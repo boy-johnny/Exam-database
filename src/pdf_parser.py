@@ -24,6 +24,19 @@ PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)
 # It's good practice to define constants for directory names
 IMAGES_BASE_SUBDIR = "images_from_pdf" # Renamed to avoid conflict if you have other "images" dirs
 
+# --- Regex Pattern Strings (Module Level) ---
+# Used by determine_parsing_mode and then compiled in parsing functions
+DEFAULT_QUESTION_START_REGEX_STR = r"^\\s*(\\d+)\\s*[．.\\uFF0E]\\s*(.*)"
+STRICT_QUESTION_START_REGEX_STR = r"^\\s*(\\d+)\\s*[．.\\uFF0E](?!\\d)\\s*(.*)" # Negative lookahead for strict
+OPTION_REGEX_STR = (
+    r"^\\s*"
+    r"(?:(?:[（\\(])\\s*([A-Z\\uFF21-\\uFF3A])\\s*(?:[）\\)])|"  # (A) or （Ａ）
+    r"([A-Z\\uFF21-\\uFF3A])\\s*[．.\\uFF0E])"  # A. or Ａ．
+    r"\\s*(.*)"  # Option text
+)
+# Anchored version for matching at the beginning of a block
+ANCHORED_OPTION_REGEX_STR = OPTION_REGEX_STR # Already starts with ^\\s* effectively
+
 # 1. 從 PDF 提取純文字 ----------------------------
 
 def extract_text_from_pdf(pdf_path: str) -> str:
@@ -135,19 +148,15 @@ def parse_questions_from_pdf_text(pdf_text: str, parsing_mode: str = "default") 
     active_option_letter: Optional[str] = None
     current_state: ParsingState = ParsingState.EXPECTING_QUESTION
 
+    # Compile patterns based on mode using module-level strings
     if parsing_mode == "strict_start":
-        question_start_pattern = re.compile(r"^\s*(\d+)\s*[．.\uFF0E](?!\d)\s*(.*)")
-        logger.info("Using STRICT_START question pattern.")
+        question_start_pattern = re.compile(STRICT_QUESTION_START_REGEX_STR)
+        logger.info("Using STRICT_START question pattern for text parsing.")
     else: # default mode
-        question_start_pattern = re.compile(r"^\s*(\d+)\s*[．.\uFF0E]\s*(.*)")
-        logger.info("Using DEFAULT question pattern.")
+        question_start_pattern = re.compile(DEFAULT_QUESTION_START_REGEX_STR)
+        logger.info("Using DEFAULT question pattern for text parsing.")
     
-    option_pattern = re.compile(
-        r"^\s*"
-        r"(?:(?:[（\(])\s*([A-Z\uFF21-\uFF3A])\s*(?:[）\)])|"
-        r"([A-Z\uFF21-\uFF3A])\s*[．.\uFF0E])"
-        r"\s*(.*)"
-    )
+    option_pattern = re.compile(OPTION_REGEX_STR) # This is used for line-based matching in this func
 
     lines = pdf_text.splitlines()
 
@@ -539,8 +548,8 @@ def process_exam_pdfs(question_pdf_path: str, answer_pdf_path: str, processed_pr
 
 def parse_questions_from_pdf(
     pdf_path: str,
-    base_output_dir: str, # 例如: "processed_data" 或測試時的 "test_processed_data"
-    test_id_for_images: str, # 例如: "111_first_biochemistry"
+    # base_output_dir: str, # 例如: "processed_data" 或測試時的 "test_processed_data" --- 會被重新定義
+    # test_id_for_images: str, # 例如: "111_first_biochemistry" ---不再需要，由pdf_path推斷
     # 以下參數將傳遞給您現有的 parse_questions_from_pdf_text
     # 您可能需要從您的配置中獲取 question_start_pattern 和 option_pattern
     # 這裡我們假設它們會被傳入，或者在函數內部根據 pdf_path 決定
@@ -548,37 +557,83 @@ def parse_questions_from_pdf(
 ):
     """
     從 PDF 文件中逐頁解析題目、選項，並提取關聯的圖片。
-    調用現有的 parse_questions_from_pdf_text 進行每頁的文本解析。
+    圖片將保存到 processed_data/image/結構化路徑/原始文件名/圖片文件.png
 
     Args:
         pdf_path: PDF 文件的路徑。
-        base_output_dir: 存儲提取圖片等處理後數據的基礎目錄。
-        test_id_for_images: 本次測驗的唯一標識，用於在 images 子目錄下創建更深層的子目錄。
+        # base_output_dir: 將被內部設置為 PROJECT_ROOT / "processed_data"
+        # test_id_for_images: 不再使用
 
     Returns:
         一個字典列表，每個字典包含題目數據及 'image_path' 和 'page_number'。
     """
     all_parsed_questions_data = []
     
+    # 重新定義基礎輸出目錄的根
+    actual_base_output_dir = PROJECT_ROOT / "processed_data" / "image" # 新的根目錄
+
     try:
         doc = fitz.open(pdf_path)
     except Exception as e:
         logger.error(f"Error opening PDF {pdf_path}: {e}")
         return all_parsed_questions_data
 
-    # 決定本次解析使用的模式
-    current_parsing_mode = determine_parsing_mode(pdf_path) # 使用您已有的函數
+    # 從 pdf_path 中提取科目、年份等結構化路徑和原始文件名
+    try:
+        # 例如 pdf_path = "raw_data/exams/科目A/111年_第一次/題目XYZ.pdf"
+        # 我們要提取 "科目A/111年_第一次" 和 "題目XYZ"
+        path_obj = Path(pdf_path)
+        
+        # 假設 "raw_data/exams" 是固定前綴
+        # 我們需要找到 "exams" 這部分的索引
+        parts = path_obj.parts
+        exams_index = -1
+        for i, part in enumerate(parts):
+            if part == "exams":
+                exams_index = i
+                break
+        
+        if exams_index == -1 or exams_index + 1 >= len(parts) -1: # exams 後面必須有科目等文件夾，然後才是文件名
+            logger.warning(f"Could not determine structured path from pdf_path: {pdf_path}. Using flat structure.")
+            structured_path_parts = []
+        else:
+            # "科目A/111年_第一次"
+            structured_path_parts = list(parts[exams_index + 1 : -1]) # exams 後面到文件名之前的部分
+            
+        original_pdf_filename_no_ext = path_obj.stem # "題目XYZ"
+
+    except Exception as e_path:
+        logger.error(f"Error processing pdf_path for output structure: {e_path}. Defaulting to flat structure.")
+        structured_path_parts = []
+        original_pdf_filename_no_ext = Path(pdf_path).stem
+
 
     # 為本次測驗的圖片創建特定的輸出子目錄
-    # 例如: base_output_dir/images_from_pdf/test_id_for_images/
-    # IMAGES_BASE_SUBDIR 已經在文件頂部定義
-    current_exam_images_dir = os.path.join(base_output_dir, IMAGES_BASE_SUBDIR, test_id_for_images)
+    # 例如: processed_data/image/科目A/111年_第一次/題目XYZ/
+    current_exam_images_dir = actual_base_output_dir
+    if structured_path_parts:
+        current_exam_images_dir = current_exam_images_dir.joinpath(*structured_path_parts)
+    current_exam_images_dir = current_exam_images_dir / original_pdf_filename_no_ext
+    
     os.makedirs(current_exam_images_dir, exist_ok=True)
-    logger.info(f"Images for {test_id_for_images} will be saved in: {current_exam_images_dir}")
+    logger.info(f"Images for {pdf_path} will be saved in: {current_exam_images_dir}")
+
+
+    # Compile OPTION_RE_ANCHORED for block parsing if needed, or use OPTION_REGEX_STR directly with re.match
+    # For block matching, we usually want patterns anchored at the start.
+    # OPTION_REGEX_STR itself is suitable for re.match() if we strip the block text first.
+    anchored_option_pattern_for_blocks = re.compile(OPTION_REGEX_STR) # Same as OPTION_RE_STR for re.match on stripped lines
+
+    # Determine parsing mode for question_start_pattern
+    current_parsing_mode = determine_parsing_mode(pdf_path)
+    if current_parsing_mode == "strict_start":
+        current_question_start_pattern_for_blocks = re.compile(STRICT_QUESTION_START_REGEX_STR)
+    else:
+        current_question_start_pattern_for_blocks = re.compile(DEFAULT_QUESTION_START_REGEX_STR)
 
     for page_num, page in enumerate(doc):
         page_actual_number = page_num + 1
-        page_image_paths = [] # 存儲本頁提取出的所有圖片的路徑
+        page_image_data_list = [] # 存儲本頁提取出的所有圖片的路徑和 bounding boxes
 
         # 1. 提取並保存本頁所有圖片
         img_list = page.get_images(full=True)
@@ -586,37 +641,150 @@ def parse_questions_from_pdf(
             xref = img_info[0]
             try:
                 pix = fitz.Pixmap(doc, xref)
-                # 統一保存為 PNG
-                image_filename = f"page{page_actual_number}_img{img_index + 1}.png"
-                image_save_path = os.path.join(current_exam_images_dir, image_filename)
+                # 新的文件名格式: {原始PDF文件名(不含副檔名)}-page{頁數}-img{圖片索引}.png
+                image_filename = f"{original_pdf_filename_no_ext}-page{page_actual_number}-img{img_index}.png"
+                image_save_path = current_exam_images_dir / image_filename # 使用 Path對象進行路徑拼接
+                img_bbox_on_page = page.get_image_bbox(img_info) # Get correct bbox
+
+                if pix.n - pix.alpha < 4: # not CMYK or GRAY
+                    if not os.path.exists(image_save_path):
+                        pix.save(image_save_path)
+                else: # CMYK: convert to RGB first
+                    if not os.path.exists(image_save_path):
+                        pix_rgb = fitz.Pixmap(fitz.csRGB, pix)
+                        pix_rgb.save(image_save_path)
+                        pix_rgb = None # Release memory
                 
-                if pix.n - pix.alpha < 4: # RGBA or RGB
-                    pix.save(image_save_path)
-                else: # CMYK images, etc., convert to RGB first
-                    pix_rgb = fitz.Pixmap(fitz.csRGB, pix)
-                    pix_rgb.save(image_save_path)
-                    pix_rgb = None # Release memory
-                
-                page_image_paths.append(image_save_path)
+                page_image_data_list.append({
+                    "path": image_save_path,
+                    "bbox": img_bbox_on_page # Assign the fitz.Rect object directly
+                })
                 pix = None # Release memory
                 logger.debug(f"Saved image {image_filename} from page {page_actual_number} of {pdf_path}")
+                
             except Exception as e:
                 logger.error(f"Error processing image xref {xref} on page {page_actual_number} of {pdf_path}: {e}")
 
-        # 2. 提取本頁文本
-        page_text = page.get_text("text")
+        # 2. 提取本頁文本塊 (NEW)
+        text_blocks_on_page = []
+        raw_blocks = page.get_text("blocks", sort=True) 
+        for block_tuple in raw_blocks:
+            if block_tuple[6] == 0: # TEXT block
+                text_blocks_on_page.append({
+                    "text": block_tuple[4], # The text content of the block
+                    "bbox": fitz.Rect(block_tuple[0:4]) # The bounding box
+                })
         
-        # 3. 使用您現有的 parse_questions_from_pdf_text 解析本頁題目
-        # 注意：您的 parse_questions_from_pdf_text 內部有自己的日誌記錄
-        questions_on_this_page = parse_questions_from_pdf_text(page_text, parsing_mode=current_parsing_mode)
+        # 3. 使用您現有的 parse_questions_from_pdf_text 解析本頁題目結構 (Existing)
+        page_text_for_parser = page.get_text("text") 
+        questions_text_data = parse_questions_from_pdf_text(page_text_for_parser, parsing_mode=current_parsing_mode)
         
-        # 4. 基本圖片關聯策略 和 頁碼添加
-        page_first_image_path = page_image_paths[0] if page_image_paths else None
-        
-        for q_data in questions_on_this_page:
-            q_data['image_path'] = page_first_image_path # 關聯本頁第一張圖片 (如果存在)
-            q_data['page_number'] = page_actual_number
-            all_parsed_questions_data.append(q_data)
+        # 4. 針對每個解析出的題目，查找其 BBox 並重新關聯圖片 (NEW LOGIC)
+        for q_text_data in questions_text_data:
+            current_q_dict = q_text_data.copy()
+            current_q_dict['image_path'] = None # Reset from previous basic association
+            current_q_dict['page_number'] = page_actual_number # Already there, just ensuring
+            
+            q_num_as_int = current_q_dict['question_number'] # This is an int
+            
+            stem_found_blocks = []
+            first_option_y0_for_q = float('inf')
+            
+            # Iterate through blocks to identify stem and first option y0 for current_q_dict
+            active_question_parsing_state = "looking_for_stem_start" # -> "in_stem" -> "looking_for_options"
+            
+            for block_idx, block_item in enumerate(text_blocks_on_page):
+                block_text_content = block_item["text"] # Full text of the block, might have newlines
+                block_text_stripped_lines = [line.strip() for line in block_text_content.splitlines() if line.strip()]
+                if not block_text_stripped_lines:
+                    continue
+                
+                first_line_of_block = block_text_stripped_lines[0]
+
+                if active_question_parsing_state == "looking_for_stem_start":
+                    q_start_match = current_question_start_pattern_for_blocks.match(first_line_of_block)
+                    if q_start_match and int(q_start_match.group(1)) == q_num_as_int:
+                        active_question_parsing_state = "in_stem"
+                        stem_found_blocks.append(block_item["bbox"])
+                        # Check if the rest of this block contains an option
+                        # This requires careful handling of multi-line blocks.
+                        # For simplicity, assume one block = one line for option start check here.
+                        option_match_in_same_block = anchored_option_pattern_for_blocks.match(q_start_match.group(2).strip()) # Check remainder
+                        if not option_match_in_same_block:
+                             # Check subsequent lines in the same block if q_start_match.group(2) was empty
+                             for L_idx, line_in_block in enumerate(block_text_stripped_lines):
+                                 if L_idx == 0 and q_start_match.group(2).strip(): # Already checked effective group(2)
+                                     continue
+                                 if anchored_option_pattern_for_blocks.match(line_in_block):
+                                     first_option_y0_for_q = min(first_option_y0_for_q, block_item["bbox"].y0) # block's y0
+                                     active_question_parsing_state = "looking_for_options" # Stem effectively ended
+                                     break 
+                             if active_question_parsing_state == "looking_for_options": break # break from block loop for this question.
+                        else: # Option found in the first line itself after question number
+                            first_option_y0_for_q = min(first_option_y0_for_q, block_item["bbox"].y0)
+                            active_question_parsing_state = "looking_for_options" # Stem ended.
+                            break # break from block loop for this question.
+
+
+                elif active_question_parsing_state == "in_stem":
+                    # Check if this block starts an option
+                    option_match = anchored_option_pattern_for_blocks.match(first_line_of_block)
+                    if option_match:
+                        first_option_y0_for_q = min(first_option_y0_for_q, block_item["bbox"].y0)
+                        active_question_parsing_state = "looking_for_options" # Stem ended
+                        break # Stop stem collection for this question, move to image association
+
+                    # Check if this block starts the *next* question
+                    next_q_match = current_question_start_pattern_for_blocks.match(first_line_of_block)
+                    if next_q_match and int(next_q_match.group(1)) == q_num_as_int + 1:
+                        active_question_parsing_state = "looking_for_stem_start" # Reset for next question in outer loop
+                        break # Current question's stem processing ends.
+                    
+                    stem_found_blocks.append(block_item["bbox"]) # Add to stem
+
+            # Consolidate stem_found_blocks into main_stem_bbox
+            main_stem_bbox = None
+            if stem_found_blocks:
+                main_stem_bbox = stem_found_blocks[0]
+                for bbox in stem_found_blocks[1:]:
+                    main_stem_bbox.include_rect(bbox)
+            
+            # Image association logic using main_stem_bbox and first_option_y0_for_q
+            if main_stem_bbox:
+                # current_q_dict['debug_stem_bbox'] = (main_stem_bbox.x0, main_stem_bbox.y0, main_stem_bbox.x1, main_stem_bbox.y1)
+                # current_q_dict['debug_first_option_y0'] = first_option_y0_for_q if first_option_y0_for_q != float('inf') else None
+                
+                best_img_path = None
+                min_v_dist_to_stem = float('inf')
+
+                for img_item in page_image_data_list: # CORRECTED: Was page_image_paths
+                    img_bbox = img_item["bbox"]
+                    
+                    image_starts_below_stem = img_bbox.y0 > main_stem_bbox.y1
+                    # Lenient horizontal overlap: center of image is somewhat aligned with center of stem, or edges overlap
+                    stem_center_x = (main_stem_bbox.x0 + main_stem_bbox.x1) / 2
+                    img_center_x = (img_bbox.x0 + img_bbox.x1) / 2
+                    # Check if image x-range is within a wider range of stem, or vice-versa
+                    # Or simply, if (max(stem.x0, img.x0) < min(stem.x1, img.x1))
+                    horizontal_overlap = (max(main_stem_bbox.x0, img_bbox.x0) < min(main_stem_bbox.x1, img_bbox.x1))
+
+                    if image_starts_below_stem and horizontal_overlap:
+                        image_ends_above_options = True # Default
+                        if first_option_y0_for_q != float('inf'):
+                            if img_bbox.y1 >= first_option_y0_for_q: # Image extends to or past where options start
+                                image_ends_above_options = False
+                        
+                        if image_ends_above_options:
+                            vertical_distance = img_bbox.y0 - main_stem_bbox.y1
+                            # Positive distance, and within a tolerance (e.g., 150 points, can be tuned)
+                            if 0 <= vertical_distance < 150: 
+                                if vertical_distance < min_v_dist_to_stem:
+                                    min_v_dist_to_stem = vertical_distance
+                                    best_img_path = img_item["path"]
+                
+                current_q_dict['image_path'] = best_img_path
+            
+            all_parsed_questions_data.append(current_q_dict)
 
     doc.close()
     logger.info(f"Finished parsing {pdf_path}. Total questions extracted: {len(all_parsed_questions_data)}")
@@ -624,11 +792,8 @@ def parse_questions_from_pdf(
 
 
 if __name__ == "__main__":
-    # 確保日誌在直接運行此文件時能輸出
-    logger.setLevel(logging.DEBUG) # 設置為 DEBUG 以獲取更詳細的圖像保存信息
-    
+    logger.setLevel(logging.DEBUG) 
     print(" executing pdf_parser.py directly for testing...")
-    # 打印 PyMuPDF 版本
     try:
         print(f"PyMuPDF (fitz) version: {fitz.__doc__}")
     except Exception as e_version:
@@ -636,80 +801,27 @@ if __name__ == "__main__":
 
     # --- 測試新的 parse_questions_from_pdf ---
     
-    # 定義用於測試的正則表達式 (您應該從您的配置中加載實際的模式)
-    # 這些是簡化的示例，您需要用您 parse_questions_from_pdf_text 函數實際使用的 pattern
-    # 但由於 parse_questions_from_pdf 會調用 determine_parsing_mode, 
-    # 而 determine_parsing_mode 又會影響 parse_questions_from_pdf_text 內部使用的 pattern,
-    # 所以這裡不需要顯式傳遞 pattern 給 parse_questions_from_pdf。
+    # 1. 指定您要測試的實際試題卷路徑
+    #    將 "path/to/your/actual_exam.pdf" 替換為您的文件路徑
+    actual_test_pdf_path = "raw_data/exams/臨床微生物學/111年_第二次/題目1112微生物.pdf" # 例如
 
-    # 創建一個虛擬 PDF 用於測試
-    dummy_pdf_filename = "dummy_test_exam_with_image.pdf"
-    dummy_pdf_path = str(PROJECT_ROOT / dummy_pdf_filename) # 確保路徑在項目根目錄
-
-    if not os.path.exists(dummy_pdf_path):
-        try:
-            doc = fitz.open() # new empty PDF
-            page = doc.new_page()
-            
-            # 添加一些符合您 question_start_pattern 和 option_pattern 的文本
-            # (請根據您 parse_questions_from_pdf_text 中的正則進行調整)
-            page.insert_text(fitz.Point(50, 72), "1. 第一題的題目內容？")
-            page.insert_text(fitz.Point(70, 92), "(A) 選項A的內容")
-            page.insert_text(fitz.Point(70, 112), "(B) 選項B的內容")
-            
-            page.insert_text(fitz.Point(50, 152), "2. 第二題的題目，這題有圖。")
-            page.insert_text(fitz.Point(70, 172), "（A）選項 A again")
-            page.insert_text(fitz.Point(70, 192), "（B）選項 B again")
-            
-            # 創建一個小的像素圖 (例如 20x20 的黑色矩形)
-            img_width, img_height = 20, 20
-            # 黑色 RGB: (0,0,0)。數據是 R,G,B,R,G,B,...
-            img_data = bytearray([0, 0, 0] * (img_width * img_height))
-            
-            # PyMuPDF 1.26.0: Pixmap 沒有 set_samples 方法。
-            # 必須在構造時提供所有信息。
-            try:
-                # 直接使用標準構造函數，包含 colorspace, width, height, samples, alpha
-                pix = fitz.Pixmap(fitz.csRGB, img_width, img_height, img_data, False)
-            except Exception as e_pix:
-                print(f"Error creating Pixmap object with (cs, w, h, samples, alpha=False): {e_pix}")
-                # 嘗試不帶 alpha 參數，以防萬一
-                try:
-                    print("Retrying Pixmap creation without explicit alpha...")
-                    pix = fitz.Pixmap(fitz.csRGB, img_width, img_height, img_data)
-                except Exception as e_pix_no_alpha:
-                    print(f"Error creating Pixmap object with (cs, w, h, samples): {e_pix_no_alpha}")
-                    raise # 如果兩種都失敗，則重新拋出最後一個異常
-
-            page.insert_image(fitz.Rect(50, 220, 50 + img_width*5, 220 + img_height*5), pixmap=pix) # 插入圖片
-            
-            doc.save(dummy_pdf_path)
-            doc.close()
-            print(f"Created dummy PDF for testing: {dummy_pdf_path}")
-        except Exception as e:
-            print(f"Could not create dummy PDF: {e}")
-            dummy_pdf_path = None 
-    else:
-        print(f"Dummy PDF already exists: {dummy_pdf_path}")
-
-    if dummy_pdf_path and os.path.exists(dummy_pdf_path):
-        print(f"--- Testing parse_questions_from_pdf with: {dummy_pdf_path} ---")
+    if actual_test_pdf_path and os.path.exists(actual_test_pdf_path):
+        print(f"--- Testing parse_questions_from_pdf with: {actual_test_pdf_path} ---")
         
-        # 測試時的輸出目錄 (例如 processed_data/test_dummy_output/)
-        # 我們直接在 PROJECT_ROOT 下創建 test_processed_data/
-        test_base_output_dir = str(PROJECT_ROOT / "test_processed_data")
-        os.makedirs(test_base_output_dir, exist_ok=True)
+        # 2. 測試時的輸出目錄和圖像子目錄ID (這些參數不再由 __main__ 控制, 由函數內部邏輯決定)
+        # test_base_output_dir = str(PROJECT_ROOT / "test_output_data") 
+        # test_image_id = "biochem_111_2_test"
+
+        # os.makedirs(test_base_output_dir, exist_ok=True) # 目錄創建由函數處理
         
         parsed_data = parse_questions_from_pdf(
-            pdf_path=dummy_pdf_path,
-            base_output_dir=test_base_output_dir,
-            test_id_for_images="dummy_exam_run_001"
-            # current_parsing_mode is determined internally by determine_parsing_mode
+            pdf_path=actual_test_pdf_path
+            # base_output_dir and test_id_for_images are now handled internally
         )
         
-        print(f"\\n--- Parsed Data (Total: {len(parsed_data)}) ---")
+        print(f"\n--- Parsed Data (Total: {len(parsed_data)}) ---")
         for i, q_data in enumerate(parsed_data):
-            print(f"  Question (from parser): {q_data.get('question_number')}") # 您的 parser 返回 'question_number'
+            print(f"  Question (from parser): {q_data.get('question_number')}")
             print(f"    Content: {q_data.get('content', 'N/A')[:60]}...")
             print(f"    Options: {q_data.get('options', {})}")
             print(f"    Page: {q_data.get('page_number')}")
@@ -718,115 +830,26 @@ if __name__ == "__main__":
                 print(f"      Image file found: YES")
             elif q_data.get('image_path'):
                 print(f"      Image file found: NO (Path: {q_data['image_path']})")
+            else:
+                print(f"      No image associated.")
         print("--- End of parsing test ---")
 
-        # 清理建議 (您可以取消註釋以在測試後自動清理)
-        # print("\\n--- Cleanup ---")
-        # dummy_images_full_path = os.path.join(test_base_output_dir, IMAGES_BASE_SUBDIR, "dummy_exam_run_001")
-        # if os.path.exists(dummy_images_full_path):
+        # print("\n--- Cleanup (optional) ---")
+        # images_full_path = os.path.join(test_base_output_dir, IMAGES_BASE_SUBDIR, test_image_id) # 路徑已更改
+        # 實際的圖片路徑現在會是 processed_data/image/臨床血清免疫學和臨床病毒學/111年_第一次/題目1111免疫/
+        # 例如:
+        # expected_image_output_dir = PROJECT_ROOT / "processed_data" / "image" / "臨床血清免疫學和臨床病毒學" / "111年_第一次" / "題目1111免疫"
+        # print(f"Check for images in: {expected_image_output_dir}")
+        # if os.path.exists(expected_image_output_dir):
         #     import shutil
         #     try:
-        #         shutil.rmtree(dummy_images_full_path)
-        #         print(f"Removed dummy images directory: {dummy_images_full_path}")
+        #         # shutil.rmtree(expected_image_output_dir) # 取消註釋以刪除測試圖片目錄
+        #         print(f"Test images are at: {expected_image_output_dir}") 
         #     except Exception as e:
-        #         print(f"Error removing dummy images directory {dummy_images_full_path}: {e}")
-        
-        # if os.path.exists(dummy_pdf_path):
-        #     try:
-        #         os.remove(dummy_pdf_path)
-        #         print(f"Removed dummy PDF: {dummy_pdf_path}")
-        #     except Exception as e:
-        #         print(f"Error removing dummy PDF {dummy_pdf_path}: {e}")
-        
-        # test_images_base_folder = os.path.join(test_base_output_dir, IMAGES_BASE_SUBDIR)
-        # if os.path.exists(test_images_base_folder) and not os.listdir(test_images_base_folder):
-        #     try:
-        #         os.rmdir(test_images_base_folder) # remove IMAGES_BASE_SUBDIR if empty
-        #         print(f"Removed empty base image subdir: {test_images_base_folder}")
-        #     except Exception as e:
-        #         print(f"Error removing {test_images_base_folder}: {e}")
-
-        # if os.path.exists(test_base_output_dir) and not os.listdir(test_base_output_dir):
-        #     try:
-        #         os.rmdir(test_base_output_dir) # remove test_base_output_dir if empty
-        #         print(f"Removed empty test base output dir: {test_base_output_dir}")
-        #     except Exception as e:
-        #         print(f"Error removing {test_base_output_dir}: {e}")
+        #         print(f"Error during cleanup of {expected_image_output_dir}: {e}")
+        # # ... (其他清理代碼) ...
 
     else:
-        print("Skipping test with dummy PDF as it could not be created or found.")
-
-    # 您原有的其他 __main__ 測試可以放在這裡，或者保持註釋狀態
-    # # --- 測試 parse_questions_from_pdf_text ---
-    # ... (您原來的測試代碼保持原樣或刪除/調整) ...
-    pass # 原來的 pass 语句可以保留或移除
-
-
-# if __name__ == "__main__":
-#     # --- 測試 parse_questions_from_pdf_text ---
-    # Test Case 1: "臨床生理學和病理學/111年_第一次/題目1111病理.pdf" - Should use "default" mode
-    # question_pdf_path_test_pathology = "raw_data/exams/臨床血液學和血庫學/111年_第二次/題目1112血液.pdf"
-    # logger.info(f"--- Testing parse_questions_from_pdf_text with {question_pdf_path_test_pathology} (MODE: default) ---")
-    # question_text_pages_test_pathology = extract_text_from_pdf(question_pdf_path_test_pathology)
-    # full_question_text_test_pathology = "\n".join(question_text_pages_test_pathology)
-    # parsed_questions_test_pathology = parse_questions_from_pdf_text(full_question_text_test_pathology, parsing_mode="default")
+        print(f"Skipping test as the PDF was not found or specified: {actual_test_pdf_path}")
     
-#     print("\n=== 題目解析測試結果 (病理 - default mode) ===")
-#     if parsed_questions_test_pathology:
-#         print(f"Total questions parsed (Pathology, default mode): {len(parsed_questions_test_pathology)}")
-#     else:
-#         print("No questions were parsed (Pathology, default mode).")
-#     print("--- End of Test for Pathology PDF ---\n")
-
-#     # Test Case 2: "生物化學與臨床生化學/111年_第一次/題目1111微生物.pdf" - Should use "strict_start" mode
-#     question_pdf_path_test_biochem = "raw_data/exams/臨床微生物學/111年_第一次/題目1111微生物.pdf"
-#     logger.info(f"--- Testing parse_questions_from_pdf_text with {question_pdf_path_test_biochem} (MODE: strict_start) ---")
-#     question_text_pages_test_biochem = extract_text_from_pdf(question_pdf_path_test_biochem)
-#     full_question_text_test_biochem = "\n".join(question_text_pages_test_biochem)
-#     parsed_questions_test_biochem = parse_questions_from_pdf_text(full_question_text_test_biochem, parsing_mode="strict_start")
-
-#     print("\n=== 題目解析測試結果 (生化 - strict_start mode) ===")
-#     if parsed_questions_test_biochem:
-#         # (簡化輸出，只打總數和第38, 39題左右)
-#         for i, q_data in enumerate(parsed_questions_test_biochem):
-#             if q_data.get('question_number') in [37, 38, 39, 6, 7]: # Check around the problematic area
-#                  print(f"--- Question {i+1} (Original Number: {q_data.get('question_number')}) ---")
-#                  print(f"Content: {q_data.get('content')}")
-#                  print("Options:")
-#                  if q_data.get('options'):
-#                      for opt_key, opt_text in q_data['options'].items():
-#                          print(f"  {opt_key}: {opt_text}")
-#                  else:
-#                      print("  (No options parsed)")
-#                  print("-" * 20)
-#         print(f"Total questions parsed (Biochemistry, strict_start mode): {len(parsed_questions_test_biochem)}")
-#     else:
-#         print("No questions were parsed (Biochemistry, strict_start mode).")
-#     print("--- End of Test for Biochemistry PDF ---\n")
-    
-#     # # --- 測試答案卷解析 (原有代碼) ---
-#     # # 測試答案卷解析
-#     # pdf_path = "raw_data/exams/生物化學與臨床生化學/111年_第二次/答案1112生化.pdf"
-    
-#     # # 1. 提取文字 (No longer needed here if parser takes path directly)
-#     # # text_pages = extract_text_from_pdf(pdf_path)
-#     # # logger.info(f"Extracted {len(text_pages)} pages from {pdf_path}")
-    
-#     # # 2. 解析答案
-#     # answers_data = parse_answers_from_pdf_text(pdf_path) # MODIFIED CALL
-    
-#     # # 3. 輸出結果
-#     # print("\n=== 答案解析結果 ===")
-#     # if isinstance(answers_data, dict) and "answers" in answers_data:
-#     #     # 有備註的情況
-#     #     print("\n答案:")
-#     #     for q_num, ans in answers_data["answers"].items():
-#     #         print(f"題號 {q_num}: {ans}")
-#     #     print("\n備註:")
-#     #     for q_num, note in answers_data["notes"].items():
-#     #         print(f"題號 {q_num}: {note}")
-#     # else:
-#     #     # 無備註的情況
-#     #     for q_num, ans in answers_data.items():
-#     #         print(f"題號 {q_num}: {ans}")
-#     pass 
+    pass # 保留 pass 或其他舊的測試代碼（如果需要）
