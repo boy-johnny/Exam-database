@@ -21,18 +21,23 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PROCESSED_DATA_DIR = PROJECT_ROOT / "processed_data"
 PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
+# It's good practice to define constants for directory names
+IMAGES_BASE_SUBDIR = "images_from_pdf" # Renamed to avoid conflict if you have other "images" dirs
+
 # 1. 從 PDF 提取純文字 ----------------------------
 
-def extract_text_from_pdf(pdf_path: str) -> List[str]:
-    """
-    讀取 PDF，返回每一頁的純文字（list of str）。
-    """
-    text_pages = []
-    with fitz.open(pdf_path) as doc:
+def extract_text_from_pdf(pdf_path: str) -> str:
+    """從 PDF 提取所有純文字。"""
+    try:
+        doc = fitz.open(pdf_path)
+        text = ""
         for page in doc:
-            text_pages.append(page.get_text())
-    logger.info(f"Extracted text from {pdf_path}, total {len(text_pages)} pages.")
-    return text_pages
+            text += page.get_text()
+        doc.close()
+        return text
+    except Exception as e:
+        print(f"Error extracting text from PDF {pdf_path}: {e}")
+        return ""
 
 # 2. 從 PDF 首頁與檔名提取元數據 ----------------------------
 
@@ -432,7 +437,7 @@ def parse_answers_from_pdf_text(answer_pdf_path: str) -> Dict[int, Any]:
 
 # 5. 合併題目與答案 ----------------------------
 
-def｀combine_questions_and_answers(questions: List[Dict[str, Any]], answers: Dict[int, Any]) -> List[Dict[str, Any]]:
+def combine_questions_and_answers(questions: List[Dict[str, Any]], answers: Dict[int, Any]) -> List[Dict[str, Any]]:
     """
     將題目與答案合併，補齊 correct_answer_key、notes 等欄位。
     若遇到特殊情況，notes 標註。
@@ -530,14 +535,241 @@ def process_exam_pdfs(question_pdf_path: str, answer_pdf_path: str, processed_pr
     }, f"{processed_prefix}_rawtext.json")
     logger.info(f"Process complete for {processed_prefix}")
 
+# 8. 新增：逐頁解析題目並提取圖片的函數
+
+def parse_questions_from_pdf(
+    pdf_path: str,
+    base_output_dir: str, # 例如: "processed_data" 或測試時的 "test_processed_data"
+    test_id_for_images: str, # 例如: "111_first_biochemistry"
+    # 以下參數將傳遞給您現有的 parse_questions_from_pdf_text
+    # 您可能需要從您的配置中獲取 question_start_pattern 和 option_pattern
+    # 這裡我們假設它們會被傳入，或者在函數內部根據 pdf_path 決定
+    # current_parsing_mode: str # 這個由 determine_parsing_mode 決定
+):
+    """
+    從 PDF 文件中逐頁解析題目、選項，並提取關聯的圖片。
+    調用現有的 parse_questions_from_pdf_text 進行每頁的文本解析。
+
+    Args:
+        pdf_path: PDF 文件的路徑。
+        base_output_dir: 存儲提取圖片等處理後數據的基礎目錄。
+        test_id_for_images: 本次測驗的唯一標識，用於在 images 子目錄下創建更深層的子目錄。
+
+    Returns:
+        一個字典列表，每個字典包含題目數據及 'image_path' 和 'page_number'。
+    """
+    all_parsed_questions_data = []
+    
+    try:
+        doc = fitz.open(pdf_path)
+    except Exception as e:
+        logger.error(f"Error opening PDF {pdf_path}: {e}")
+        return all_parsed_questions_data
+
+    # 決定本次解析使用的模式
+    current_parsing_mode = determine_parsing_mode(pdf_path) # 使用您已有的函數
+
+    # 為本次測驗的圖片創建特定的輸出子目錄
+    # 例如: base_output_dir/images_from_pdf/test_id_for_images/
+    # IMAGES_BASE_SUBDIR 已經在文件頂部定義
+    current_exam_images_dir = os.path.join(base_output_dir, IMAGES_BASE_SUBDIR, test_id_for_images)
+    os.makedirs(current_exam_images_dir, exist_ok=True)
+    logger.info(f"Images for {test_id_for_images} will be saved in: {current_exam_images_dir}")
+
+    for page_num, page in enumerate(doc):
+        page_actual_number = page_num + 1
+        page_image_paths = [] # 存儲本頁提取出的所有圖片的路徑
+
+        # 1. 提取並保存本頁所有圖片
+        img_list = page.get_images(full=True)
+        for img_index, img_info in enumerate(img_list):
+            xref = img_info[0]
+            try:
+                pix = fitz.Pixmap(doc, xref)
+                # 統一保存為 PNG
+                image_filename = f"page{page_actual_number}_img{img_index + 1}.png"
+                image_save_path = os.path.join(current_exam_images_dir, image_filename)
+                
+                if pix.n - pix.alpha < 4: # RGBA or RGB
+                    pix.save(image_save_path)
+                else: # CMYK images, etc., convert to RGB first
+                    pix_rgb = fitz.Pixmap(fitz.csRGB, pix)
+                    pix_rgb.save(image_save_path)
+                    pix_rgb = None # Release memory
+                
+                page_image_paths.append(image_save_path)
+                pix = None # Release memory
+                logger.debug(f"Saved image {image_filename} from page {page_actual_number} of {pdf_path}")
+            except Exception as e:
+                logger.error(f"Error processing image xref {xref} on page {page_actual_number} of {pdf_path}: {e}")
+
+        # 2. 提取本頁文本
+        page_text = page.get_text("text")
+        
+        # 3. 使用您現有的 parse_questions_from_pdf_text 解析本頁題目
+        # 注意：您的 parse_questions_from_pdf_text 內部有自己的日誌記錄
+        questions_on_this_page = parse_questions_from_pdf_text(page_text, parsing_mode=current_parsing_mode)
+        
+        # 4. 基本圖片關聯策略 和 頁碼添加
+        page_first_image_path = page_image_paths[0] if page_image_paths else None
+        
+        for q_data in questions_on_this_page:
+            q_data['image_path'] = page_first_image_path # 關聯本頁第一張圖片 (如果存在)
+            q_data['page_number'] = page_actual_number
+            all_parsed_questions_data.append(q_data)
+
+    doc.close()
+    logger.info(f"Finished parsing {pdf_path}. Total questions extracted: {len(all_parsed_questions_data)}")
+    return all_parsed_questions_data
+
+
+if __name__ == "__main__":
+    # 確保日誌在直接運行此文件時能輸出
+    logger.setLevel(logging.DEBUG) # 設置為 DEBUG 以獲取更詳細的圖像保存信息
+    
+    print(" executing pdf_parser.py directly for testing...")
+    # 打印 PyMuPDF 版本
+    try:
+        print(f"PyMuPDF (fitz) version: {fitz.__doc__}")
+    except Exception as e_version:
+        print(f"Could not retrieve fitz version: {e_version}")
+
+    # --- 測試新的 parse_questions_from_pdf ---
+    
+    # 定義用於測試的正則表達式 (您應該從您的配置中加載實際的模式)
+    # 這些是簡化的示例，您需要用您 parse_questions_from_pdf_text 函數實際使用的 pattern
+    # 但由於 parse_questions_from_pdf 會調用 determine_parsing_mode, 
+    # 而 determine_parsing_mode 又會影響 parse_questions_from_pdf_text 內部使用的 pattern,
+    # 所以這裡不需要顯式傳遞 pattern 給 parse_questions_from_pdf。
+
+    # 創建一個虛擬 PDF 用於測試
+    dummy_pdf_filename = "dummy_test_exam_with_image.pdf"
+    dummy_pdf_path = str(PROJECT_ROOT / dummy_pdf_filename) # 確保路徑在項目根目錄
+
+    if not os.path.exists(dummy_pdf_path):
+        try:
+            doc = fitz.open() # new empty PDF
+            page = doc.new_page()
+            
+            # 添加一些符合您 question_start_pattern 和 option_pattern 的文本
+            # (請根據您 parse_questions_from_pdf_text 中的正則進行調整)
+            page.insert_text(fitz.Point(50, 72), "1. 第一題的題目內容？")
+            page.insert_text(fitz.Point(70, 92), "(A) 選項A的內容")
+            page.insert_text(fitz.Point(70, 112), "(B) 選項B的內容")
+            
+            page.insert_text(fitz.Point(50, 152), "2. 第二題的題目，這題有圖。")
+            page.insert_text(fitz.Point(70, 172), "（A）選項 A again")
+            page.insert_text(fitz.Point(70, 192), "（B）選項 B again")
+            
+            # 創建一個小的像素圖 (例如 20x20 的黑色矩形)
+            img_width, img_height = 20, 20
+            # 黑色 RGB: (0,0,0)。數據是 R,G,B,R,G,B,...
+            img_data = bytearray([0, 0, 0] * (img_width * img_height))
+            
+            # PyMuPDF 1.26.0: Pixmap 沒有 set_samples 方法。
+            # 必須在構造時提供所有信息。
+            try:
+                # 直接使用標準構造函數，包含 colorspace, width, height, samples, alpha
+                pix = fitz.Pixmap(fitz.csRGB, img_width, img_height, img_data, False)
+            except Exception as e_pix:
+                print(f"Error creating Pixmap object with (cs, w, h, samples, alpha=False): {e_pix}")
+                # 嘗試不帶 alpha 參數，以防萬一
+                try:
+                    print("Retrying Pixmap creation without explicit alpha...")
+                    pix = fitz.Pixmap(fitz.csRGB, img_width, img_height, img_data)
+                except Exception as e_pix_no_alpha:
+                    print(f"Error creating Pixmap object with (cs, w, h, samples): {e_pix_no_alpha}")
+                    raise # 如果兩種都失敗，則重新拋出最後一個異常
+
+            page.insert_image(fitz.Rect(50, 220, 50 + img_width*5, 220 + img_height*5), pixmap=pix) # 插入圖片
+            
+            doc.save(dummy_pdf_path)
+            doc.close()
+            print(f"Created dummy PDF for testing: {dummy_pdf_path}")
+        except Exception as e:
+            print(f"Could not create dummy PDF: {e}")
+            dummy_pdf_path = None 
+    else:
+        print(f"Dummy PDF already exists: {dummy_pdf_path}")
+
+    if dummy_pdf_path and os.path.exists(dummy_pdf_path):
+        print(f"--- Testing parse_questions_from_pdf with: {dummy_pdf_path} ---")
+        
+        # 測試時的輸出目錄 (例如 processed_data/test_dummy_output/)
+        # 我們直接在 PROJECT_ROOT 下創建 test_processed_data/
+        test_base_output_dir = str(PROJECT_ROOT / "test_processed_data")
+        os.makedirs(test_base_output_dir, exist_ok=True)
+        
+        parsed_data = parse_questions_from_pdf(
+            pdf_path=dummy_pdf_path,
+            base_output_dir=test_base_output_dir,
+            test_id_for_images="dummy_exam_run_001"
+            # current_parsing_mode is determined internally by determine_parsing_mode
+        )
+        
+        print(f"\\n--- Parsed Data (Total: {len(parsed_data)}) ---")
+        for i, q_data in enumerate(parsed_data):
+            print(f"  Question (from parser): {q_data.get('question_number')}") # 您的 parser 返回 'question_number'
+            print(f"    Content: {q_data.get('content', 'N/A')[:60]}...")
+            print(f"    Options: {q_data.get('options', {})}")
+            print(f"    Page: {q_data.get('page_number')}")
+            print(f"    Image Path: {q_data.get('image_path')}")
+            if q_data.get('image_path') and os.path.exists(q_data['image_path']):
+                print(f"      Image file found: YES")
+            elif q_data.get('image_path'):
+                print(f"      Image file found: NO (Path: {q_data['image_path']})")
+        print("--- End of parsing test ---")
+
+        # 清理建議 (您可以取消註釋以在測試後自動清理)
+        # print("\\n--- Cleanup ---")
+        # dummy_images_full_path = os.path.join(test_base_output_dir, IMAGES_BASE_SUBDIR, "dummy_exam_run_001")
+        # if os.path.exists(dummy_images_full_path):
+        #     import shutil
+        #     try:
+        #         shutil.rmtree(dummy_images_full_path)
+        #         print(f"Removed dummy images directory: {dummy_images_full_path}")
+        #     except Exception as e:
+        #         print(f"Error removing dummy images directory {dummy_images_full_path}: {e}")
+        
+        # if os.path.exists(dummy_pdf_path):
+        #     try:
+        #         os.remove(dummy_pdf_path)
+        #         print(f"Removed dummy PDF: {dummy_pdf_path}")
+        #     except Exception as e:
+        #         print(f"Error removing dummy PDF {dummy_pdf_path}: {e}")
+        
+        # test_images_base_folder = os.path.join(test_base_output_dir, IMAGES_BASE_SUBDIR)
+        # if os.path.exists(test_images_base_folder) and not os.listdir(test_images_base_folder):
+        #     try:
+        #         os.rmdir(test_images_base_folder) # remove IMAGES_BASE_SUBDIR if empty
+        #         print(f"Removed empty base image subdir: {test_images_base_folder}")
+        #     except Exception as e:
+        #         print(f"Error removing {test_images_base_folder}: {e}")
+
+        # if os.path.exists(test_base_output_dir) and not os.listdir(test_base_output_dir):
+        #     try:
+        #         os.rmdir(test_base_output_dir) # remove test_base_output_dir if empty
+        #         print(f"Removed empty test base output dir: {test_base_output_dir}")
+        #     except Exception as e:
+        #         print(f"Error removing {test_base_output_dir}: {e}")
+
+    else:
+        print("Skipping test with dummy PDF as it could not be created or found.")
+
+    # 您原有的其他 __main__ 測試可以放在這裡，或者保持註釋狀態
+    # # --- 測試 parse_questions_from_pdf_text ---
+    # ... (您原來的測試代碼保持原樣或刪除/調整) ...
+    pass # 原來的 pass 语句可以保留或移除
+
+
 # if __name__ == "__main__":
 #     # --- 測試 parse_questions_from_pdf_text ---
-#     # Test Case 1: "臨床生理學和病理學/111年_第一次/題目1111病理.pdf" - Should use "default" mode
-#     question_pdf_path_test_pathology = "raw_data/exams/臨床血液學和血庫學/111年_第二次/題目1112血液.pdf"
-#     logger.info(f"--- Testing parse_questions_from_pdf_text with {question_pdf_path_test_pathology} (MODE: default) ---")
-#     question_text_pages_test_pathology = extract_text_from_pdf(question_pdf_path_test_pathology)
-#     full_question_text_test_pathology = "\n".join(question_text_pages_test_pathology)
-#     parsed_questions_test_pathology = parse_questions_from_pdf_text(full_question_text_test_pathology, parsing_mode="default")
+    # Test Case 1: "臨床生理學和病理學/111年_第一次/題目1111病理.pdf" - Should use "default" mode
+    # question_pdf_path_test_pathology = "raw_data/exams/臨床血液學和血庫學/111年_第二次/題目1112血液.pdf"
+    # logger.info(f"--- Testing parse_questions_from_pdf_text with {question_pdf_path_test_pathology} (MODE: default) ---")
+    # question_text_pages_test_pathology = extract_text_from_pdf(question_pdf_path_test_pathology)
+    # full_question_text_test_pathology = "\n".join(question_text_pages_test_pathology)
+    # parsed_questions_test_pathology = parse_questions_from_pdf_text(full_question_text_test_pathology, parsing_mode="default")
     
 #     print("\n=== 題目解析測試結果 (病理 - default mode) ===")
 #     if parsed_questions_test_pathology:
