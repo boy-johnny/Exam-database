@@ -641,10 +641,10 @@ def parse_questions_from_pdf(
             xref = img_info[0]
             try:
                 pix = fitz.Pixmap(doc, xref)
-                # 新的文件名格式: {原始PDF文件名(不含副檔名)}-page{頁數}-img{圖片索引}.png
+                # 文件名格式: {原始PDF文件名(不含副檔名)}-page{頁數}-img{圖片索引}.png
                 image_filename = f"{original_pdf_filename_no_ext}-page{page_actual_number}-img{img_index}.png"
-                image_save_path = current_exam_images_dir / image_filename # 使用 Path對象進行路徑拼接
-                img_bbox_on_page = page.get_image_bbox(img_info) # Get correct bbox
+                image_save_path = current_exam_images_dir / image_filename
+                img_bbox_on_page = page.get_image_bbox(img_info)
 
                 if pix.n - pix.alpha < 4: # not CMYK or GRAY
                     if not os.path.exists(image_save_path):
@@ -656,49 +656,53 @@ def parse_questions_from_pdf(
                         pix_rgb = None # Release memory
                 
                 page_image_data_list.append({
-                    "path": image_save_path,
-                    "bbox": img_bbox_on_page # Assign the fitz.Rect object directly
+                    "path": str(image_save_path), # 直接存儲最終路徑字符串
+                    "bbox": img_bbox_on_page
                 })
-                pix = None # Release memory
-                logger.debug(f"Saved image {image_filename} from page {page_actual_number} of {pdf_path}")
+                pix = None
+                logger.debug(f"Saved image {image_filename} from page {page_actual_number}")
                 
             except Exception as e:
                 logger.error(f"Error processing image xref {xref} on page {page_actual_number} of {pdf_path}: {e}")
 
-        # 2. 提取本頁文本塊 (NEW)
+        # 2. 提取本頁文本塊 (此部分保留，因為獲取文本塊本身是有用的)
         text_blocks_on_page = []
         raw_blocks = page.get_text("blocks", sort=True) 
         for block_tuple in raw_blocks:
             if block_tuple[6] == 0: # TEXT block
                 text_blocks_on_page.append({
-                    "text": block_tuple[4], # The text content of the block
-                    "bbox": fitz.Rect(block_tuple[0:4]) # The bounding box
+                    "text": block_tuple[4],
+                    "bbox": fitz.Rect(block_tuple[0:4])
                 })
         
         # 3. 使用您現有的 parse_questions_from_pdf_text 解析本頁題目結構 (Existing)
         page_text_for_parser = page.get_text("text") 
+        logger.debug(f"--- Page {page_actual_number} Raw Text for Parser ---")
+        logger.debug(page_text_for_parser[:1000]) # Log first 1000 chars of page text
+        logger.debug("--- End of Page Raw Text ---")
+        
         questions_text_data = parse_questions_from_pdf_text(page_text_for_parser, parsing_mode=current_parsing_mode)
         
-        # 4. 針對每個解析出的題目，查找其 BBox 並重新關聯圖片 (NEW LOGIC)
+        if not questions_text_data:
+            logger.warning(f"[Page {page_actual_number}] No questions parsed by parse_questions_from_pdf_text. Skipping BBox association for this page.")
+
+        # 4. 針對每個解析出的題目，查找其 BBox 並重新關聯圖片
         for q_text_data in questions_text_data:
             current_q_dict = q_text_data.copy()
             current_q_dict['image_path'] = None # Reset from previous basic association
-            current_q_dict['page_number'] = page_actual_number # Already there, just ensuring
+            current_q_dict['page_number'] = page_actual_number
             
-            q_num_as_int = current_q_dict['question_number'] # This is an int
+            q_num_as_int = current_q_dict['question_number']
             
             stem_found_blocks = []
             first_option_y0_for_q = float('inf')
-            
-            # Iterate through blocks to identify stem and first option y0 for current_q_dict
-            active_question_parsing_state = "looking_for_stem_start" # -> "in_stem" -> "looking_for_options"
+            active_question_parsing_state = "looking_for_stem_start"
             
             for block_idx, block_item in enumerate(text_blocks_on_page):
-                block_text_content = block_item["text"] # Full text of the block, might have newlines
+                block_text_content = block_item["text"]
                 block_text_stripped_lines = [line.strip() for line in block_text_content.splitlines() if line.strip()]
                 if not block_text_stripped_lines:
                     continue
-                
                 first_line_of_block = block_text_stripped_lines[0]
 
                 if active_question_parsing_state == "looking_for_stem_start":
@@ -706,83 +710,62 @@ def parse_questions_from_pdf(
                     if q_start_match and int(q_start_match.group(1)) == q_num_as_int:
                         active_question_parsing_state = "in_stem"
                         stem_found_blocks.append(block_item["bbox"])
-                        # Check if the rest of this block contains an option
-                        # This requires careful handling of multi-line blocks.
-                        # For simplicity, assume one block = one line for option start check here.
-                        option_match_in_same_block = anchored_option_pattern_for_blocks.match(q_start_match.group(2).strip()) # Check remainder
+                        option_match_in_same_block = anchored_option_pattern_for_blocks.match(q_start_match.group(2).strip())
                         if not option_match_in_same_block:
-                             # Check subsequent lines in the same block if q_start_match.group(2) was empty
                              for L_idx, line_in_block in enumerate(block_text_stripped_lines):
-                                 if L_idx == 0 and q_start_match.group(2).strip(): # Already checked effective group(2)
-                                     continue
+                                 if L_idx == 0 and q_start_match.group(2).strip(): continue
                                  if anchored_option_pattern_for_blocks.match(line_in_block):
-                                     first_option_y0_for_q = min(first_option_y0_for_q, block_item["bbox"].y0) # block's y0
-                                     active_question_parsing_state = "looking_for_options" # Stem effectively ended
+                                     first_option_y0_for_q = min(first_option_y0_for_q, block_item["bbox"].y0)
+                                     active_question_parsing_state = "looking_for_options"
                                      break 
-                             if active_question_parsing_state == "looking_for_options": break # break from block loop for this question.
-                        else: # Option found in the first line itself after question number
+                             if active_question_parsing_state == "looking_for_options": break
+                        else: 
                             first_option_y0_for_q = min(first_option_y0_for_q, block_item["bbox"].y0)
-                            active_question_parsing_state = "looking_for_options" # Stem ended.
-                            break # break from block loop for this question.
-
-
+                            active_question_parsing_state = "looking_for_options"
+                            break
                 elif active_question_parsing_state == "in_stem":
-                    # Check if this block starts an option
                     option_match = anchored_option_pattern_for_blocks.match(first_line_of_block)
                     if option_match:
                         first_option_y0_for_q = min(first_option_y0_for_q, block_item["bbox"].y0)
-                        active_question_parsing_state = "looking_for_options" # Stem ended
-                        break # Stop stem collection for this question, move to image association
-
-                    # Check if this block starts the *next* question
+                        active_question_parsing_state = "looking_for_options"
+                        break
                     next_q_match = current_question_start_pattern_for_blocks.match(first_line_of_block)
                     if next_q_match and int(next_q_match.group(1)) == q_num_as_int + 1:
-                        active_question_parsing_state = "looking_for_stem_start" # Reset for next question in outer loop
-                        break # Current question's stem processing ends.
-                    
-                    stem_found_blocks.append(block_item["bbox"]) # Add to stem
+                        active_question_parsing_state = "looking_for_stem_start"
+                        break
+                    stem_found_blocks.append(block_item["bbox"])
 
-            # Consolidate stem_found_blocks into main_stem_bbox
             main_stem_bbox = None
             if stem_found_blocks:
                 main_stem_bbox = stem_found_blocks[0]
                 for bbox in stem_found_blocks[1:]:
                     main_stem_bbox.include_rect(bbox)
             
-            # Image association logic using main_stem_bbox and first_option_y0_for_q
-            if main_stem_bbox:
-                # current_q_dict['debug_stem_bbox'] = (main_stem_bbox.x0, main_stem_bbox.y0, main_stem_bbox.x1, main_stem_bbox.y1)
-                # current_q_dict['debug_first_option_y0'] = first_option_y0_for_q if first_option_y0_for_q != float('inf') else None
-                
-                best_img_path = None
+            if main_stem_bbox: # Only proceed if stem was found
+                best_img_path_for_q = None
                 min_v_dist_to_stem = float('inf')
 
-                for img_item in page_image_data_list: # CORRECTED: Was page_image_paths
+                for img_item in page_image_data_list:
                     img_bbox = img_item["bbox"]
-                    
                     image_starts_below_stem = img_bbox.y0 > main_stem_bbox.y1
-                    # Lenient horizontal overlap: center of image is somewhat aligned with center of stem, or edges overlap
-                    stem_center_x = (main_stem_bbox.x0 + main_stem_bbox.x1) / 2
-                    img_center_x = (img_bbox.x0 + img_bbox.x1) / 2
-                    # Check if image x-range is within a wider range of stem, or vice-versa
-                    # Or simply, if (max(stem.x0, img.x0) < min(stem.x1, img.x1))
                     horizontal_overlap = (max(main_stem_bbox.x0, img_bbox.x0) < min(main_stem_bbox.x1, img_bbox.x1))
 
                     if image_starts_below_stem and horizontal_overlap:
-                        image_ends_above_options = True # Default
+                        image_ends_above_options = True
                         if first_option_y0_for_q != float('inf'):
-                            if img_bbox.y1 >= first_option_y0_for_q: # Image extends to or past where options start
+                            if img_bbox.y1 >= first_option_y0_for_q:
                                 image_ends_above_options = False
                         
                         if image_ends_above_options:
                             vertical_distance = img_bbox.y0 - main_stem_bbox.y1
-                            # Positive distance, and within a tolerance (e.g., 150 points, can be tuned)
                             if 0 <= vertical_distance < 150: 
                                 if vertical_distance < min_v_dist_to_stem:
                                     min_v_dist_to_stem = vertical_distance
-                                    best_img_path = img_item["path"]
+                                    best_img_path_for_q = img_item["path"] # Store the path string
                 
-                current_q_dict['image_path'] = best_img_path
+                current_q_dict['image_path'] = best_img_path_for_q
+            else:
+                current_q_dict['image_path'] = None # Stem not found, so no image association
             
             all_parsed_questions_data.append(current_q_dict)
 
@@ -803,7 +786,7 @@ if __name__ == "__main__":
     
     # 1. 指定您要測試的實際試題卷路徑
     #    將 "path/to/your/actual_exam.pdf" 替換為您的文件路徑
-    actual_test_pdf_path = "raw_data/exams/臨床微生物學/111年_第二次/題目1112微生物.pdf" # 例如
+    actual_test_pdf_path = "raw_data/exams/臨床血清免疫學和臨床病毒學/111年_第一次/題目1111免疫.pdf" # 例如
 
     if actual_test_pdf_path and os.path.exists(actual_test_pdf_path):
         print(f"--- Testing parse_questions_from_pdf with: {actual_test_pdf_path} ---")
