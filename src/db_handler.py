@@ -154,11 +154,20 @@ def get_or_create_chapter(chapter_title: str, subject_id: str, order: Optional[i
         logger.error(f"Error in get_or_create_chapter for '{chapter_title}': {e}", exc_info=True)
         return None
 
-def get_or_create_test(test_name: str, year: int, period: int, subject_id: str, duration_in_seconds: Optional[int] = 3600, description: Optional[str] = None) -> Optional[str]:
+def get_or_create_test(
+    test_name: str, 
+    year: int, 
+    period: int, 
+    subject_id: str, 
+    duration_in_seconds: Optional[int] = 3600, 
+    description: Optional[str] = None,
+    subject_code: Optional[str] = None,      # 新增參數
+    question_count: Optional[int] = None     # 新增參數
+) -> Optional[str]:
     """
     根據考卷全名、年份、期次和科目ID獲取或創建考卷記錄。
     duration_in_seconds 默認為 3600。
-    description 為可選。
+    description, subject_code, question_count 為可選。
     返回考卷 ID (uuid)。
     """
     client = get_supabase_client()
@@ -191,14 +200,42 @@ def get_or_create_test(test_name: str, year: int, period: int, subject_id: str, 
             logger.info(f"Found existing test '{existing_test_name}' (ID: {test_id}) for subject_id '{subject_id}', year {year}, period {period}.")
             
             # Optionally, update name if it differs and is provided
+            # Также обновляем subject_code и question_count, если они предоставлены и отличаются
+            updates_to_perform: Dict[str, Any] = {}
             if existing_test_name != test_name:
-                logger.warning(f"Test name mismatch for ID {test_id}: provided '{test_name}', existing '{existing_test_name}'. Updating name.")
-                update_name_response = client.table("tests").update({"name": test_name}).eq("id", test_id).execute()
-                if not update_name_response.data:
-                    logger.error(f"Failed to update test name for ID {test_id}. Error: {update_name_response.error}")
+                updates_to_perform["name"] = test_name
+                logger.warning(f"Test name mismatch for ID {test_id}: provided '{test_name}', existing '{existing_test_name}'. Queuing name update.")
             
-            # Optionally, update duration or description if they differ
-            # ... (add similar update logic for duration_in_seconds and description if needed)
+            existing_subject_code = test_record.get("subject_code")
+            if subject_code is not None and existing_subject_code != subject_code:
+                updates_to_perform["subject_code"] = subject_code
+                logger.info(f"Updating subject_code for test ID {test_id} from '{existing_subject_code}' to '{subject_code}'.")
+
+            existing_question_count = test_record.get("question_count")
+            if question_count is not None and existing_question_count != question_count:
+                updates_to_perform["question_count"] = question_count
+                logger.info(f"Updating question_count for test ID {test_id} from '{existing_question_count}' to '{question_count}'.")
+
+            # Optionally, update duration or description if they differ and are provided
+            existing_duration = test_record.get("duration_in_seconds")
+            if duration_in_seconds is not None and existing_duration != duration_in_seconds:
+                 updates_to_perform["duration_in_seconds"] = duration_in_seconds
+                 logger.info(f"Updating duration for test ID {test_id} from '{existing_duration}' to '{duration_in_seconds}'.")
+            
+            existing_description = test_record.get("description")
+            if description is not None and existing_description != description:
+                updates_to_perform["description"] = description
+                logger.info(f"Updating description for test ID {test_id}.") # No need to log full old/new desc
+
+            if updates_to_perform:
+                update_response = client.table("tests").update(updates_to_perform).eq("id", test_id).execute()
+                if update_response.data:
+                    logger.info(f"Successfully applied updates to test ID {test_id}: {list(updates_to_perform.keys())}")
+                else:
+                    logger.error(f"Failed to apply updates to test ID {test_id}. Error: {update_response.error}")
+            else:
+                logger.info(f"No updates needed for existing test ID {test_id}.")
+
             return test_id
         else:
             # 2. If not found, create new test
@@ -212,6 +249,10 @@ def get_or_create_test(test_name: str, year: int, period: int, subject_id: str, 
             }
             if description is not None:
                 test_data["description"] = description
+            if subject_code is not None:               # 新增
+                test_data["subject_code"] = subject_code # 新增
+            if question_count is not None:             # 新增
+                test_data["question_count"] = question_count # 新增
             
             insert_response = client.table("tests").insert(test_data).execute()
             logger.debug(f"Insert test response: {insert_response}")
@@ -399,7 +440,9 @@ if __name__ == "__main__":
         test_id_1 = get_or_create_test(test_name=test_test_name_1, 
                                        year=test_year_1, 
                                        period=test_period_1, 
-                                       subject_id=subject_id_2)
+                                       subject_id=subject_id_2,
+                                       subject_code="SC001",      # Test subject_code
+                                       question_count=80)       # Test question_count
         if test_id_1:
             logger.info(f"Got or created test '{test_test_name_1}' (Year: {test_year_1}, Period: {test_period_1}) with ID: {test_id_1}")
         else:
@@ -410,7 +453,9 @@ if __name__ == "__main__":
             test_id_1_again = get_or_create_test(test_name=test_test_name_1, 
                                                  year=test_year_1, 
                                                  period=test_period_1, 
-                                                 subject_id=subject_id_2)
+                                                 subject_id=subject_id_2,
+                                                 subject_code="SC001",
+                                                 question_count=80)
             if test_id_1_again and test_id_1_again == test_id_1:
                 logger.info(f"Successfully retrieved existing test '{test_test_name_1}' (Year: {test_year_1}, Period: {test_period_1}) again.")
             # Test updating the name of the same test
@@ -418,7 +463,9 @@ if __name__ == "__main__":
             test_id_1_updated_name = get_or_create_test(test_name=updated_test_name_1, 
                                                         year=test_year_1, 
                                                         period=test_period_1, 
-                                                        subject_id=subject_id_2)
+                                                        subject_id=subject_id_2,
+                                                        subject_code="SC002",      # Test updated subject_code
+                                                        question_count=85)       # Test updated question_count
             if test_id_1_updated_name and test_id_1_updated_name == test_id_1:
                 logger.info(f"Successfully updated name for test ID '{test_id_1}' to '{updated_test_name_1}'.")
 

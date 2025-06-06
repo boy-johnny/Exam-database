@@ -6,6 +6,8 @@ import fitz  # PyMuPDF
 import re
 from typing import List, Dict, Any, Tuple, Optional
 from enum import Enum, auto
+# Import from config
+from config import PROJECT_ROOT, PROCESSED_DATA_DIR
 
 # 日誌設置
 logger = logging.getLogger(__name__)
@@ -16,26 +18,26 @@ handler.setFormatter(formatter)
 if not logger.hasHandlers():
     logger.addHandler(handler)
 
-# processed_data 目錄
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-PROCESSED_DATA_DIR = PROJECT_ROOT / "processed_data"
-PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)
+# processed_data 目錄 - Now imported from config.py
+# PROJECT_ROOT = Path(__file__).resolve().parent.parent # Now imported
+# PROCESSED_DATA_DIR = PROJECT_ROOT / "processed_data" # Now imported
+PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True) # Ensure it exists if config didn't create it
 
 # It's good practice to define constants for directory names
 IMAGES_BASE_SUBDIR = "images_from_pdf" # Renamed to avoid conflict if you have other "images" dirs
 
 # --- Regex Pattern Strings (Module Level) ---
 # Used by determine_parsing_mode and then compiled in parsing functions
-DEFAULT_QUESTION_START_REGEX_STR = r"^\\s*(\\d+)\\s*[．.\\uFF0E]\\s*(.*)"
-STRICT_QUESTION_START_REGEX_STR = r"^\\s*(\\d+)\\s*[．.\\uFF0E](?!\\d)\\s*(.*)" # Negative lookahead for strict
+DEFAULT_QUESTION_START_REGEX_STR = r"^\s*(\d+)\s*\u002E\s*(.*)"
+STRICT_QUESTION_START_REGEX_STR = r"^\s*(\d+)\s*\u002E(?!\d)\s*(.*)"
 OPTION_REGEX_STR = (
-    r"^\\s*"
-    r"(?:(?:[（\\(])\\s*([A-Z\\uFF21-\\uFF3A])\\s*(?:[）\\)])|"  # (A) or （Ａ）
-    r"([A-Z\\uFF21-\\uFF3A])\\s*[．.\\uFF0E])"  # A. or Ａ．
-    r"\\s*(.*)"  # Option text
+    r"^\s*"
+    r"(?:(?:[（\(])\s*([A-Z\uFF21-\uFF3A])\s*(?:[）\)])|"  # (A) or （Ａ）
+    r"([A-Z\uFF21-\uFF3A])\s*\u002E)"  # A. or Ａ．
+    r"\s*(.*)"  # Option text
 )
 # Anchored version for matching at the beginning of a block
-ANCHORED_OPTION_REGEX_STR = OPTION_REGEX_STR # Already starts with ^\\s* effectively
+ANCHORED_OPTION_REGEX_STR = OPTION_REGEX_STR # Already starts with ^\s* effectively
 
 # 1. 從 PDF 提取純文字 ----------------------------
 
@@ -159,13 +161,29 @@ def parse_questions_from_pdf_text(pdf_text: str, parsing_mode: str = "default") 
     option_pattern = re.compile(OPTION_REGEX_STR) # This is used for line-based matching in this func
 
     lines = pdf_text.splitlines()
+    # Ensure logger level is appropriate for these messages to appear
+    # logger.setLevel(logging.DEBUG) # Consider setting this at a higher level if needed for testing
 
     for line_idx, line_raw in enumerate(lines):
+        # Diagnostic logging for the first ~20 lines and any lines near where a question *should* be found
+        if line_idx < 20 or (current_question and line_idx < 30): # Log more initial lines
+            logger.info(f"PDFParse Line {line_idx + 1}/{len(lines)}: '{line_raw[:150]}'") # Log more chars
+            logger.info(f"PDFParse Repr {line_idx + 1}: {repr(line_raw[:150])}")
+
         q_match = question_start_pattern.match(line_raw)
         opt_match = option_pattern.match(line_raw)
 
+        if line_idx < 20 or (current_question and line_idx < 30):
+            logger.info(f"  Attempting match on: {repr(line_raw)}")
+            logger.info(f"  Q_match: {bool(q_match)} (Pattern: {question_start_pattern.pattern})")
+            if q_match:
+                logger.info(f"    Q_match groups: {q_match.groups()}")
+            logger.info(f"  Opt_match: {bool(opt_match)} (Pattern: {option_pattern.pattern})")
+            if opt_match:
+                logger.info(f"    Opt_match groups: {opt_match.groups()}")
+
         if q_match: # New question starts
-            logger.debug(f"Line {line_idx + 1} matched QUESTION start: '{line_raw}'")
+            logger.info(f"Line {line_idx + 1} matched QUESTION start: '{line_raw}'") # Changed to INFO for visibility
             # Finalize previous question if any
             if current_question:
                 if current_state == ParsingState.PARSING_OPTION_TEXT and active_option_letter:
@@ -189,7 +207,7 @@ def parse_questions_from_pdf_text(pdf_text: str, parsing_mode: str = "default") 
             active_option_letter = None
 
         elif opt_match and current_question: # New option starts for the current question
-            logger.debug(f"Line {line_idx + 1} matched OPTION start: '{line_raw}' for Q#{current_question.get('question_number')}")
+            logger.info(f"Line {line_idx + 1} matched OPTION start: '{line_raw}' for Q#{current_question.get('question_number')}") # Changed to INFO
             if current_state == ParsingState.PARSING_QUESTION_CONTENT:
                 _commit_buffer(current_text_buffer, current_question, "content")
             elif current_state == ParsingState.PARSING_OPTION_TEXT and active_option_letter:
@@ -240,12 +258,23 @@ def parse_questions_from_pdf_text(pdf_text: str, parsing_mode: str = "default") 
     if questions_data:
         parsed_numbers = sorted([q["question_number"] for q in questions_data if q.get("question_number") is not None])
         if parsed_numbers:
-            expected_max_number = parsed_numbers[0] + len(parsed_numbers) - 1
-            if parsed_numbers[-1] > expected_max_number + 2 or len(parsed_numbers) < parsed_numbers[-1] - parsed_numbers[0] - 2 : # 允許少量不連續或末尾缺失
-                logger.warning(
-                    f"Potential missing or misparsed questions. Parsed {len(parsed_numbers)} questions, "
-                    f"with numbers from {parsed_numbers[0]} to {parsed_numbers[-1]}. Check for discontinuities."
-                )
+            # Check for major discontinuities only if there's a significant number of questions
+            if len(parsed_numbers) > 5: # Arbitrary threshold to avoid warnings on very short PDFs
+                expected_max_number_strict = parsed_numbers[0] + len(parsed_numbers) - 1
+                # Looser check: if the last parsed number is far beyond the expected sequence based on count,
+                # or if the count is much smaller than the range of numbers.
+                # This allows for a few missing numbers in sequence.
+                # Example: 1, 2, 5, 6, 7 (parsed_numbers[-1]=7, expected_max_number_strict=1+5-1=5). Differs.
+                # Number of gaps = (parsed_numbers[-1] - parsed_numbers[0] + 1) - len(parsed_numbers)
+                num_gaps = (parsed_numbers[-1] - parsed_numbers[0] + 1) - len(parsed_numbers)
+                # Warn if more than, say, 20% of questions are missing or if there are more than 5 gaps
+                # These thresholds can be adjusted.
+                if num_gaps > max(5, len(parsed_numbers) * 0.20) :
+                    logger.warning(
+                        f"Potential missing or misparsed questions. Parsed {len(parsed_numbers)} questions, "
+                        f"with numbers from {parsed_numbers[0]} to {parsed_numbers[-1]}. "
+                        f"Detected {num_gaps} gaps in the sequence. Check for discontinuities or parsing errors."
+                    )
             # 檢查是否有重複題號
             if len(parsed_numbers) != len(set(parsed_numbers)):
                 logger.warning("Duplicate question numbers detected. Please review parsing logic or PDF content.")
@@ -338,8 +367,9 @@ def parse_answers_from_pdf_text(answer_pdf_path: str) -> Dict[int, Any]:
                                     ans_char_to_add = potential_ans_char
                             
                             if ans_char_to_add:
+                                normalized_ans_char = normalize_full_width_alpha(ans_char_to_add)
                                 current_answers.append({
-                                    'text': ans_char_to_add,
+                                    'text': normalized_ans_char, # 使用標準化後的字符
                                     'x_mid': (word_info[0] + word_info[2]) / 2,
                                     'y0': word_info[1]
                                 })
@@ -402,8 +432,9 @@ def parse_answers_from_pdf_text(answer_pdf_path: str) -> Dict[int, Any]:
             for m in re.finditer(r"第(\d+)題[，,，、及和與]*(?:答案|選項)?(?:更正為|應為)?([A-D#\uFF03])(?:.*?)。", note_text):
                 qn = int(m.group(1))
                 corrected_ans = m.group(2)
-                notes[qn] = f"答案更正為 {corrected_ans}"
-                answers[qn] = [corrected_ans]
+                normalized_corrected_ans = normalize_full_width_alpha(corrected_ans)
+                notes[qn] = f"答案更正為 {normalized_corrected_ans}" # 也可以在筆記中用標準化字符
+                answers[qn] = [normalized_corrected_ans] # 使用標準化後的答案
 
             for m in re.finditer(r"第(\d+)題[，,，]?(送分|均給分|皆給分|給分)", note_text):
                 qn = int(m.group(1))
@@ -428,8 +459,9 @@ def parse_answers_from_pdf_text(answer_pdf_path: str) -> Dict[int, Any]:
                 ans_to_set = ['#']
 
                 if corrected_ans_val: 
-                    actual_note = f"答案更正為 {corrected_ans_val}"
-                    ans_to_set = [corrected_ans_val]
+                    normalized_corrected_ans_val = normalize_full_width_alpha(corrected_ans_val)
+                    actual_note = f"答案更正為 {normalized_corrected_ans_val}"
+                    ans_to_set = [normalized_corrected_ans_val] # 使用標準化後的答案
                 elif note_type == "送分" or "給分" in note_type : 
                     actual_note = "送分"
                     ans_to_set = ['送分']
@@ -446,25 +478,78 @@ def parse_answers_from_pdf_text(answer_pdf_path: str) -> Dict[int, Any]:
 
 # 5. 合併題目與答案 ----------------------------
 
-def combine_questions_and_answers(questions: List[Dict[str, Any]], answers: Dict[int, Any]) -> List[Dict[str, Any]]:
+def combine_questions_and_answers(
+    questions: List[Dict[str, Any]],
+    answers_map: Dict[int, List[str]],
+    notes_map: Optional[Dict[int, str]] = None
+) -> List[Dict[str, Any]]:
     """
     將題目與答案合併，補齊 correct_answer_key、notes 等欄位。
     若遇到特殊情況，notes 標註。
     """
-    # TODO: 合併邏輯
-    combined = []
-    return combined
+    combined_data = []
+    if notes_map is None:
+        notes_map = {} # Ensure notes_map is a dict for easier lookup
+
+    for question in questions:
+        q_num = question.get("question_number")
+        if q_num is None:
+            logger.warning(f"Question found without question_number: {question.get('content', 'N/A')[:50]}... Skipping answer/note merging for this item.")
+            combined_data.append(question) # Add as is, or decide on error handling
+            continue
+
+        # Initialize fields to ensure they exist, even if no data is found
+        question_copy = question.copy() # Work on a copy
+        question_copy["correct_answer_key"] = []
+        question_copy["notes"] = None
+
+        if q_num in answers_map:
+            question_copy["correct_answer_key"] = answers_map[q_num]
+             # 檢查 correct_answer_key 是否為 ["#"]
+            if question_copy["correct_answer_key"] == ["#"]:
+                note_for_hash_answer = "答案待確認" # 或者你可以用 "答案待確認" 等更通用的描述
+                
+                if question_copy["notes"]:
+                    # 如果已經有來自 PDF 的備註，則附加新備註
+                    question_copy["notes"] = f"{question_copy['notes']}\n{note_for_hash_answer}"
+                else:
+                    # 否則，直接設置新備註
+                    question_copy["notes"] = note_for_hash_answer
+        else:
+            logger.warning(f"No answer found in answers_map for question number: {q_num}. Setting empty correct_answer_key.")
+
+        if q_num in notes_map:
+            question_copy["notes"] = notes_map[q_num]
+        
+        combined_data.append(question_copy)
+        
+    return combined_data
 
 # 6. 存 processed_data ----------------------------
 
-def save_processed_data(data: Any, filename: str):
-    """
-    將解析後的資料存為 JSON 到 processed_data 目錄。
-    """
-    out_path = PROCESSED_DATA_DIR / filename
-    with open(out_path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-    logger.info(f"Saved processed data to {out_path}")
+def save_processed_data(data: Dict[str, Any], out_path: str):
+    """保存處理後的數據到 JSON 文件。"""
+    try:
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)  # Create directory if it doesn't exist
+        with open(out_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=4)
+        logger.info(f"Processed data saved to: {out_path}")
+    except IOError as e:
+        logger.error(f"Error saving processed data to {out_path}: {e}")
+    except Exception as e:
+        logger.error(f"An unexpected error occurred while saving processed data to {out_path}: {e}")
+
+def save_raw_text(text_content: str, out_path: str):
+    """保存提取的純文字到文件。"""
+    try:
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)  # Create directory if it doesn't exist
+        with open(out_path, 'w', encoding='utf-8') as f:
+            f.write(text_content)
+        logger.info(f"Raw text saved to: {out_path}")
+    except IOError as e:
+        logger.error(f"Error saving raw text to {out_path}: {e}")
+    except Exception as e:
+        logger.error(f"An unexpected error occurred while saving raw text to {out_path}: {e}")
 
 # 7. 主流程範例 ----------------------------
 
@@ -490,59 +575,116 @@ def process_exam_pdfs(question_pdf_path: str, answer_pdf_path: str, processed_pr
     主流程：
     1. 讀取題目卷與答案卷 PDF
     2. 提取元數據
-    3. 解析題目與答案
+    3. 解析題目（包含圖片）與答案
     4. 合併
-    5. 存 processed_data
+    5. 存 processed_data (只存 parsed JSON)
     """
-    # 1. 讀取 PDF
-    question_text_pages = extract_text_from_pdf(question_pdf_path)
-    answer_text_pages = extract_text_from_pdf(answer_pdf_path)
-    # 2. 提取元數據（僅用首頁）
-    meta = extract_metadata_from_text(question_text_pages[0], os.path.basename(question_pdf_path))
-    # 3. 解析題目與答案
-    current_parsing_mode = determine_parsing_mode(question_pdf_path)
-    questions = parse_questions_from_pdf_text("\n".join(question_text_pages), parsing_mode=current_parsing_mode)
-    answers_data = parse_answers_from_pdf_text(answer_pdf_path)
+    # 1. 讀取 PDF (題目卷文字用於元數據提取)
+    full_question_text = extract_text_from_pdf(question_pdf_path)
+    # 答案卷的文字提取會在 parse_answers_from_pdf_text 內部處理
 
-    # 校驗題目數量
-    if meta.get("question_count") is not None:
-        expected_q_count = meta["question_count"]
-        actual_q_count = len(questions)
-        if actual_q_count != expected_q_count:
+    # 2. 提取元數據（使用完整的題目卷文本）
+    meta = extract_metadata_from_text(full_question_text, os.path.basename(question_pdf_path))
+    logger.info(f"Extracted metadata: {meta} (from {os.path.basename(question_pdf_path)})")
+
+    # --- Construct output paths based on metadata ---
+    subject_name_sanitized = sanitize_for_filesystem(meta.get('subject_name', 'UnknownSubject'))
+    year_str = str(meta.get('year', 'UnknownYear'))
+    period_str = str(meta.get('period', 'UnknownPeriod'))
+    # exam_name_sanitized = sanitize_for_filesystem(meta.get('exam_name', 'UnknownExamName')) # No longer used for dir or file name directly
+
+    # --- Create Subject Abbreviation ---
+    subject_name_original = meta.get('subject_name')
+    subject_short_name = "未知簡稱" # Default
+    if subject_name_original:
+        if "與" in subject_name_original:
+            subject_short_name = subject_name_original.split("與")[0]
+        elif "和" in subject_name_original:
+            subject_short_name = subject_name_original.split("和")[0]
+        elif "及" in subject_name_original: # Adding "及" based on "臨床血液學及血庫學" from schema examples
+            subject_short_name = subject_name_original.split("及")[0]
+        else:
+            # Fallback: take first 2 chars if no common separator, common for abbreviations like 生化, 血液
+            subject_short_name = subject_name_original[:2] 
+    subject_short_name_sanitized = sanitize_for_filesystem(subject_short_name)
+    
+    year_period_folder = f"{year_str}_{period_str}"
+
+    # Base directory for this specific exam's parsed files
+    # Format: parsed/科目全名/年份_期次/
+    parsed_exam_dir = PROCESSED_DATA_DIR / "parsed" / subject_name_sanitized / year_period_folder
+    
+    # Full file path for the parsed JSON
+    # Format: parsed/科目全名/年份_期次/[年份][期次][科目簡稱].json
+    output_filename = f"{year_str}{period_str}{subject_short_name_sanitized}.json"
+    output_parsed_filepath = parsed_exam_dir / output_filename
+    # --- End of output path construction ---
+
+    # 3. 解析題目（包含圖片）與答案
+    #   3a. 解析題目卷 (這會處理圖片提取並返回包含 image_path 的題目列表)
+    logger.info(f"Starting to parse questions and images from: {question_pdf_path}")
+    questions = parse_questions_from_pdf(pdf_path=question_pdf_path) # This now includes image paths
+    logger.info(f"Parsed {len(questions)} question structures (including image references) from {question_pdf_path}.")
+
+    #   3b. 解析答案卷
+    logger.info(f"Starting to parse answers from: {answer_pdf_path}")
+    raw_answers_output = parse_answers_from_pdf_text(answer_pdf_path)
+
+    final_answers_map: Dict[int, List[str]] = {}
+    final_notes_map: Optional[Dict[int, str]] = None 
+
+    if isinstance(raw_answers_output, dict) and "answers" in raw_answers_output:
+        final_answers_map = raw_answers_output.get("answers", {})
+        final_notes_map = raw_answers_output.get("notes", {})
+        if not isinstance(final_answers_map, dict):
+             logger.warning(f"Type of 'answers' in raw_answers_output is not dict: {type(final_answers_map)}. Defaulting to empty.")
+             final_answers_map = {}
+        if final_notes_map is not None and not isinstance(final_notes_map, dict):
+            logger.warning(f"Type of 'notes' in raw_answers_output is not dict: {type(final_notes_map)}. Defaulting to empty.")
+            final_notes_map = {} # Ensure it's a dict if not None initially
+        if not final_notes_map: # If it became an empty dict, set to None
+            final_notes_map = None
+    elif isinstance(raw_answers_output, dict):
+        # Check if it's a direct Dict[int, List[str]] answers map
+        if all(isinstance(k, int) and isinstance(v, list) for k, v in raw_answers_output.items()):
+            final_answers_map = raw_answers_output
+        else:
+            logger.warning(f"Received a dict from parse_answers_from_pdf_text that is not a direct answer map (Dict[int, List[str]]) nor the {{'answers':..., 'notes':...}} structure: {raw_answers_output}. Treating as empty answers.")
+            final_answers_map = {}
+    else:
+        logger.warning(f"Unexpected data type from parse_answers_from_pdf_text: {type(raw_answers_output)}. Expected dict. Treating as empty answers.")
+        final_answers_map = {}
+
+    # 4. 合併
+    # Check if question_count from metadata matches parsed questions if available
+    meta_q_count = meta.get("question_count")
+    if meta_q_count is not None:
+        if len(questions) != meta_q_count:
             logger.warning(
-                f"Mismatch in question count for {os.path.basename(question_pdf_path)}. "
-                f"Expected (from metadata): {expected_q_count}, Parsed: {actual_q_count}. Manual review suggested."
+                f"Mismatch in question count: metadata says {meta_q_count}, "
+                f"parsed {len(questions)} questions from {question_pdf_path}"
             )
     else:
         logger.info(f"Metadata did not provide question_count for {os.path.basename(question_pdf_path)}. Skipping count check.")
 
-    # 4. 合併
-    actual_answers_map: Dict[int, List[str]]
-    optional_notes_map: Optional[Dict[int, str]] = None
-
-    if isinstance(answers_data, dict) and "answers" in answers_data:
-        actual_answers_map = answers_data["answers"]
-        optional_notes_map = answers_data.get("notes") # Optional_notes_map not used by current combine stub
-    elif isinstance(answers_data, dict): # Should be Dict[int, List[str]]
-        actual_answers_map = answers_data
-    else: # Should not happen with correct parse_answers_from_pdf_text return
-        logger.error("Unexpected format from parse_answers_from_pdf_text")
-        actual_answers_map = {}
-
-    combined = combine_questions_and_answers(questions, actual_answers_map) # Pass only answer map for now
-                                                                            # until combine_questions_and_answers is updated for notes
-
-    # 5. 存 processed_data
-    save_processed_data({
+    combined_questions_list = combine_questions_and_answers(
+        questions,
+        final_answers_map,
+        final_notes_map # Pass the extracted notes_map
+    )
+    combined_data = {
         "meta": meta,
-        "questions": combined
-    }, f"{processed_prefix}_parsed.json")
-    # 也可存原始文字
-    save_processed_data({
-        "question_text_pages": question_text_pages,
-        "answer_text_pages": answer_text_pages
-    }, f"{processed_prefix}_rawtext.json")
-    logger.info(f"Process complete for {processed_prefix}")
+        "questions": combined_questions_list
+    }
+
+    # 5. 存 processed_data (只存 parsed JSON)
+    save_processed_data(combined_data, str(output_parsed_filepath)) # Ensure path is string for os.makedirs
+    
+    logger.info(f"Process complete for exam based on {os.path.basename(question_pdf_path)}")
+    logger.info(f"Parsed data saved to: {output_parsed_filepath}")
+    # Raw text saving is removed as per request
+
+    return combined_data, str(output_parsed_filepath)
 
 # 8. 新增：逐頁解析題目並提取圖片的函數
 
@@ -569,8 +711,8 @@ def parse_questions_from_pdf(
     """
     all_parsed_questions_data = []
     
-    # 重新定義基礎輸出目錄的根
-    actual_base_output_dir = PROJECT_ROOT / "processed_data" / "image" # 新的根目錄
+    # 重新定義基礎輸出目錄的根 - 使用從 config 導入的 PROCESSED_DATA_DIR
+    actual_image_root_dir = PROCESSED_DATA_DIR / "image" # 新的根目錄
 
     try:
         doc = fitz.open(pdf_path)
@@ -610,7 +752,7 @@ def parse_questions_from_pdf(
 
     # 為本次測驗的圖片創建特定的輸出子目錄
     # 例如: processed_data/image/科目A/111年_第一次/題目XYZ/
-    current_exam_images_dir = actual_base_output_dir
+    current_exam_images_dir = actual_image_root_dir # Start with PROCESSED_DATA_DIR / "image"
     if structured_path_parts:
         current_exam_images_dir = current_exam_images_dir.joinpath(*structured_path_parts)
     current_exam_images_dir = current_exam_images_dir / original_pdf_filename_no_ext
@@ -655,8 +797,13 @@ def parse_questions_from_pdf(
                         pix_rgb.save(image_save_path)
                         pix_rgb = None # Release memory
                 
+                # Convert absolute image_save_path to be relative to PROCESSED_DATA_DIR
+                relative_image_path = os.path.relpath(image_save_path, PROCESSED_DATA_DIR)
+                # Ensure platform-independent path separators (forward slashes)
+                relative_image_path_posix = Path(relative_image_path).as_posix()
+
                 page_image_data_list.append({
-                    "path": str(image_save_path), # 直接存儲最終路徑字符串
+                    "path": relative_image_path_posix, # Store the relative POSIX path
                     "bbox": img_bbox_on_page
                 })
                 pix = None
@@ -773,6 +920,34 @@ def parse_questions_from_pdf(
     logger.info(f"Finished parsing {pdf_path}. Total questions extracted: {len(all_parsed_questions_data)}")
     return all_parsed_questions_data
 
+# --- Helper Functions ---
+def normalize_full_width_alpha(text: str) -> str:
+    """Converts full-width Latin alphabet characters in a string to half-width."""
+    if not text:
+        return ""
+    normalized_chars = []
+    for char_val in [ord(c) for c in text]:
+        if 0xFF21 <= char_val <= 0xFF3A:  # Full-width A-Z
+            normalized_chars.append(chr(char_val - 0xFEE0))
+        elif 0xFF41 <= char_val <= 0xFF5A: # Full-width a-z
+            normalized_chars.append(chr(char_val - 0xFEE0))
+        else:
+            normalized_chars.append(chr(char_val))
+    return "".join(normalized_chars)
+
+def sanitize_for_filesystem(name: str) -> str:
+    """Sanitizes a string to be used as a filename or directory name."""
+    if not name:
+        return "untitled"
+    # Replace common problematic characters with underscore
+    name = re.sub(r'[\\\\/:*?"<>|]', '_', name)
+    # Remove leading/trailing whitespace and dots, and control characters
+    name = name.strip(" .\\t\\n\\r\\f\\v")
+    name = re.sub(r'[\\x00-\\x1F\\x7F]', '', name) # Remove control characters
+    # Reduce multiple underscores to one
+    name = re.sub(r'_+', '_', name)
+    # Limit length
+    return name[:150]
 
 if __name__ == "__main__":
     logger.setLevel(logging.DEBUG) 
@@ -782,57 +957,64 @@ if __name__ == "__main__":
     except Exception as e_version:
         print(f"Could not retrieve fitz version: {e_version}")
 
-    # --- 測試新的 parse_questions_from_pdf ---
+    # --- 測試 process_exam_pdfs (題目解析、答案解析與合併) ---
+    print("\\n--- Testing process_exam_pdfs ---")
     
-    # 1. 指定您要測試的實際試題卷路徑
-    #    將 "path/to/your/actual_exam.pdf" 替換為您的文件路徑
-    actual_test_pdf_path = "raw_data/exams/臨床血清免疫學和臨床病毒學/111年_第一次/題目1111免疫.pdf" # 例如
+    # ** 請將以下路徑替換為您實際的測試文件路徑 **
+    test_question_pdf_path = "raw_data/exams/生物化學與臨床生化學/111年_第一次/題目1111生化.pdf" # 示例：題目卷
+    test_answer_pdf_path = "raw_data/exams/生物化學與臨床生化學/111年_第一次/答案1111生化.pdf"   # 示例：答案卷
+    test_output_prefix = "test_biochemistry_111_1" # processed_prefix is not directly used for filename anymore in process_exam_pdfs
 
-    if actual_test_pdf_path and os.path.exists(actual_test_pdf_path):
-        print(f"--- Testing parse_questions_from_pdf with: {actual_test_pdf_path} ---")
-        
-        # 2. 測試時的輸出目錄和圖像子目錄ID (這些參數不再由 __main__ 控制, 由函數內部邏輯決定)
-        # test_base_output_dir = str(PROJECT_ROOT / "test_output_data") 
-        # test_image_id = "biochem_111_2_test"
+    if os.path.exists(test_question_pdf_path) and os.path.exists(test_answer_pdf_path):
+        print(f"Processing Question PDF: {test_question_pdf_path}")
+        print(f"Processing Answer PDF: {test_answer_pdf_path}")
+        try:
+            result_tuple = process_exam_pdfs(
+                question_pdf_path=test_question_pdf_path,
+                answer_pdf_path=test_answer_pdf_path,
+                processed_prefix=test_output_prefix # This argument is kept for now but not used for output naming directly
+            )
+            
+            # Construct the expected output path based on how process_exam_pdfs now saves it
+            # This requires metadata from the PDF, so it's harder to predict here without parsing meta first.
+            # For testing, you might need to inspect the log output from process_exam_pdfs to find the exact path.
+            # Or, if process_exam_pdfs returns the path:
+            if isinstance(result_tuple, tuple) and len(result_tuple) == 2:
+                output_json_path = result_tuple[1] # process_exam_pdfs returns (combined_data, output_filepath)
+                print(f"\\nProcessing complete. Merged data saved to: {output_json_path}")
+                print("You can open this JSON file to inspect the merged questions, answers, and notes.")
 
-        # os.makedirs(test_base_output_dir, exist_ok=True) # 目錄創建由函數處理
-        
-        parsed_data = parse_questions_from_pdf(
-            pdf_path=actual_test_pdf_path
-            # base_output_dir and test_id_for_images are now handled internally
-        )
-        
-        print(f"\n--- Parsed Data (Total: {len(parsed_data)}) ---")
-        for i, q_data in enumerate(parsed_data):
-            print(f"  Question (from parser): {q_data.get('question_number')}")
-            print(f"    Content: {q_data.get('content', 'N/A')[:60]}...")
-            print(f"    Options: {q_data.get('options', {})}")
-            print(f"    Page: {q_data.get('page_number')}")
-            print(f"    Image Path: {q_data.get('image_path')}")
-            if q_data.get('image_path') and os.path.exists(q_data['image_path']):
-                print(f"      Image file found: YES")
-            elif q_data.get('image_path'):
-                print(f"      Image file found: NO (Path: {q_data['image_path']})")
+                if os.path.exists(output_json_path):
+                    with open(output_json_path, 'r', encoding='utf-8') as f:
+                        merged_output = json.load(f)
+                    
+                    print("\\n--- Snippet of Merged Data ---")
+                    if "meta" in merged_output:
+                        print(f"Meta: {merged_output['meta']}")
+                    if "questions" in merged_output and merged_output["questions"]:
+                        print(f"Total questions in output: {len(merged_output['questions'])}")
+                        for i, q_data in enumerate(merged_output["questions"][:2]): # 打印前2條題目
+                            print(f"  Q{q_data.get('question_number')}: {q_data.get('content', 'N/A')[:50]}...")
+                            print(f"    Options: {q_data.get('options', {})}")
+                            print(f"    Correct Answer: {q_data.get('correct_answer_key')}")
+                            print(f"    Notes: {q_data.get('notes')}")
+                            print(f"    Image Path: {q_data.get('image_path')}") 
+                            print(f"    Page Number: {q_data.get('page_number')}")
+                    else:
+                        print("No questions found in the merged output.")
+                else:
+                    print(f"Could not find the output file for snippet display: {output_json_path}")
             else:
-                print(f"      No image associated.")
-        print("--- End of parsing test ---")
+                print(f"process_exam_pdfs did not return the expected output. Result: {result_tuple}")
 
-        # print("\n--- Cleanup (optional) ---")
-        # images_full_path = os.path.join(test_base_output_dir, IMAGES_BASE_SUBDIR, test_image_id) # 路徑已更改
-        # 實際的圖片路徑現在會是 processed_data/image/臨床血清免疫學和臨床病毒學/111年_第一次/題目1111免疫/
-        # 例如:
-        # expected_image_output_dir = PROJECT_ROOT / "processed_data" / "image" / "臨床血清免疫學和臨床病毒學" / "111年_第一次" / "題目1111免疫"
-        # print(f"Check for images in: {expected_image_output_dir}")
-        # if os.path.exists(expected_image_output_dir):
-        #     import shutil
-        #     try:
-        #         # shutil.rmtree(expected_image_output_dir) # 取消註釋以刪除測試圖片目錄
-        #         print(f"Test images are at: {expected_image_output_dir}") 
-        #     except Exception as e:
-        #         print(f"Error during cleanup of {expected_image_output_dir}: {e}")
-        # # ... (其他清理代碼) ...
 
+        except Exception as e:
+            print(f"Error during process_exam_pdfs test: {e}")
+            logger.error(f"Error in __main__ during process_exam_pdfs test: {e}", exc_info=True)
     else:
-        print(f"Skipping test as the PDF was not found or specified: {actual_test_pdf_path}")
-    
-    pass # 保留 pass 或其他舊的測試代碼（如果需要）
+        print(f"Skipping process_exam_pdfs test. Please ensure both question PDF and answer PDF exist at:")
+        print(f"  Question PDF path: {test_question_pdf_path}")
+        print(f"  Answer PDF path: {test_answer_pdf_path}")
+        
+    print("\\n--- End of pdf_parser.py execution ---")
+    pass
