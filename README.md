@@ -2,12 +2,12 @@
 
 ![banner](./public/banner.png)
 
-
 A comprehensive system for processing, storing, and managing medical examination questions from PDF files. This system extracts questions, answers, and images from exam papers and stores them in a structured database for easy access and management.
 
 ## Features
 
 - **PDF Processing**
+
   - Extracts questions, answers, and metadata from exam papers
   - Handles both question papers and answer papers
   - Extracts and saves images from questions
@@ -15,6 +15,7 @@ A comprehensive system for processing, storing, and managing medical examination
   - Handles special cases like answer corrections and notes
 
 - **Database Management**
+
   - Stores questions, answers, and metadata in Supabase
   - Organizes content by subjects, chapters, and tests
   - Supports batch operations for efficient data insertion
@@ -41,6 +42,7 @@ A comprehensive system for processing, storing, and managing medical examination
 ├── processed_data/        # Processed output
 │   ├── parsed/           # Parsed JSON files
 │   └── images/           # Extracted images
+├── archive/        # Archived ouput (stored in supabase)
 └── logs/                 # Log files
 └── public/               # Static Data
 ```
@@ -54,12 +56,14 @@ A comprehensive system for processing, storing, and managing medical examination
 ## Installation
 
 1. Clone the repository:
+
    ```bash
    git clone [repository-url]
    cd [repository-name]
    ```
 
 2. Install required packages:
+
    ```bash
    pip install -r requirements.txt
    ```
@@ -77,12 +81,14 @@ A comprehensive system for processing, storing, and managing medical examination
 ## Usage
 
 1. Place your exam PDF files in the appropriate structure:
+
    ```
    raw_data/exams/[Subject Name]/[Year]_[Period]/[Question Paper].pdf
    raw_data/exams/[Subject Name]/[Year]_[Period]/[Answer Paper].pdf
    ```
 
 2. Run the main processing script:
+
    ```bash
    python src/main_questions.py
    ```
@@ -102,6 +108,7 @@ The system can be configured through:
 - Command-line arguments (when supported)
 
 Key configuration options:
+
 - Logging level
 - File paths
 - Database connection
