@@ -1,0 +1,1273 @@
+{
+    "meta": {
+        "exam_name": "111年第一次專門職業及技術人員高等考試醫師牙醫師藥師考試分階",
+        "subject_name": "微生物學與臨床微生物學（包括細菌與黴菌）",
+        "subject_code": "4308",
+        "subject_type": "醫事檢驗師",
+        "year": 111,
+        "period": 1,
+        "question_count": null
+    },
+    "questions": [
+        {
+            "question_number": 1,
+            "content": "有關Columbia CNA（colistin-nalidixic acid）agar之敘述，下列何者錯誤？",
+            "options": {
+                "A": "選擇性培養基",
+                "B": "鑑別性培養基",
+                "C": "抑制革蘭氏陰性細菌",
+                "D": "含有膽鹽"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 2,
+            "content": "有關Mannitol Salt Agar的敘述，下列何者錯誤？",
+            "options": {
+                "A": "利用對mannitol發酵能力不同，可區分不同Streptococcus species",
+                "B": "指示劑為Phenol red",
+                "C": "內含7.5% NaCl，可抑制大部分的細菌生長",
+                "D": "屬於鑑別性培養基（differential medium）"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 3,
+            "content": "遇到營養不足等不利生長因素時，下列何菌屬具有產生孢子（spore）的能力？",
+            "options": {
+                "A": "Bacillus",
+                "B": "Listeria",
+                "C": "Corynebacterium",
+                "D": "Gardnerella"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 4,
+            "content": "下列培養基與指示劑之配對，何者錯誤？",
+            "options": {
+                "A": "XLD / Phenol red",
+                "B": "Hugh and Leifson OF medium / Bromothymol blue",
+                "C": "MacConkey agar / Neutral red",
+                "D": "Citrate agar / Methylene blue"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 5,
+            "content": "下列何種標記最常用於分子生物技術來進行細菌的鑑定？",
+            "options": {
+                "A": "Protein之胺基酸序列",
+                "B": "Mitochondria DNA 序列",
+                "C": "16S rRNA 基因序列",
+                "D": "Internal transcribed spacers（ITS）基因序列"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 6,
+            "content": "有關染色後觀察顯微鏡下菌體排列形狀的敘述，下列何者錯誤？",
+            "options": {
+                "A": "Listeria spp. 呈人字型，柵狀排列",
+                "B": "Neisseria spp. 為兩兩成對的球菌，類似腎臟或是咖啡豆形狀",
+                "C": "Campylobacter spp.  呈S形或海鷗翅膀形狀（seagull-wing）",
+                "D": "Moraxella catarrhalis  常呈雙球狀排列"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 7,
+            "content": "下列何種微生物的診斷方法可以用來檢測厭氧性細菌代謝所產生的脂肪酸？",
+            "options": {
+                "A": "聚合酶鏈鎖反應（PCR）",
+                "B": "DNA探針雜交法",
+                "C": "Gas-liquid chromatography",
+                "D": "直接鏡檢觀察"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 8,
+            "content": "有關細菌與真菌之比較，下列何者錯誤？",
+            "options": {
+                "A": "細菌為無核細胞，真菌為有核細胞",
+                "B": "細菌大多為單一環狀染色體，真菌為線狀染色體",
+                "C": "細菌之能量生產處為粒線體，真菌之能量生產處為細胞膜",
+                "D": "細菌細胞壁含肽聚醣，真菌細胞壁含葡萄聚醣和幾丁質"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 9,
+            "content": "導致人類類丹毒疾病之細菌為何？",
+            "options": {
+                "A": "Listeria monocytogenes",
+                "B": "Nocardia asteroides",
+                "C": "Erysipelothrix rhusiopathiae",
+                "D": "Clostridium difficile"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 10,
+            "content": "有關Listeria monocytogenes的敘述，下列何者錯誤？",
+            "options": {
+                "A": "正常存在於土壤、水、腐敗的蔬菜、植物及許多動物的腸道",
+                "B": "可經胎盤感染胎兒",
+                "C": "能夠在4～6℃的低溫下繁殖",
+                "D": "無法在巨噬細胞中複製"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 11,
+            "content": "關於Mycobacterium fortuitum之敘述，下列何者錯誤？",
+            "options": {
+                "A": "屬於rapidly growing mycobacteria",
+                "B": "不會產生色素",
+                "C": "Arylsulfatase呈陰性",
+                "D": "可在不含crystal violet的MacConkey agar生長"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 12,
+            "content": "下列何者不是Staphylococcus aureus主要的毒力因子（virulence factors）？",
+            "options": {
+                "A": "C5a peptidase",
+                "B": "Coagulase",
+                "C": "Protein A",
+                "D": "Microbial surface components recognizing adhesive matrix molecules"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 13,
+            "content": "關於Streptococcus pneumoniae的特性，下列何者正確？",
+            "options": {
+                "A": "培養過久時菌落會autolysis",
+                "B": "對optochin（5 μg disc）不會有抑制環產生",
+                "C": "Bile solubility呈陰性",
+                "D": "具有Streptococcal pyrogenic exotoxin"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 14,
+            "content": "下列何者不是Streptococcus pyogenes的毒力因子（virulence factor）？",
+            "options": {
+                "A": "M protein"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 15,
+            "content": "下列何者細胞壁不具Lancefield grouping antigen？",
+            "options": {
+                "A": "Streptococcus agalactiae",
+                "B": "Streptococcus dysgalactiae",
+                "C": "Streptococcus pyogenes",
+                "D": "Streptococcus pneumoniae"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 16,
+            "content": "大多數的天然抗生素主要由下列何種菌屬所產生？",
+            "options": {
+                "A": "Actinomyces",
+                "B": "Actinomadura",
+                "C": "Streptomyces",
+                "D": "Nocardia"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 17,
+            "content": "從眼部檢體分離出一種β-溶血的大型革蘭氏陽性帶芽孢桿菌，lecithinase陽性，motility陽性，此病原菌最可能\n為：",
+            "options": {
+                "A": "Bacillus anthracis",
+                "B": "Bacillus cereus",
+                "C": "Clostridium ramosum",
+                "D": "Clostridium perfringens"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 18,
+            "content": "Rothia mucilaginosa之何種特性可與Staphylococcus及Micrococcus作區別？",
+            "options": {
+                "A": "能在無氧環境下生長",
+                "B": "對lysostaphin具抗性",
+                "C": "在含5% NaCl 之nutrient agar上無法生長",
+                "D": "Glucose產酸"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 19,
+            "content": "葡萄球菌對β-lactams類藥物產生抗藥性，主要為具有下列何種基因？",
+            "options": {
+                "A": "mecA gene",
+                "B": "pbp3 gene",
+                "C": "pbp4 gene",
+                "D": "spa gene"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 20,
+            "content": "關於Mycobacterium spp.之敘述，下列何者正確？",
+            "options": {
+                "A": "M. tuberculosis complex包含M. bovis、M. microti 等",
+                "B": "M. tuberculosis感染，可引起Hansen disease",
+                "C": "M. chelonae最佳生長溫度為42℃",
+                "D": "M. avium complex最常見於皮膚潰瘍傷口"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 21,
+            "content": "老農夫因腳部腐爛就醫，傷口培養出oxidase (＋)、Motility (＋)、Lysine (＋)的陰性桿菌，對Aminoglycoside呈\n抵抗性，但對trimethoprim-sulfamethoxazole是敏感的，最有可能為下列何種細菌？",
+            "options": {
+                "A": "Burkholderia cepacia"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 22,
+            "content": "下列何種細菌通常不具運動性？",
+            "options": {
+                "A": "Burkholderia mallei",
+                "B": "Burkholderia pseudomallei",
+                "C": "Burkholderia cepacia complex",
+                "D": "Burkholderia gladioli"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 23,
+            "content": "有關Campylobacter jejuni 的敘述，下列何者最適當？",
+            "options": {
+                "A": "不具有觸酶（catalase），也不形成芽孢",
+                "B": "能在25°C生長，但無法在42°C生長",
+                "C": "具有尿素酶（urease）和運動性（motility）",
+                "D": "是人畜共通感染的致病菌"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 24,
+            "content": "下列何者是佛氏檸檬酸桿菌（Citrobacter freundii）和摩氏摩根菌（Morganella morganii）的共同特徵？",
+            "options": {
+                "A": "Tyrosine hydrolysis 陰性",
+                "B": "Oxidase 陰性",
+                "C": "Ornithine decarboxylase 陰性",
+                "D": "H2S 陰性"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 25,
+            "content": "下列何種培養基最適用於嗜血桿菌屬（Haemophilus）的培養？",
+            "options": {
+                "A": "Eosin methylene blue（EMB）agar plate",
+                "B": "Horse blood agar plate",
+                "C": "Colistin-nalidixic acid（CNA）agar plate",
+                "D": "Phenylethyl alcohol（PEA）agar plate"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 26,
+            "content": "下列何項試驗Helicobacter pylori 為陽性反應，而H. fennelliae 及H. cinaedi 為陰性反應？",
+            "options": {
+                "A": "氧化酶（oxidase）",
+                "B": "觸酶（catalase）",
+                "C": "尿素酶（urease）",
+                "D": "硫化氫（H2S）"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 27,
+            "content": "下列何種細菌具有色胺酸酶（tryptophanase）？",
+            "options": {
+                "A": "Klebsiella pneumoniae",
+                "B": "Klebsiella oxytoca",
+                "C": "Klebsiella ozaenae",
+                "D": "Klebsiella rhinoscleromatis"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 28,
+            "content": "Lysine iron agar的主要目的在於區分那兩菌屬？",
+            "options": {
+                "A": "Salmonella 與 Proteus",
+                "B": "Escherichia 與 Shigella",
+                "C": "Citrobacter 與 Enterobacter"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 29,
+            "content": "Neisseria spp. 的菌種中，何者形態的描述較類似桿菌？",
+            "options": {
+                "A": "Neisseria elongata",
+                "B": "Neisseria lactamica",
+                "C": "Neisseria sicca",
+                "D": "Neisseria mucosa"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 30,
+            "content": "下列何者不是Nitrate reduction test使用的試藥？",
+            "options": {
+                "A": "Diazonium salt",
+                "B": "Sulfanilic acid",
+                "C": "α-naphthylamine",
+                "D": "Zinc dust"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 31,
+            "content": "關於Pseudomonas aeruginosa所分泌之pyoverdin，其屬性為下列何者？",
+            "options": {
+                "A": "多醣（polysaccharide）",
+                "B": "磷脂酶（phospholipase）",
+                "C": "纖維接合素（fibronectin）",
+                "D": "螯鐵蛋白（siderophore）"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 32,
+            "content": "Shigella sonnei在下列何種試驗呈現陽性反應時，可以和S. dysenteriae、S. flexneri、S. boydii 區別？",
+            "options": {
+                "A": "Indole",
+                "B": "Mannitol fermentation",
+                "C": "Ornithine decarboxylase",
+                "D": "Lactose fermentation"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 33,
+            "content": "有關嗜麥芽窄食單胞菌（Stenotrophomonas maltophilia）的敘述，下列何者最適當？",
+            "options": {
+                "A": "大多由性行為接觸而傳播此菌",
+                "B": "大部分菌株對β-lactams藥物有抗性，但對aminoglycosides藥物具有感受性",
+                "C": "生長緩慢，至少要培養7天才能發陰性報告",
+                "D": "革蘭氏陰性菌，氧化酶（oxidase）陰性，具有運動性"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 34,
+            "content": "下列何者不是Yersinia pestis的生化特徵？",
+            "options": {
+                "A": "Motility陽性（25～28℃）",
+                "B": "Indole陰性",
+                "C": "Methyl red陽性",
+                "D": "Voges-Proskauer陰性"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 35,
+            "content": "下列細菌那些是氧化酶（oxidase）陰性？①Pseudomonas fluorescens ②Stenotrophomonas maltophilia\n③Acinetobacter baumannii ④Acinetobacter lwoffii ⑤Burkholderia pseudomallei",
+            "options": {
+                "A": "①②③",
+                "B": "②③④",
+                "C": "③④⑤"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 36,
+            "content": "下列何種生化反應可以區分Escherichia coli與Salmonella spp.？",
+            "options": {
+                "A": "urease",
+                "B": "H2S",
+                "C": "oxidase",
+                "D": "motility"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 37,
+            "content": "下列何者為Edwardsiella spp. 與Salmonella spp. 的indole試驗結果？",
+            "options": {
+                "A": "Edwardsiella spp. (＋)，Salmonella spp. (＋)",
+                "B": "Edwardsiella spp. (＋)，Salmonella spp. (－)",
+                "C": "Edwardsiella spp. (－)，Salmonella spp. (＋)",
+                "D": "Edwardsiella spp. (－)，Salmonella spp. (－)"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 38,
+            "content": "E. coli O157:H7可以利用modified MacConkey 培養基與其他E. coli 區分，此培養基為：",
+            "options": {
+                "A": "將glucose置換成sorbitol",
+                "B": "將lactose置換成sorbitol",
+                "C": "將sucrose置換成sorbitol",
+                "D": "直接添加sorbitol"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 39,
+            "content": "下列何種試驗可以區分Arcobacter butzleri 和Arcobacter cryaerophilus？",
+            "options": {
+                "A": "nitrate還原反應",
+                "B": "urease反應",
+                "C": "hippurate水解",
+                "D": "在MacConkey培養基生長"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 40,
+            "content": "Neisseria meningitidis的cytochrome oxidase與catalase反應為何？",
+            "options": {
+                "A": "cytochrome oxidase (－)，catalase (－)",
+                "B": "cytochrome oxidase (＋)，catalase (－)",
+                "C": "cytochrome oxidase (－)，catalase (＋)",
+                "D": "cytochrome oxidase (＋)，catalase (＋)"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 41,
+            "content": "Kanamycin-vancomycin laked blood agar（KVLB）培養基內含laked blood的作用為何？",
+            "options": {
+                "A": "易於觀察溶血",
+                "B": "易於觀察Prevotella及Porphyromonas等菌產生的色素",
+                "C": "易於觀察Prevotella及Porphyromonas等菌產生的螢光",
+                "D": "抑制細菌游走（swarming）"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 42,
+            "content": "有關Mycoplasma 的敘述，下列何者錯誤？",
+            "options": {
+                "A": "屬於革蘭氏陰性菌",
+                "B": "對penicillin具有抗性",
+                "C": "呈現荷包蛋菌落",
+                "D": "會造成垂直感染"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 43,
+            "content": "下列何者可以中和血液培養瓶添加劑sodium polyanethol sulfonate 抑制某些細菌生長的作用？",
+            "options": {},
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 44,
+            "content": "下列何者是非淋菌性尿道炎（nongonococcal urethritis）的主要元兇之一?",
+            "options": {
+                "A": "砂眼披衣菌（Chlamydia trachomatis）",
+                "B": "立克次體屬（Rickettsia spp.）",
+                "C": "柯克斯氏體屬（Coxiella spp.）",
+                "D": "鸚鵡熱披衣菌（Chlamydophila psittaci）"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 45,
+            "content": "關於淋巴肉芽腫（Lymphogranuloma venereum）的敘述，下列何者錯誤？",
+            "options": {
+                "A": "由 Chlamydia trachomatis serovars A引起",
+                "B": "經由性接觸傳染",
+                "C": "感染後可能造成患者不孕",
+                "D": "採檢後，檢體可用chlamydial transport medium保存"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 46,
+            "content": "有關細菌和疾病的配對，下列何者錯誤？",
+            "options": {
+                "A": "Mycoplasma pneumoniae / respiratory disease",
+                "B": "Mycoplasma hominis / gastrointestinal tract disease",
+                "C": "Ureaplasma urealyticum / urogenital tract disease",
+                "D": "Mycoplasma genitalium / urogenital tract disease"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 47,
+            "content": "Treponema pallidum最不可能經由下列何種方式傳染？",
+            "options": {
+                "A": "垂直傳染，母親傳給胎兒",
+                "B": "性行為傳染",
+                "C": "呼吸道傳染",
+                "D": "輸血傳染"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 48,
+            "content": "下列何種革蘭氏陰性厭氧菌染色形態較有可能為細長、兩端尖？",
+            "options": {
+                "A": "Prevotella intermedia",
+                "B": "Bacteroides fragilis",
+                "C": "Porphyromonas gingivalis",
+                "D": "Fusobacterium nucleatum"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 49,
+            "content": "下列何種藥物常用於治療A群鏈球菌（Streptococcus pyogenes）的第一線經驗療法？",
+            "options": {
+                "A": "Ciprofloxacin",
+                "B": "Linezolid",
+                "C": "Penicillin",
+                "D": "Vancomycin"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 50,
+            "content": "下列何種抗生素具有β-lactam ring的特殊結構？",
+            "options": {
+                "A": "Gentamicin",
+                "B": "Penicillin"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 51,
+            "content": "下列何種抗生素其主要的殺菌機制是抑制細胞壁的合成？",
+            "options": {
+                "A": "Kanamycin",
+                "B": "Vancomycin",
+                "C": "Erythromycin",
+                "D": "Clindamycin"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 52,
+            "content": "下列何種抗生素須在有氧環境下，以細菌耗能的方式進入菌體內，達到殺菌效果？",
+            "options": {
+                "A": "β-lactam",
+                "B": "aminoglycoside",
+                "C": "metronidazole",
+                "D": "ciprofloxacin"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 53,
+            "content": "Müller-Hinton培養基中的胸腺嘧啶（thymidine or thymine）過量時，會造成細菌對何種抗生素出現偽抗性\n（false-resistance）？",
+            "options": {
+                "A": "Trimethoprim",
+                "B": "Erythromycin",
+                "C": "Penicillin",
+                "D": "Vancomycin"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 54,
+            "content": "D-zone test 需要使用那兩種抗生素紙錠？",
+            "options": {
+                "A": "vancomycin & oxacillin",
+                "B": "aminoglycoside & penicillin",
+                "C": "erythromycin & clindamycin",
+                "D": "streptomycin & colistin"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 55,
+            "content": "下列何種抗生素不用於治療肺炎黴漿菌（Mycoplasma pneumoniae）感染？",
+            "options": {
+                "A": "Ampicillin",
+                "B": "Ciprofloxacin",
+                "C": "Doxycycline",
+                "D": "Erythromycin"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 56,
+            "content": "下列何種疾病的防護措施應將患者隔離於負壓（negative air pressure）病房？",
+            "options": {
+                "A": "結核病",
+                "B": "HIV感染",
+                "C": "Clostridium difficile 感染",
+                "D": "黴漿菌性肺炎（Mycoplasma pneumoniae）"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 57,
+            "content": "下列何種培養液最適合用來檢測厭氧菌的抗生素藥敏試驗？",
+            "options": {
+                "A": "Brucella broth",
+                "B": "Middlebrook 7H9 broth",
+                "C": "Pyruvate broth"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 58,
+            "content": "下列何者較不可能為肺結核桿菌的感染途徑？",
+            "options": {
+                "A": "直接接觸",
+                "B": "空氣傳染",
+                "C": "飛沫傳染",
+                "D": "媒介傳播"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 59,
+            "content": "下列那一類抗生素不能直接抑制細菌蛋白質合成？",
+            "options": {
+                "A": "aminoglycosides",
+                "B": "macrolides",
+                "C": "tetracyclines",
+                "D": "fluoroquinolones"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 60,
+            "content": "下列何者不是常見院內感染肺炎之致病菌？",
+            "options": {
+                "A": "Pseudomonas aeruginosa",
+                "B": "Klebsiella pneumoniae",
+                "C": "Plesiomonas shigelloides",
+                "D": "Staphylococcus aureus"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 61,
+            "content": "依Runyon分類法，下列何種分枝桿菌屬於見光產色菌（photochromogens）？",
+            "options": {
+                "A": "Mycobacterium kansasii",
+                "B": "Mycobacterium gordonae",
+                "C": "Mycobacterium ulcerans",
+                "D": "Mycobacterium chelonae"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 62,
+            "content": "下列何者不是常見的性傳染病之病原菌？",
+            "options": {
+                "A": "Neisseria gonorrhoeae",
+                "B": "Chlamydia trachomatis",
+                "C": "Heamophilus ducreyi",
+                "D": "Fusobacterium nucleatum"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 63,
+            "content": "病患疑似有大腸桿菌O157感染，其糞便檢體除一般低選擇性培養外，最好再外加何種高選擇性培養基以利篩\n檢？",
+            "options": {
+                "A": "Sorbitol MacConkey agar",
+                "B": "Cycloserine-cefoxitin-fructose agar（CCFA）",
+                "C": "Thiosulfate citrate bile salts sucrose（TCBS）agar",
+                "D": "GN broth"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 64,
+            "content": "下列何種細菌主要為咽喉拭子檢體培養出的病原菌而非正常菌叢？",
+            "options": {
+                "A": "Streptococcus mutans",
+                "B": "Streptococcus pyogenes",
+                "C": "Staphylococcus hominis",
+                "D": "Corynebacterium xerosis"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 65,
+            "content": "Germ tube test常用來鑑定下列何種真菌？",
+            "options": {
+                "A": "Blastomyces dermatitidis",
+                "B": "Cryptococcus neoformans",
+                "C": "Candida albicans",
+                "D": "Histoplasma capsulatum"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 66,
+            "content": "有關Candida albicans的敘述，下列何者錯誤？",
+            "options": {
+                "A": "可以酵母菌或菌絲的型式生長",
+                "B": "可形成生物薄膜（Biofilm）",
+                "C": "Urease陰性",
+                "D": "無法生長於42℃環境下"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 67,
+            "content": "關於新型隱球菌（Cryptococcus neoformans）的敘述，下列何者錯誤？",
+            "options": {
+                "A": "屬於擔子菌門（Basidiomycota）",
+                "B": "無菌絲或假菌絲",
+                "C": "可藉由Mucicarmine 染色觀察其夾膜",
+                "D": "在Sabouraud’s dextrose agar（SDA）上無法生長"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 68,
+            "content": "有關檢體進行真菌培養及鑑定的敘述，下列何者錯誤？",
+            "options": {
+                "A": "接種於不含抑制劑及含抑制劑的培養基各一種",
+                "B": "接種兩套分別放置室溫及37℃培養",
+                "C": "絲狀真菌以顏色及型態判斷",
+                "D": "分子診斷以16S rRNA的基因序列判斷"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 69,
+            "content": "下列何者為Trichophyton屬的大分生孢子形態？",
+            "options": {
+                "A": "",
+                "B": "",
+                "C": "",
+                "D": ""
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 70,
+            "content": "下列何種抗真菌（anti-fungal）藥物，其機制主要是作用在葡聚醣（1,3-β-D-glucan）合成酶？",
+            "options": {
+                "A": "5-fluorocytosine（5-FC）"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 71,
+            "content": "下列何者為生物安全操作箱用於過濾空氣的配備？",
+            "options": {
+                "A": "HEPA filter",
+                "B": "Glass fiber filter",
+                "C": "Nylon fiber filter",
+                "D": "Nitrocellulose acetate filter"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 72,
+            "content": "抗真菌藥物療黴舒（terbinafine）之作用機轉為抑制下列何者之生成？",
+            "options": {
+                "A": "蛋白質",
+                "B": "核酸",
+                "C": "麥角固醇（ergosterol）",
+                "D": "β-葡聚糖（β-glucan）"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 73,
+            "content": "下列何者不屬於人畜共通（zoonotic）革蘭氏陰性菌？",
+            "options": {
+                "A": "流產布氏桿菌（Brucella abortus）",
+                "B": "腦膜炎雙球菌（Neisseria meningitidis）",
+                "C": "巴氏德桿菌（Pasteurella multocida）",
+                "D": "土倫病法蘭西斯氏菌（Francisella tularensis）"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 74,
+            "content": "下列何種免疫化學方法（Immunochemical method）最不常用於微生物檢測？",
+            "options": {
+                "A": "染色質免疫沉澱法（Chromatin immunoprecipitation）",
+                "B": "間接血球凝集實驗（Indirect hemagglutination assay）",
+                "C": "性病研究實驗室檢驗（Venereal Disease Research Laboratory test）",
+                "D": "發熱疾病的凝集試驗（Weil-Felix test）"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 75,
+            "content": "糞便檢體利用冷增菌法（cold enrichment）處理，可增加下列何種革蘭氏陽性桿菌的檢出機會？",
+            "options": {
+                "A": "Yersinia enterocolitica",
+                "B": "Corynebacterium diphtheriae",
+                "C": "Listeria monocytogenes",
+                "D": "Erysipelothrix rhusiopathiae"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 76,
+            "content": "下列何種細菌感染，最可能造成非典型肺炎？",
+            "options": {
+                "A": "大腸桿菌（Escherichia coli）",
+                "B": "貝氏考克斯菌（Coxiella burnetii）",
+                "C": "綠膿桿菌（Pseudomonas aeruginosa）",
+                "D": "金黃色葡萄球菌（Staphylococcus aureus）"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 77,
+            "content": "下列何種疾病與病原菌之配對正確？",
+            "options": {
+                "A": "Rat-bite fever－Borrelia recurrentis",
+                "B": "Relapsing fever－Leptospira interrogans",
+                "C": "Pontiac fever－Legionella pneumophila"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 78,
+            "content": "下列何種培養基最適合用於從糞便檢體中分離Clostridium difficile？",
+            "options": {
+                "A": "Bacteroides bile esculin（BBE）agar plate",
+                "B": "cycloserine cefoxitin fructose agar（CCFA）plate",
+                "C": "kanamycin-vancomycin laked blood（KVLB）agar plate",
+                "D": "aerobic blood agar plate（aeBAP）"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 79,
+            "content": "有關使用暗視野觀察微生物之敘述，下列何者錯誤？",
+            "options": {
+                "A": "須染色製片",
+                "B": "主要觀察螺旋體",
+                "C": "微生物體表會出現反光色澤",
+                "D": "背景為黑色"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 80,
+            "content": "下列何種疾病主要是因接觸被感染動物的尿液而致病？",
+            "options": {
+                "A": "梅毒（syphilis）",
+                "B": "鉤端螺旋體病（leptospirosis）",
+                "C": "萊姆氏病（Lyme disease）",
+                "D": "回歸熱（relapsing fever）"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        }
+    ]
+}

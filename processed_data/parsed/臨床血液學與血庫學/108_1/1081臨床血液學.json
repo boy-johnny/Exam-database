@@ -1,0 +1,1264 @@
+{
+    "meta": {
+        "exam_name": "108年第一次專門職業及技術人員高等考試醫師牙醫師藥師考試分階",
+        "subject_name": "臨床血液學與血庫學",
+        "subject_code": "2308",
+        "subject_type": "醫事檢驗師",
+        "year": 108,
+        "period": 1,
+        "question_count": null
+    },
+    "questions": [
+        {
+            "question_number": 1,
+            "content": "某病患的⾎液檢驗報告如下：RBC 6×106/μL、Hb 12 g/dL、Hct 35%、MCV 55 fL，⾎清ferritin、⾎清鐵和\nTIBC均正常，Hb A2 6%；則推測其最可能罹患下列何種貧⾎？",
+            "options": {
+                "A": "α-thalassemia minor",
+                "B": "Hb E disease",
+                "C": "β-thalassemia minor",
+                "D": "Hb H disease"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 2,
+            "content": "正常成⼈⾎液中Hb F含量為何？",
+            "options": {
+                "A": "0.5～0.8%",
+                "B": "3.5～8.0%",
+                "C": "15～32%",
+                "D": "＞90%"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 3,
+            "content": "下列何種貧⾎不會出現splenomegaly？",
+            "options": {
+                "A": "β-thalassemia major",
+                "B": "Hereditary spherocytosis",
+                "C": "Hb H disease",
+                "D": "Aplastic anemia"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 4,
+            "content": "下列何種因素會降低⼈體對於鐵的吸收效率？",
+            "options": {
+                "A": "⼆價鐵食物",
+                "B": "懷孕",
+                "C": "缺鐵",
+                "D": "茶"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 5,
+            "content": "下列何者可⽤於檢驗遺傳性球型紅⾎球增多症（hereditary spherocytosis）？",
+            "options": {
+                "A": "Sugar water test",
+                "B": "Osmotic fragility test",
+                "C": "Acid serum test",
+                "D": "Solubility test"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 6,
+            "content": "紅⾎球利⽤下列何種代謝途徑⽣產90%的ATP？",
+            "options": {
+                "A": "Luebering-Rapoport shunt",
+                "B": "Methemoglobin reductase pathway"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 7,
+            "content": "急性出⾎引起的⼤紅⾎球症（macrocytosis）常併發下列何種特徵？",
+            "options": {
+                "A": "網狀紅⾎球數⽬增多",
+                "B": "Megaloblastic change",
+                "C": "全⾎球減少症（pancytopenia）",
+                "D": "Macro-ovalocytes"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 8,
+            "content": "下列有關⼈類造⾎之敘述，何者錯誤？",
+            "options": {
+                "A": "卵黃囊造⾎發⽣於胚胎時期前6星期",
+                "B": "肝臟造⾎發⽣於胎齡2～7個⽉",
+                "C": "脾臟造⾎發⽣於胎齡3～6個⽉",
+                "D": "骨髓造⾎發⽣於出⽣後"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 9,
+            "content": "若⾎管內發⽣⼤量溶⾎，下列檢驗結果何者正確？",
+            "options": {
+                "A": "Methemalbumin呈陰性",
+                "B": "Urine hemosiderin增加",
+                "C": "Unconjugated bilirubin level正常",
+                "D": "Reticulocyte count下降"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 10,
+            "content": "下列何種⽩⾎病最容易引起瀰漫性⾎管內凝⾎（DIC）？",
+            "options": {
+                "A": "AML M2",
+                "B": "AML M3",
+                "C": "AML M1",
+                "D": "AML M6"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 11,
+            "content": "FAB分類的急性骨髓性⽩⾎病中，下列何者為⾎⼩板系列的疾病？",
+            "options": {
+                "A": "AML M0",
+                "B": "AML M5",
+                "C": "AML M6",
+                "D": "AML M7"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 12,
+            "content": "顆粒性⽩⾎球細胞質內的初級顆粒及次級顆粒之形成，分別於成熟過程中的那⼀階段開始出現？",
+            "options": {
+                "A": "Myeloblast；Promyelocyte",
+                "B": "Promyelocyte；Myelocyte",
+                "C": "Myelocyte；Metamyelocyte",
+                "D": "Metamyelocyte；Band"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 13,
+            "content": "某50歲男性因上腹疼痛⾄醫院求診，經診斷為消化性潰瘍，同時⾎液常規檢查發現Hb 11.7 g/dL、MCV 92.5\nfL、⾎⼩板475,000/μL、WBC 158,420/μL；WBC分類為blast 1%、promyelocyte 6.5%、myelocyte 16%、\nmetamyelocyte 14.5%、basophil 0.5%、eosinophil 1.5%、band neutrophil 23%及segmented neutrophil\n31%、monocyte 4.5%、lymphocyte 1.5%、LAP score 17；則推測最可能罹患下列何種疾病？",
+            "options": {
+                "A": "Myelodysplastic syndrome"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 14,
+            "content": "有關成⼈急性骨髓性⽩⾎病（acute myeloid leukemia）⾎癌細胞染⾊體變化的敘述，下列何者錯誤？",
+            "options": {
+                "A": "以傳統染⾊體分析⽅法，⼤約⾼達95%的病⼈都有異常",
+                "B": "缺少⼀條第七號染⾊體（monosomy 7）者，常有較短的存活期",
+                "C": "同時有⾄少三種染⾊體異常者，常有較短的存活期",
+                "D": "男性病⼈少了Y染⾊體（－Y）者，不屬於⾼危險類型（high-risk）"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 15,
+            "content": "下列關於B細胞成熟過程的敘述，何者錯誤？",
+            "options": {
+                "A": "TdT會在D區域加入⼀些新的鹼基（bases）⽽增加變異性",
+                "B": "細胞表⾯免疫球蛋⽩（surface immunoglobulin）僅在成熟B細胞（mature B cells）階段才會出現",
+                "C": "intracytoplasmic CD22是pre-B及pro-B細胞的重要特徵",
+                "D": "重鏈的基因重組發⽣在輕鏈之前"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 16,
+            "content": "在嗜中性⽩⾎球⽣成的過程中，細胞在下列何時期開始停⽌分裂？",
+            "options": {
+                "A": "Myeloblast",
+                "B": "Promyelocyte",
+                "C": "Myelocyte",
+                "D": "Metamyelocyte"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 17,
+            "content": "Rituximab是⼀種anti-CD20 antibody，常⽤來治療下列何種疾病？",
+            "options": {
+                "A": "B-cell lymphoma",
+                "B": "T-cell lymphoma",
+                "C": "CML",
+                "D": "AML M3"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 18,
+            "content": "當懷疑lupus anticoagulant時，需要執⾏混合試驗（mixing study），其最主要⽬的為證明下列何者？",
+            "options": {
+                "A": "確認有factor deficiency",
+                "B": "確認有inhibitor",
+                "C": "確認檢體品質符合允收",
+                "D": "分析lupus anticoagulant濃度"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 19,
+            "content": "下列何者是protein C抗凝⾎系統活化時的輔因⼦（cofactor）？",
+            "options": {
+                "A": "Plasminogen",
+                "B": "Antithrombin",
+                "C": "Protein S",
+                "D": "Factor V"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 20,
+            "content": "下列關於VWD的敘述，何者錯誤？",
+            "options": {
+                "A": "主要為體染⾊體異常疾病",
+                "B": "VWD的發⽣率非常低，比⾎友病更低",
+                "C": "第2型病⼈主要為VWF功能不佳所致"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 21,
+            "content": "下列何者為⾎⼩板凝集試驗的激活劑（agonist）？①collagen\n②thrombin\n③thrombomodulin\n④ATP",
+            "options": {
+                "A": "①②",
+                "B": "①④",
+                "C": "②③",
+                "D": "③④"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 22,
+            "content": "有關gray platelet syndrome的敘述，下列何者錯誤？",
+            "options": {
+                "A": "出現巨⼤⾎⼩板",
+                "B": "輕度⾎⼩板減少",
+                "C": "⾎⼩板表⾯醣蛋⽩結構正常",
+                "D": "α顆粒內涵物正常"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 23,
+            "content": "下列何者不是thrombin可⽔解或活化的凝⾎因⼦？",
+            "options": {
+                "A": "Factor I",
+                "B": "Tissue factor",
+                "C": "Factor V",
+                "D": "Factor VIII"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 24,
+            "content": "⼀般⾎液凝固篩檢試驗所使⽤之檸檬酸鈉（sodium citrate）濃度，下列何者最合適？",
+            "options": {
+                "A": "2.2%",
+                "B": "2.7%",
+                "C": "3.2%",
+                "D": "3.7%"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 25,
+            "content": "下列何者為凝⾎因⼦的抑制⼦（inhibitor）？",
+            "options": {
+                "A": "α1-antiplasmin",
+                "B": "Heparin cofactor",
+                "C": "α2-microglobulin",
+                "D": "Thrombin activatable fibrinolysis inhibitor（TAFI）"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 26,
+            "content": "下列有關activated protein C resistance之敘述，何者正確？",
+            "options": {
+                "A": "⻄⽅⼈動脈栓塞發⽣之重要危險因⼦",
+                "B": "亞洲⼈靜脈栓塞發⽣之重要危險因⼦",
+                "C": "無法抑制凝⾎的進⾏",
+                "D": "Protein C基因產⽣突變"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 27,
+            "content": "65歲女性，急診時主訴為發燒、腎功能異常、全⾝多處出⾎點，檢驗結果：⾎⾊素5 g/dL、⾎⼩板\n8,000/μL、PT 12.8秒（參考值11.3～14.6秒）、APTT 30秒（參考值25～34秒）、出⾎時間延⻑、D-dimer\n在正常範圍內、haptoglobin 5 mg/dL（參考值50～250 mg/dL）、⾎液抹片檢查發現fragmented RBC，則下\n列何種檢驗對確定診斷最有幫助？",
+            "options": {
+                "A": "⾎中ADAMTS13活性",
+                "B": "⾎⼩板凝集試驗"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 28,
+            "content": "有關接觸因⼦（contact factors）缺乏症之敘述，下列何者錯誤？",
+            "options": {
+                "A": "病⼈會嚴重出⾎",
+                "B": "遺傳模式為體染⾊體隱性（autosomal recessive）",
+                "C": "病⼈⼀般不需要補充凝⾎因⼦",
+                "D": "接觸因⼦在⽌⾎功能之⾓⾊仍不清楚"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 29,
+            "content": "唾液試驗結果如下表，依此檢驗結果，可以認定此受檢者為：",
+            "options": {
+                "A": "不分泌型，故唾液試驗無法得知⾎型",
+                "B": "AB型不分泌型",
+                "C": "無法判斷須重作檢驗",
+                "D": "AB型分泌型"
+            },
+            "image_path": "image/臨床血液學和血庫學/108年_第一次/題目1081血液/題目1081血液-page5-img1.png",
+            "page_number": 5,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 30,
+            "content": "病⼈輸⾎前檢查結果如下表，則下列何者正確？",
+            "options": {
+                "A": "病⼈有冷型⾃體抗體",
+                "B": "病⼈有溫型⾃體抗體",
+                "C": "病⼈有異體抗體，但臨床意義可能不重要",
+                "D": "篩檢細胞1與2之反應價數不同，表⽰病⼈⼀定有兩種或以上之不規則抗體"
+            },
+            "image_path": "image/臨床血液學和血庫學/108年_第一次/題目1081血液/題目1081血液-page5-img0.png",
+            "page_number": 5,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 31,
+            "content": "紅⾎球加入⽊瓜酵素（papain）後，下列何種⾎型抗原會被破壞？",
+            "options": {
+                "A": "Duffy系統",
+                "B": "Rh系統",
+                "C": "Kidd系統",
+                "D": "Lewis系統"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 32,
+            "content": "DAT（direct antiglobulin test）在下列那些情況下呈陽性反應？①⾃體免疫性溶⾎\n②溶⾎性輸⾎反應\n③\n冷凝性疾病\n④因⺟親抗體引起新⽣兒溶⾎症",
+            "options": {
+                "A": "①②③",
+                "B": "①②④",
+                "C": "①③④",
+                "D": "②③④"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 33,
+            "content": "A2⾎型病⼈體內形成anti-A1，其⾎型檢驗結果，最可能為：",
+            "options": {
+                "A": "細胞定型anti-A（＋）、anti-B（0）；⾎清定型A1 cell（＋）、B cell（＋）"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 34,
+            "content": "輸⾎前檢驗結果如下：anti-A（4＋）、anti-B（0）、A1 cell（1＋）、B cell（4＋），抗體篩檢陰性，疑為\nABO亞⾎型，則⽤下列何種試劑加做檢驗最合理？",
+            "options": {
+                "A": "Ulex europaeus",
+                "B": "Dolichos biflorus",
+                "C": "Arachis hypogaea",
+                "D": "Glycine soja"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 35,
+            "content": "國⼈普遍存在的Sew385等位基因，其紅⾎球的Lewis表現型為：",
+            "options": {
+                "A": "Le（a＋b－）",
+                "B": "Le（a－b－）",
+                "C": "Le（a＋b＋）",
+                "D": "Le（a－b＋）"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 36,
+            "content": "文獻報告，可以引起輸⾎相關移植物反宿主反應（TA-GVHD）之⾎品為何？①⾎⼩板濃厚液\n②新鮮製備\n之⾎漿\n③紅⾎球濃厚液\n④新鮮冷凍⾎漿",
+            "options": {
+                "A": "①②④",
+                "B": "①③④",
+                "C": "②③④",
+                "D": "①②③"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 37,
+            "content": "親⼦鑑定案例，下列何者不屬於直接排除親⼦之可能性？",
+            "options": {
+                "A": "ABO⾎型：⽗O、⺟A、⼩孩B",
+                "B": "⾎型：⽗MN、⺟MM、⼩孩MM",
+                "C": "short tandem repeat檢驗：⽗D18S51：17型、⺟D18S51：11型、⼩孩D18S51：11，21型",
+                "D": "⾎型：⽗Jk（a＋b－）、⺟Jk（a＋b－）、⼩孩Jk（a＋b＋）"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 38,
+            "content": "ABO⾎型中，H抗原量最少者為：",
+            "options": {
+                "A": "A",
+                "B": "B",
+                "C": "O",
+                "D": "AB"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 39,
+            "content": "臺灣規定病⼈輸⾎紀錄應⾄少保存幾年？",
+            "options": {
+                "A": "1",
+                "B": "2",
+                "C": "5",
+                "D": "10"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 40,
+            "content": "下列有關執⾏緊急輸⾎之處置，何者錯誤？",
+            "options": {
+                "A": "無法取得病⼈檢體，給與O型全⾎"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 41,
+            "content": "Megaloblastic anemia病⼈的紅⾎球⺟細胞（normoblasts）最主要具有下列何種問題？",
+            "options": {
+                "A": "RNA合成有問題",
+                "B": "DNA合成有問題",
+                "C": "Hemoglobin合成有問題",
+                "D": "Albumin合成有問題"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 42,
+            "content": "下列兩張圖的重點分別為何？",
+            "options": {
+                "A": "Plasmacytosis (Liu’s stain)，Sideroblasts (Iron stain)",
+                "B": "Dyserythropoiesis (Liu’s stain)，Sideroblasts (Iron stain)",
+                "C": "Acute promyelocytic leukemia (Liu’s stain)，Leukemic blasts (Peroxidase stain)",
+                "D": "Megaloblastic anemia (Liu’s stain)，Megaloblasts (Peroxidase stain)"
+            },
+            "image_path": "image/臨床血液學和血庫學/108年_第一次/題目1081血液/題目1081血液-page7-img3.png",
+            "page_number": 7,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 43,
+            "content": "下列那種疾病在被確診時，病⼈的Hb數值可能正常？",
+            "options": {
+                "A": "G6PD缺乏症",
+                "B": "溫型⾃體免疫型溶⾎性貧⾎",
+                "C": "March hemoglobinuria",
+                "D": "同合⼦型Hb E症"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 44,
+            "content": "有關造⾎的敘述，下列何者錯誤？",
+            "options": {
+                "A": "缺乏Vit.B12或葉酸時，骨髓檢查只會發現紅⾎球⽣成異常",
+                "B": "紅⾎球⽣成需要鐵質、Vit.B12及葉酸",
+                "C": "當病⼈出現無效性紅⾎球⽣成時，腸道鐵質之吸收會增加",
+                "D": "⾎紅素的合成需要δ-aminolevulinic acid synthase"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 45,
+            "content": "有關紅⾎球⽣成素（EPO）之敘述，下列何者錯誤？",
+            "options": {
+                "A": "EPO主要由腎臟腎絲球旁juxtaglomerular（JG）cell分泌",
+                "B": "⻑時間在⾼⼭上⽣活，⾎清EPO量可能上升，進⽽造成紅⾎球數量增多",
+                "C": "慢性阻塞性肺病（COPD）病⼈，通常⾎清EPO量會上升",
+                "D": "當腎臟細胞hypoxia-inducible factor（HIF）表現量上升時，⾎中EPO量會上升"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 46,
+            "content": "有關有核紅⾎球（N-RBC）之敘述，下列何者錯誤？",
+            "options": {
+                "A": "骨髓外造⾎時，周邊⾎液抹片可⾒N-RBC",
+                "B": "⼤量出⾎的外傷病⼈，其周邊⾎液常可⾒⼤量N-RBC",
+                "C": "⼤量N-RBC出現在周邊⾎液，將造成病⼈⽩⾎球計數偽性上升",
+                "D": "N-RBC的細胞質可因Hb之存在⽽出現嗜酸性染⾊"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 47,
+            "content": "⼀位24歲女性罹患腸道疾病多年且經常腹瀉，近⽇發現Hb 9.2g/dL，MCV 125fL，校正後reticulocyte",
+            "options": {},
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 48,
+            "content": "下列有關⾎管內溶⾎最常⾒的檢驗特徵，何者錯誤？",
+            "options": {
+                "A": "⾎紅素⾎症（hemoglobinemia）",
+                "B": "⾼鐵⾎紅質⽩蛋⽩⾎症（methemalbuminemia）",
+                "C": "⾎鐵質尿症（hemosiderinuria）",
+                "D": "⾎鐵沉積症（hemochromatosis）"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 49,
+            "content": "下列何者為新⽣兒溶⾎性疾病（hemolytic disease of newborn）引起的貧⾎？",
+            "options": {
+                "A": "Hereditary hemolytic anemia",
+                "B": "Acquired autoimmune hemolytic anemia",
+                "C": "Acquired non-immune hemolytic anemia",
+                "D": "Acquired alloimmune hemolytic anemia"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 50,
+            "content": "有關intrinsic factor（IF）的敘述，下列何者正確？",
+            "options": {
+                "A": "是⼀種醣蛋⽩",
+                "B": "由腸壁細胞合成",
+                "C": "IF的type II抗體會阻斷IF與Vit.B12的結合",
+                "D": "IF的type I抗體會阻斷IF-Vit.B12複合體與腸壁結合"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 51,
+            "content": "某女性受檢者之⾎液檢體測得紅⾎球佔⾎液體積33%，紅⾎球數⽬3.3×106/μL，⾎⾊素11g/dL，下列敘述何\n者錯誤？",
+            "options": {
+                "A": "MCV=100fL",
+                "B": "MCHC=33.3%",
+                "C": "MCH=150pg",
+                "D": "可能有貧⾎症狀"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 52,
+            "content": "⼈類第11號染⾊體含有下列那些⾎紅蛋⽩（globin）基因？",
+            "options": {
+                "A": "α1, β, Gγ, Aγ, δ, ζ, α",
+                "B": "ζ, α1, α2",
+                "C": "ε, Gγ, Aγ, δ, β",
+                "D": "α1, α2, β, Gγ, Aγ"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 53,
+            "content": "下列何者不是多發性骨髓瘤（multiple myeloma）病患常⾒的臨床症狀？",
+            "options": {
+                "A": "骨頭疼痛",
+                "B": "貧⾎",
+                "C": "腎衰竭",
+                "D": "低⾎鈣"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 54,
+            "content": "慢性骨髓性⽩⾎病（CML）的費城染⾊體所造成之BCR-ABL1異常融合蛋⽩質具下列何種活性，導致細胞快\n速增⽣？",
+            "options": {
+                "A": "Alkaline phosphatase",
+                "B": "Cyclin-D kinase",
+                "C": "Tyrosine kinase",
+                "D": "Lactate dehydrogenase"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 55,
+            "content": "在臺灣，下列那⼀種免疫型惡性淋巴瘤的比例最⾼？",
+            "options": {
+                "A": "T cell",
+                "B": "B cell",
+                "C": "NK cell",
+                "D": "Plasma cell"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 56,
+            "content": "某位新⽣兒早上8：00的⽩⾎球數⽬為13,000/μL、嗜中性球為40%、淋巴球為25%，下午5：00⽩⾎球數⽬\n為26,000/μL、嗜中性球為30%、淋巴球為45%，下列敘述何者正確？",
+            "options": {
+                "A": "該新⽣兒早上8：00的⽩⾎球數⽬⾼於參考值範圍",
+                "B": "該新⽣兒下午5：00的⽩⾎球數⽬低於參考值範圍",
+                "C": "⽩⾎球數⽬參考值範圍於不同年齡皆⼀致",
+                "D": "新⽣兒的⽩⾎球數⽬參考值範圍較成⼈者為⾼"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 57,
+            "content": "以流式細胞儀（flow cytometry）與⾃動化全⾎細胞計數（complete blood count, CBC）儀進⾏⽩⾎球檢驗\n時，下列何者最正確？",
+            "options": {
+                "A": "⼆者皆須先將紅⾎球溶解，並進⾏螢光抗體標⽰",
+                "B": "⾃動化全⾎細胞計數上機前不需溶解紅⾎球，也可不需使⽤螢光抗體標⽰",
+                "C": "流式細胞儀上機前需先離⼼將紅⾎球移除",
+                "D": "流式細胞儀使⽤後樣本，可以直接再⽤⾃動化全⾎細胞計數分析，反之亦然"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 58,
+            "content": "下列何者為正常成⼈主要的造⾎器官？",
+            "options": {
+                "A": "肝臟",
+                "B": "腎臟",
+                "C": "脊髓",
+                "D": "骨髓"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 59,
+            "content": "下列何者不是May-Hegglin anomaly之特徵？",
+            "options": {
+                "A": "Basophilic inclusion body in neutrophil cytoplasm",
+                "B": "Thrombocytopenia",
+                "C": "Giant platelet"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 60,
+            "content": "下列那些是⼈類初級（primary）的淋巴細胞⽣成器官？①bone marrow\n②thymus\n③spleen\n④lymph\nnodes\n⑤liver",
+            "options": {
+                "A": "③⑤",
+                "B": "①④",
+                "C": "②③",
+                "D": "①②"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 61,
+            "content": "Infectious mononucleosis的⾎液檢驗變化包括下列何者？①lymphocytosis\n②pleomorphic atypical\nlymphocytes\n③antibody against EBV\n④heterophile antibody",
+            "options": {
+                "A": "①②③④",
+                "B": "僅①②③",
+                "C": "僅①②",
+                "D": "僅④"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 62,
+            "content": "下列那種染⾊體變化常⾒於化療藥物etoposide引起的therapy-related AML？",
+            "options": {
+                "A": "t(9;22)BCR-ABL1",
+                "B": "t(12;21)ETV6-RUNX1",
+                "C": "11q MLL rearrangement",
+                "D": "t(8;21)RUNX1-RUNX1T1"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 63,
+            "content": "下列何者不是凝⾎第八因⼦與第九因⼦的共通性質？",
+            "options": {
+                "A": "兩者皆屬於肝臟製造的維⽣素K依賴型凝⾎因⼦",
+                "B": "缺乏第八或第九因⼦所引起的疾病皆為⾎友病",
+                "C": "臨床篩檢試驗皆使⽤APTT",
+                "D": "兩者的基因皆座落於X染⾊體"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 64,
+            "content": "那⼀型von Willebrand disease（VWD）的特徵是von Willebrand factor（VWF）吸附凝⾎第八因⼦能⼒下\n降？",
+            "options": {
+                "A": "Type 2A",
+                "B": "Type 2B",
+                "C": "Type 2M",
+                "D": "Type 2N"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 65,
+            "content": "有關von Willebrand factor（VWF）之敘述，下列何者錯誤？",
+            "options": {
+                "A": "儲存於⾎⼩板α顆粒或內⽪細胞Weibel-Palade bodies",
+                "B": "受⾎型影響，O型⼈⾎中VWF含量最低",
+                "C": "Ristocetin可誘導VWF吸附於⾎⼩板表⾯",
+                "D": "VWF缺乏導致VWD，其症狀男性較女性嚴重"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 66,
+            "content": "有關肝素（heparin）作⽤模式，下列敘述何者錯誤？",
+            "options": {
+                "A": "誘發⾎⼩板數⽬下降⽽達到抗凝⾎效果",
+                "B": "可使⽤於治療及預防靜脈⾎栓"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 67,
+            "content": "當結合檢驗前風險（pretest probability）臨床評估時，下列那項檢驗最適合排除肺動脈栓塞？",
+            "options": {
+                "A": "D⼆聚體（d-dimer）定性檢驗",
+                "B": "D⼆聚體（d-dimer）定量檢驗",
+                "C": "纖維蛋⽩裂解產物（FDP）定性檢驗",
+                "D": "纖維蛋⽩裂解產物（FDP）定量檢驗"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 68,
+            "content": "下列何者與⾎液同半胱胺酸（homocysteine）濃度上升最無關？",
+            "options": {
+                "A": "葉酸缺乏",
+                "B": "維⽣素B6缺乏",
+                "C": "methylenetetrahydrofolate還原酶基因突變",
+                "D": "蛋胺酸（methionine）缺乏"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 69,
+            "content": "下表有關⾎⼩板減少症與A型⾎友病之比較，何者最不恰當？",
+            "options": {
+                "A": "①臨床表現",
+                "B": "②Bleeding time",
+                "C": "③PFA-100 Closure time",
+                "D": "④凝⾎檢查aPTT"
+            },
+            "image_path": "image/臨床血液學和血庫學/108年_第一次/題目1081血液/題目1081血液-page11-img4.png",
+            "page_number": 11,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 70,
+            "content": "有關內⽪細胞製造的抗⾎⼩板凝集物質，下列何者錯誤？",
+            "options": {
+                "A": "NO",
+                "B": "ADPase",
+                "C": "PGI2",
+                "D": "Thromboxane A2"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 71,
+            "content": "在⾎⼩板內進⾏以下反應，下列有關此反應之敘述，何者正確？",
+            "options": {
+                "A": "終產物為thromboxane A2；cAMP濃度上升",
+                "B": "終產物為prostacyclin ；cAMP濃度上升",
+                "C": "終產物為thromboxane A2；cAMP濃度下降",
+                "D": "終產物為prostacyclin；cAMP濃度下降"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 72,
+            "content": "以標準試劑濃度檢測Bernard Soulier syndrome病⼈⾎⼩板之凝集功能，下列何者為最常⾒的結果？",
+            "options": {},
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 73,
+            "content": "有關⾎⼩板促進⾎液凝固之敘述，下列何者錯誤？",
+            "options": {
+                "A": "⾎⼩板表⾯提供磷脂質（phospholipid），有利於外因性路徑tenase之形成",
+                "B": "⾎⼩板表⾯提供磷脂質，有利於prothrombinase之形成",
+                "C": "⾎⼩板表⾯提供磷脂質，有利內因性路徑tenase之形成",
+                "D": "⾎⼩板表⾯提供磷脂質，有利於thrombomodulin-thrombin complex之形成"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 74,
+            "content": "下列何者最常在⾎庫檢驗中造成冷凝集素產⽣的凝集作⽤？",
+            "options": {
+                "A": "Anti-I",
+                "B": "Anti-P",
+                "C": "Anti-M",
+                "D": "Anti-i"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 75,
+            "content": "發⽣輸⾎反應時，下列何種情境應檢測病⼈IgA濃度？",
+            "options": {
+                "A": "懷疑IgA引起之溶⾎反應",
+                "B": "懷疑輸⾎相關急性肺傷害",
+                "C": "懷疑輸⾎相關移植體反宿主反應",
+                "D": "懷疑休克性過敏反應"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 76,
+            "content": "輸⾎後⼆星期病⼈出現發燒、全⾎球低下、紅疹、肝功能異常。懷疑下列何種輸⾎反應時，需檢測病⼈⾎液\n中是否有捐贈者之淋巴球，以確認是否有chimerism現象？",
+            "options": {
+                "A": "延遲性溶⾎反應",
+                "B": "輸⾎相關急性肺傷害"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 77,
+            "content": "⼩章最近臉⾊蒼⽩，醫師發現他⾎中⽩⾎球超標（過⾼），⾎液抹片如下圖。\n下列何者是最可能的診斷？",
+            "options": {
+                "A": "Burkitt lymphoma",
+                "B": "Hairy cell leukemia",
+                "C": "Chronic lymphocytic leukemia",
+                "D": "Acute promyelocytic leukemia"
+            },
+            "image_path": null,
+            "page_number": 13,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 78,
+            "content": "承上題，下列何種表⾯標記組合最能代表圖中的腫瘤細胞？",
+            "options": {
+                "A": "CD5(+)CD19(+)CD23(+)",
+                "B": "CD5(+)CD19(-)CD23(+)",
+                "C": "CD5(-)CD19(+)CD23(+)",
+                "D": "CD5(+)CD19(+)CD23(-)"
+            },
+            "image_path": null,
+            "page_number": 13,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 79,
+            "content": "35歲男性因腹脹就醫，CBC檢驗結果為WBC 65.6×109/L、RBC 3.05×1012/L、Hb 9.1g/dL、PLT\n280×109/L，周邊⾎液抹片如圖，箭頭所指為下列何種細胞？",
+            "options": {
+                "A": "Blast",
+                "B": "Promyelocyte",
+                "C": "Basophil",
+                "D": "Monocyte"
+            },
+            "image_path": "image/臨床血液學和血庫學/108年_第一次/題目1081血液/題目1081血液-page13-img2.png",
+            "page_number": 13,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 80,
+            "content": "承上題，其LAP score為12，則此病例的⾎液細胞最可能發⽣下列那種染⾊體轉位？",
+            "options": {
+                "A": "t(9;22)BCR-ABL1",
+                "B": "t(12;21)ETV6-RUNX1",
+                "C": "t(8;21)RUNX1-RUNX1T1",
+                "D": "t(15;17)PML-RARA"
+            },
+            "image_path": null,
+            "page_number": 14,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        }
+    ]
+}

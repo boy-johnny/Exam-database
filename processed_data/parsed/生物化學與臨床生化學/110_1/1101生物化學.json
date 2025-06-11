@@ -1,0 +1,1266 @@
+{
+    "meta": {
+        "exam_name": "110年第一次專門職業及技術人員高等考試醫師牙醫師藥師考試分階",
+        "subject_name": "生物化學與臨床生化學",
+        "subject_code": "5308",
+        "subject_type": "醫事檢驗師",
+        "year": 110,
+        "period": 1,
+        "question_count": null
+    },
+    "questions": [
+        {
+            "question_number": 1,
+            "content": "下列何種胺基酸對於蛋白質的易曲性（Flexibility）影響最顯著？",
+            "options": {
+                "A": "苯丙胺酸（Phenylalanine）",
+                "B": "酪胺酸（Tyrosine）",
+                "C": "色胺酸（Tryptophan）",
+                "D": "脯胺酸（Proline）"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 2,
+            "content": "兩個胺基酸結合形成一個雙肽過程中將脫去一個什麼分子？",
+            "options": {
+                "A": "CO2",
+                "B": "NH3",
+                "C": "CO",
+                "D": "H2O"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 3,
+            "content": "利用凝膠過濾層析法（Gel filtration chromatography）的方式分離蛋白質，主要是依據蛋白質的何種性質？",
+            "options": {
+                "A": "溶解度差異",
+                "B": "帶電荷多寡",
+                "C": "親和力差異",
+                "D": "分子大小差異"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 4,
+            "content": "下列何者不是嘌呤核苷酸（Purine nucleotides）合成之回收路徑（Salvage pathway）所參與酵素的受質？",
+            "options": {
+                "A": "鳥嘌呤（Guanine）",
+                "B": "腺嘌呤（Adenine）",
+                "C": "次黃嘌呤（Hypoxanthine）",
+                "D": "肌苷（Inosine）"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 5,
+            "content": "生酮性胺基酸（Ketogenic amino acids）代謝分解產生酮體（Ketone bodies）過程中，會生成下列何種化合物？",
+            "options": {
+                "A": "乙醯乙醯輔酶A（Acetoacetyl-CoA）",
+                "B": "延胡索酸（Fumarate）",
+                "C": "草醯乙酸（Oxaloacetate）",
+                "D": "琥珀醯輔酶A（Succinyl-CoA）"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 6,
+            "content": "當以西方墨點電泳法分析蛋白質時，最宜使用下列何種膠體進行電泳？",
+            "options": {
+                "A": "Agarose",
+                "B": "Cellulose acetate",
+                "C": "Citrate agar"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 7,
+            "content": "下列何者負責運輸血液中的游離脂肪酸（Free fatty acid）？",
+            "options": {
+                "A": "白蛋白（Albumin）",
+                "B": "球蛋白（Globulin）",
+                "C": "低密度脂蛋白（LDL）",
+                "D": "乳糜微粒（Chylomicron）"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 8,
+            "content": "下列何者不易作為糖質新生作用（Gluconeogenesis）的前驅物？",
+            "options": {
+                "A": "胺基酸",
+                "B": "甘油",
+                "C": "核酸",
+                "D": "乳酸"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 9,
+            "content": "下列有關酮體（Ketone bodies）的敘述，何者錯誤？",
+            "options": {
+                "A": "某些糖尿病患者呼吸時會有特殊的氣味是因為Acetone",
+                "B": "肝臟缺乏β-Ketoacyl-CoA transferase，因此肝臟無法利用酮體作為能量的來源",
+                "C": "腎臟為主要產生酮體的器官，所產生的酮體可以作為其他器官能量的來源",
+                "D": "常見於糖尿病患者的酸中毒現象，主要是因其血中Acetoacetate和β-Hydroxybutyrate的含量上升所造成"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 10,
+            "content": "在動物體內的肝醣與植物中澱粉之結構異同處為：",
+            "options": {
+                "A": "兩者都以α-1,4鍵結為主；肝醣有較多的β-1,6鍵分支",
+                "B": "兩者都以β-1,4鍵結為主；肝醣有較多的β-1,6鍵分支",
+                "C": "兩者都以α-1,4鍵結為主；肝醣有較多的α-1,6鍵分支",
+                "D": "兩者都以β-1,4鍵結為主；肝醣有較多的α-1,6鍵分支"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 11,
+            "content": "假設一酵素反應遵循Michaelis-Menten kinetics，則下列有關酵素Km的敘述，何者錯誤？",
+            "options": {
+                "A": "當反應達穩定狀態時，酵素和受質之間親和力的一種參數",
+                "B": "當一個酵素催化反應達最大反應速率時，所加受質的濃度",
+                "C": "可在實驗中由Lineweaver-Burk plot測得",
+                "D": "同一個酵素若可催化兩種不同受質，則針對此兩種不同受質可能會有不同的Km"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 12,
+            "content": "有關下視丘在內分泌系統功能的敘述，下列何者錯誤？",
+            "options": {
+                "A": "下視丘製造多種釋素（Releasing hormones），刺激腦垂體前葉釋放相關的促素（Tropic hormone）",
+                "B": "下視丘可經神經傳導，刺激腦垂體後葉製造精胺酸升壓素（Arginine vasopressin）",
+                "C": "下視丘製造釋素（Releasing hormone）的功能，可受到相關促素（Tropic hormone）的抑制",
+                "D": "除了釋素（Releasing hormone）外，下視丘亦分泌激素抑制因子（Release-inhibiting hormone）"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 13,
+            "content": "下列那一種甲狀腺激素具有最高的生理活性？",
+            "options": {
+                "A": "游離型三碘甲狀腺素（FT3）",
+                "B": "二碘酪胺酸（Diiodotyrosine）",
+                "C": "反三碘甲狀腺素（rT3）",
+                "D": "游離型甲狀腺素（FT4）"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 14,
+            "content": "集尿腎小管（Collecting tubule）的水分再吸收受下列何者調控？",
+            "options": {
+                "A": "ADH",
+                "B": "PTH",
+                "C": "ACTH",
+                "D": "FSH"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 15,
+            "content": "下列何種元素可取代胺基酸之半胱氨酸（Cysteine）的硫原子，而穩定存在？",
+            "options": {
+                "A": "矽（Si）",
+                "B": "砷（As）",
+                "C": "硼（B）",
+                "D": "硒（Se）"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 16,
+            "content": "下列何種維生素是flavin mononucleotide（FMN）及flavin adenine dinucleotide（FAD）的主要成分？",
+            "options": {
+                "A": "Vitamin B2",
+                "B": "Vitamin B1",
+                "C": "Vitamin B3",
+                "D": "Vitamin B6"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 17,
+            "content": "下列何種維生素主要參與碳水化合物的代謝？",
+            "options": {
+                "A": "Folic acid",
+                "B": "Tocopherol",
+                "C": "Thiamine",
+                "D": "Retinol"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 18,
+            "content": "以己糖激酶法進行葡萄糖之檢測，需要耦合下列那一種酵素？",
+            "options": {
+                "A": "葡萄糖氧化酶",
+                "B": "過氧化酶",
+                "C": "葡萄糖脫氫酶",
+                "D": "葡萄糖-6-磷酸脫氫酶"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 19,
+            "content": "下列那一種腫瘤標誌的血清濃度被用來評估卵巢癌之指標？",
+            "options": {
+                "A": "CA 19-9",
+                "B": "Du-PAN-2",
+                "C": "CA125",
+                "D": "PAPP-A"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 20,
+            "content": "採檢之血液檢體，離心前應置於何種環境保存，最可避免溶血？",
+            "options": {
+                "A": "冰上或 4℃冷藏",
+                "B": "-20℃冷凍",
+                "C": "-80℃冷凍",
+                "D": "室溫（25℃）"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 21,
+            "content": "以Cellulose acetate進行血清蛋白質電泳分析，發現Albumin area為120 units，β-Globulin area為20 units，Total\narea為180 units，Total protein為6.3 g/dL，則β-Globulin的含量為多少g/dL？",
+            "options": {},
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 22,
+            "content": "華登氏巨球蛋白症（Waldenström's macroglobulinemia）患者之血清中，下列何者增高最明顯？",
+            "options": {
+                "A": "IgA",
+                "B": "IgE",
+                "C": "IgG",
+                "D": "IgM"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 23,
+            "content": "下列那一種血漿蛋白具有運送膽紅素、血鈣、游離脂肪酸及多種藥物的功能？",
+            "options": {
+                "A": "白蛋白（Albumin）",
+                "B": "運鐵蛋白（Transferrin）",
+                "C": "結合球蛋白（Haptoglobin）",
+                "D": "纖維蛋白原（Fibrinogen）"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 24,
+            "content": "檢驗尿中微量白蛋白（Microalbumin）主要目的為何？",
+            "options": {
+                "A": "診斷肝功能異常",
+                "B": "診斷腸胃道蛋白流失",
+                "C": "評估血腦屏障的通透性",
+                "D": "評估腎絲球之膜通透性"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 25,
+            "content": "對新生兒血液進行胺基酸代謝異常的篩檢，以下檢測方法中被認為是黃金標準（Gold Standard）的為何？",
+            "options": {
+                "A": "氣相層析法（GC）",
+                "B": "高效能液相層析法（HPLC）",
+                "C": "串連質譜儀（Tandem mass spectrometry）",
+                "D": "毛細管電泳（Capillary electrophoresis）"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 26,
+            "content": "肌酸（Creatine）經由那一種自發性反應產生肌酸酐（Creatinine）？",
+            "options": {
+                "A": "脫水縮合",
+                "B": "加水分解",
+                "C": "被氧氧化",
+                "D": "脫氨水解"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 27,
+            "content": "下列有關Prealbumin (Transthyretin)與Albumin之比較，何者錯誤？",
+            "options": {
+                "A": "Prealbumin (Transthyretin)於血清蛋白電泳時比 Albumin更接近陽極",
+                "B": "Prealbumin (Transthyretin)比 Albumin為更理想之營養不良之指標",
+                "C": "兩者在血液中均為結合蛋白，具有運輸功能",
+                "D": "Prealbumin (Transthyretin)比 Albumin影響血清膠質滲透壓（Colloidal osmotic pressure）更顯著"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 28,
+            "content": "在急性腎損傷（Acute kidney injury）時，下列何種蛋白的血清濃度比Creatinine上升還快？",
+            "options": {
+                "A": "Cystatin C",
+                "B": "Albumin"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 29,
+            "content": "在一個生理酸鹼值（Physiological pH）的溶液中，各種胺基酸的帶電性最可能是：",
+            "options": {
+                "A": "纈胺酸（Valine）帶正電",
+                "B": "離胺酸（Lysine）帶負電",
+                "C": "酪胺酸（Tyrosine）電中性",
+                "D": "天冬門胺酸（Asparagine）帶負電"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 30,
+            "content": "下列何種血清蛋白不是正向急性反應期蛋白（Positive acute-phase protein）？",
+            "options": {
+                "A": "Ceruloplasmin",
+                "B": "Transthyretin",
+                "C": "α1-Acid glycoprotein",
+                "D": "Haptoglobin"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 31,
+            "content": "關於胺基酸代謝異常疾病，下列何種血液變化最為罕見？",
+            "options": {
+                "A": "特定胺基酸囤積",
+                "B": "代謝副產物增加",
+                "C": "代謝有機酸過量",
+                "D": "特定胺基酸不足"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 32,
+            "content": "下列何種Apolipoprotein 是β-Lipoprotein的主要成分？",
+            "options": {
+                "A": "Apo A-I",
+                "B": "Apo B-48",
+                "C": "Apo B-100",
+                "D": "Apo E"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 33,
+            "content": "血中葡萄糖測定常用NaF當抗凝劑，NaF可抑制下列那種酵素，進而抑制糖解作用？",
+            "options": {
+                "A": "己糖激酶（Hexokinase）",
+                "B": "葡萄糖運送體-4（GLUT4）",
+                "C": "烯醇化酶（Enolase）",
+                "D": "磷酸烯醇丙酮酸羧激酶（Phosphoenolpyruvate carboxykinase）"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 34,
+            "content": "下列何者不是胰島素的功能？",
+            "options": {
+                "A": "促進蛋白質合成",
+                "B": "促進酮酸合成",
+                "C": "促進脂肪合成",
+                "D": "促進肝醣合成"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 35,
+            "content": "檢測下列何者，可用來評估脂肪代謝狀態？",
+            "options": {
+                "A": "低密度脂蛋白膽固醇（LDL cholesterol）",
+                "B": "總膽固醇（Total cholesterol）",
+                "C": "空腹8小時以上之三酸甘油脂（TG）",
+                "D": "高密度脂蛋白膽固醇（HDL cholesterol）"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 36,
+            "content": "用Glucose oxidase／Peroxidase 呈色法進行血糖分析，若血清中尿酸過高時，對血糖值可能有何影響？",
+            "options": {
+                "A": "假性降低",
+                "B": "假性升高",
+                "C": "沒有影響",
+                "D": "無法判斷"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 37,
+            "content": "下列對於臨床上分析糖化血紅素HbA1c的敘述，何者正確？",
+            "options": {
+                "A": "不須空腹",
+                "B": "分析時同時偵測Labile和Stable HbA1c",
+                "C": "檢體收集後2小時內須完成分析",
+                "D": "只能用層析法進行分析"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 38,
+            "content": "糖尿病患者因血糖控制不良所引起之代謝性酸中毒，最可能的原因為何？",
+            "options": {
+                "A": "低三酸甘油脂血症（Hypotriglyceridemia）",
+                "B": "Lactic acid形成增加",
+                "C": "Acetoacetate形成降低",
+                "D": "脂肪組織Lipolysis作用增加"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 39,
+            "content": "在空腹狀態下，循環血液中的三酸甘油脂（Triglyceride）主要存在那一種脂蛋白中？",
+            "options": {
+                "A": "乳糜微粒（Chylomicron）",
+                "B": "極低密度脂蛋白（VLDL）",
+                "C": "低密度脂蛋白（LDL）",
+                "D": "高密度脂蛋白（HDL）"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 40,
+            "content": "脂蛋白（Lipoprotein）分類是依照何種分子特性？",
+            "options": {
+                "A": "密度",
+                "B": "蛋白組成比例",
+                "C": "質量",
+                "D": "生合成的位置"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 41,
+            "content": "在嚴重的糖尿病病患代謝過程中，下列何種物質產生過量時，會直接促進酮體形成，導致酮酸中毒？",
+            "options": {
+                "A": "Fatty acid",
+                "B": "Oxaloacetate",
+                "C": "Glyceride",
+                "D": "Acetyl-CoA"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 42,
+            "content": "膽固醇是一種兩性分子（Amphipathic），是由於那個碳原子上有氫氧基（OH group），使它具有極性\n（Polar）的特性？",
+            "options": {
+                "A": "3號碳原子",
+                "B": "6號碳原子",
+                "C": "9號碳原子",
+                "D": "27號碳原子"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 43,
+            "content": "Crigler-Najjar症候群病人的血中，血清膽紅素含量上升之原因為何？",
+            "options": {},
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 44,
+            "content": "下列何種血清酵素在Paget disease患者會上升？",
+            "options": {
+                "A": "Alanine aminotransferase",
+                "B": "Alkaline phosphatase",
+                "C": "γ-Glutamyltransferase",
+                "D": "Lactate dehydrogenase"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 45,
+            "content": "某病患之生化檢查結果為γ-Glutamyltransferase（GGT）正常，Alkaline phosphatase（ALP）上升；在檢體加入\nPhenylalanine或Urea後，ALP活性並未明顯下降。該病患最可能有下列何種疾病？",
+            "options": {
+                "A": "遺傳性低血磷症（Inherited hypophosphatemia）",
+                "B": "肝膽道疾病（Hepatobiliary disorders）",
+                "C": "柏德氏症（Paget disease）",
+                "D": "急性心肌梗塞（Acute myocardial infarction, AMI）"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 46,
+            "content": "測試Creatine kinase（CK）酵素活性時，在試劑中加入N-acetylcysteine之主要目的為何？",
+            "options": {
+                "A": "去除血清中干擾物",
+                "B": "穩定CK酵素之活性",
+                "C": "提高反應之特異性",
+                "D": "縮短反應時間"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 47,
+            "content": "下列何種酵素來自Neutrophils，且可作為心血管風險指標？",
+            "options": {
+                "A": "Phospholipase A2（PLA2）",
+                "B": "Glycogen phosphorylase BB（GP-BB）",
+                "C": "Soluble CD40 ligand（sCD40L）",
+                "D": "Myeloperoxidase（MPO）"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 48,
+            "content": "以尿酸酶（Uricase）進行尿酸的測定，應盡量避免那些干擾物？",
+            "options": {
+                "A": "膽紅素（Bilirubin）及抗壞血酸（Ascorbic acid）",
+                "B": "膽固醇（Cholesterol）及水楊酸（Salicylic acid）",
+                "C": "酮體（Ketone body）及脂肪酸",
+                "D": "氨（Ammonia）及碳酸氫根"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 49,
+            "content": "下列那些物質最常做為肝臟排除外來有機物（Xenobiotics）能力之評估？",
+            "options": {
+                "A": "溴磺酞（Bromsulfophthalein, BSP）及靛青Indocyanine green（ICG）",
+                "B": "酚磺酞（Phenolsulfonphthalein, PSP）及ρ-胺基馬尿酸（ρ-aminohippuric acid, PHA）",
+                "C": "肌酸酐（Creatinine）及尿素（Urea）",
+                "D": "菊糖（Inulin）及硫代硫酸鈉（Sodium thiosulfate）"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 50,
+            "content": "下列何種酵素不適用於檢測肝膽阻塞性疾病？",
+            "options": {
+                "A": "Alkaline phosphatase（ALP）"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 51,
+            "content": "下列那一種血清酵素檢驗對胰臟炎特異性最高，較不易受到肝炎或腮腺炎等影響？",
+            "options": {
+                "A": "澱粉酶（AMY）",
+                "B": "脂酶（LPS）",
+                "C": "麩胺醯轉移酶（GGT）",
+                "D": "酸性磷酸酶（ACP）"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 52,
+            "content": "在典型的非競爭性酵素抑制反應（Uncompetitive inhibition reaction）中，並無下列何種中間產物生成？（E表\n酵素，S表受質，I表抑制劑）",
+            "options": {
+                "A": "EI複合物",
+                "B": "ES複合物",
+                "C": "ESI複合物",
+                "D": "以上中間產物皆會生成"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 53,
+            "content": "在利用NADH的消耗測定血清麩胺酸脫氫酶（Glutamate Dehydrogenase, GLD）活性，試劑添加Oxamate的目\n的為何？",
+            "options": {
+                "A": "活化GLD",
+                "B": "抑制Lactate dehydrogenase (LD)",
+                "C": "降低檢體混濁度的干擾",
+                "D": "競爭型抑制GLD"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 54,
+            "content": "下列何者不適合當作Myocardial injury的生物標誌？",
+            "options": {
+                "A": "Creatine kinase-BB (CK-BB)",
+                "B": "Cardiac troponins T (cTnT)",
+                "C": "High-sensitivity C-reactive protein (hsCRP)",
+                "D": "Lipoprotein-associated Phospholipase A2 (Lp-PLA2)"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 55,
+            "content": "下列何種分子製造時，不以酪胺酸（Tyrosine）為前驅物（Precursor）？",
+            "options": {
+                "A": "Thyroxine（T4）",
+                "B": "Epinephrine",
+                "C": "Reverse triiodothyronine（rT3）",
+                "D": "Melatonin"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 56,
+            "content": "下列何種方法最適合臨床檢測Cardiac troponins（cTns）？",
+            "options": {
+                "A": "Immunoassay",
+                "B": "HPLC",
+                "C": "Electrophoresis",
+                "D": "Photometric assay"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 57,
+            "content": "原發性腎上腺功能不足（Primary adrenal insufficiency）又稱為下列何種疾病？",
+            "options": {
+                "A": "Kallmann syndrome"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 58,
+            "content": "甲狀腺分泌的激素中，不包括下列何者？",
+            "options": {
+                "A": "Parathyroid  hormone（PTH）",
+                "B": "Thyroxine（T4）",
+                "C": "抑鈣素（Calcitonin）",
+                "D": "Triiodothyronine（T3）"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 59,
+            "content": "有關腫瘤標誌CA 19-9的敘述，下列何者最正確？",
+            "options": {
+                "A": "在血清中以脂蛋白的型式存在",
+                "B": "分子量19.9 kDa",
+                "C": "在血清中以Glycoprotein的型式存在",
+                "D": "主要是做為評估乳癌之指標"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 60,
+            "content": "下列何者數據最可能為原發性甲狀腺功能亢進症（Primary hyperthyroidism）？",
+            "options": {
+                "A": "TSH上升，T3下降，T4下降",
+                "B": "TSH上升，T3上升，T4上升",
+                "C": "TSH下降，T3上升，T4上升",
+                "D": "TSH下降，T3下降，T4上升"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 61,
+            "content": "女性在濾泡期時，何種激素的大量增加會立即促使排卵（Ovulation）的發生？",
+            "options": {
+                "A": "LH",
+                "B": "FSH",
+                "C": "Progesterone",
+                "D": "Inhibin A"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 62,
+            "content": "絨毛膜促性腺激素-乙亞單體（β-Human chorionic gonadotropin, β-hCG）最適合臨床上用來檢測何種腫瘤或癌\n症？",
+            "options": {
+                "A": "卵巢瘤（ovary tumors）",
+                "B": "生殖細胞瘤（nonseminomatous testicular germ cell tumors）",
+                "C": "攝護腺瘤（prostate tumors）",
+                "D": "畸胎瘤（teratoma）"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 63,
+            "content": "臨床上利用免疫測定法（Hybritech PSA method）來測量PSA (Prostate-Specific Antigen)以評估攝護腺癌時，主\n要是檢測PSA之何種形式？",
+            "options": {
+                "A": "自由型PSA",
+                "B": "自由型及複合型PSA",
+                "C": "PSA complexed with α1-antichymotrypsin",
+                "D": "PSA complexed with α2-macroglobulin"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 64,
+            "content": "下列何者可作為評估胎兒唐氏症（Down syndrome）的參考指標？",
+            "options": {},
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 65,
+            "content": "欲測血漿中鉀的濃度，應以下列何種抗凝劑收集檢體？",
+            "options": {
+                "A": "Potassium EDTA",
+                "B": "Lithium heparin",
+                "C": "Sodium citrate",
+                "D": "Sodium fluoride"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 66,
+            "content": "血液氣體分析儀中，PO2 electrode 是測定下列何者之變化？",
+            "options": {
+                "A": "電流",
+                "B": "滲透壓",
+                "C": "電壓",
+                "D": "氣壓"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 67,
+            "content": "何種形式之Vitamin D對腸道吸收鈣質之功能最顯著？",
+            "options": {
+                "A": "Vitamin D3",
+                "B": "25-Hydroxyvitamin D3 [25(OH)D3]",
+                "C": "24,25-Dihydroxyvitamin D3 [24,25(OH)2D3]",
+                "D": "1,25-Dihydroxyvitamin D3 [1,25(OH)2D3]"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 68,
+            "content": "以Plasma osmolality equation來計算血液中滲透壓，可做為電解質及酸鹼中毒疾病的參考。下列何者不包含在\n此計算公式中？",
+            "options": {
+                "A": "Na+",
+                "B": "K+",
+                "C": "Glucose",
+                "D": "Urea"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 69,
+            "content": "有關測試血鈣濃度的敘述，下列何者正確？",
+            "options": {
+                "A": "以Ion selective electrode（ISE）法可測得複合型鈣（Complexed Ca2+）",
+                "B": "檢體以EDTA為抗凝劑",
+                "C": "以Ortho-cresolphthalein complexone（OCPC）法測Total Ca2+時，加入8-Hydroxyquinoline可以避免Mg2+之干\n擾",
+                "D": "以Ortho-cresolphthalein complexone（OCPC）法測Total Ca2+時，檢體要先鹼化"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 70,
+            "content": "高血脂（Hyperlipidemia）及高血蛋白（Hyperproteinemia）的檢體，在檢測電解質濃度時，由於電解質排除效\n應（Electrolyte exclusion effect）會影響檢測結果，下列敘述何者正確？",
+            "options": {
+                "A": "高血脂會使其假性升高，高血蛋白會使其假性降低",
+                "B": "高血脂會使其假性降低，高血蛋白會使其假性升高",
+                "C": "兩者皆會使其假性升高"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 71,
+            "content": "為診斷病患是否為囊腫性纖維化（Cystic fibrosis），使用下列何種檢體來檢測氯離子最適宜？",
+            "options": {
+                "A": "血液",
+                "B": "尿液",
+                "C": "脊髓液",
+                "D": "汗液"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 72,
+            "content": "代謝性酸中毒的代償作用，會產生下列何種狀況？",
+            "options": {
+                "A": "呼吸急促，使PCO2下降",
+                "B": "呼吸急促，使PCO2上升",
+                "C": "呼吸緩慢，使PCO2上升",
+                "D": "呼吸緩慢，使PCO2下降"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 73,
+            "content": "慢性阻塞性肺病（Chronic obstructive pulmonary disease, COPD）常會併發下列何種狀況？",
+            "options": {
+                "A": "呼吸性酸中毒",
+                "B": "呼吸性鹼中毒",
+                "C": "代謝性酸中毒",
+                "D": "代謝性鹼中毒"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 74,
+            "content": "長期暴露於含有下列那一種金屬元素的粉塵下，會造成該金屬在腦部堆積，因而引起類似巴金森氏症\n（Parkinson-like）的神經退化？",
+            "options": {
+                "A": "鉻（Chromium, Cr）",
+                "B": "錳（Manganese, Mn）",
+                "C": "鈹（Beryllium, Be）",
+                "D": "鈷（Cobalt, Co）"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 75,
+            "content": "下列何者較適合做為鉛中毒時血液檢測的項目？",
+            "options": {
+                "A": "Aminolevulinic acid",
+                "B": "Coproporphyrin-III",
+                "C": "Zinc protoporphyrin",
+                "D": "Porphobilinogen"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 76,
+            "content": "與烏腳病的發生最有關係的有毒元素為：",
+            "options": {
+                "A": "鉛（Pb）",
+                "B": "砷（As）",
+                "C": "鎘（Cd）",
+                "D": "汞（Hg）"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 77,
+            "content": "不同形態汞（Hg）的毒性大小，由高至低排列：①一價汞（Hg+）\n②雙甲基汞（(CH3)2Hg） ③還原汞\n（Hg0）",
+            "options": {
+                "A": "①②③",
+                "B": "②①③"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 78,
+            "content": "乙醯氨酚（Acetaminophen）在肝臟代謝中受CYP450的作用成N-acetyl-p-benzoquinoneimine（NAPQI）的過程\n是屬於何種代謝反應？",
+            "options": {
+                "A": "Phase I",
+                "B": "Phase II",
+                "C": "Phase III",
+                "D": "Phase IV"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 79,
+            "content": "下列關於甲醇中毒的敘述，何者錯誤？",
+            "options": {
+                "A": "嚴重時造成酸中毒",
+                "B": "代謝產生Acetone的累積",
+                "C": "嚴重時造成血漿中Osmolality上升",
+                "D": "主要在肝臟由Alcohol dehydrogenase及Aldehyde dehydrogenase代謝"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 80,
+            "content": "下列何種脂蛋白的代謝途徑主要是將由肝臟衍生的三酸甘油脂運送至週邊細胞代謝？",
+            "options": {
+                "A": "Hepatic（endogenous）pathway",
+                "B": "Intestinal（exogenous）pathway",
+                "C": "LDL receptor pathway",
+                "D": "Reverse cholesterol transfer pathway"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        }
+    ]
+}

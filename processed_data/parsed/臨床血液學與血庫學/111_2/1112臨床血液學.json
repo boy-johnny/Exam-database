@@ -1,0 +1,1231 @@
+{
+    "meta": {
+        "exam_name": "111年第二次專技高考醫師第一階段考試、牙醫師藥師考試分階段考",
+        "subject_name": "臨床血液學與血庫學",
+        "subject_code": "2308",
+        "subject_type": "醫事檢驗師",
+        "year": 111,
+        "period": 2,
+        "question_count": null
+    },
+    "questions": [
+        {
+            "question_number": 1,
+            "content": "某成年女性最近體檢發現有點貧血：血色素10 g/dL、MCV 72 fL，白血球和血小板數量皆正常。就貧血的原因\n而言，下列何者最不可能？",
+            "options": {
+                "A": "Iron deficiency anemia",
+                "B": "Hereditary thalassemia",
+                "C": "Anemia of chronic disorder",
+                "D": "Pernicious anemia"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 2,
+            "content": "下列何者不是評估人體內鐵含量的指標？",
+            "options": {
+                "A": "血清運鐵蛋白量（serum transferrin）",
+                "B": "總鐵結合力（total iron binding capacity）",
+                "C": "儲鐵蛋白量（ferritin）",
+                "D": "游離鐵含量（free iron）"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 3,
+            "content": "病人無輸血史，但急性上呼吸道感染後出現貧血，血漿呈現紅色且其紅血球在常溫時出現凝集現象；下列有關\n病人的敘述何者最適當？",
+            "options": {
+                "A": "具有血色素病變（hemoglobinopathy）",
+                "B": "周邊血液抹片出現緡錢狀（rouleaux）現象",
+                "C": "紅血球平均大小（MCV）偽性降低",
+                "D": "紅血球平均血色素濃度（MCHC）偽性升高"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 4,
+            "content": "病人血色素約為10 g/dL，網狀紅血球數為0.9%，下列判讀何者最適當？",
+            "options": {
+                "A": "骨髓造血功能異常",
+                "B": "溶血性貧血",
+                "C": "不穩定型血色素",
+                "D": "血液抹片可見多染性紅血球上升"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 5,
+            "content": "下列何種紅血球造血前驅細胞不具分裂能力？",
+            "options": {
+                "A": "Pronormoblast"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 6,
+            "content": "下列何者為Hb oxygen dissociation curve所代表的意義？",
+            "options": {
+                "A": "Hb在不同氧分壓下的穩定度",
+                "B": "Hb在不同氧分壓下的溶解度",
+                "C": "Hb與二氧化碳的親和力",
+                "D": "Hb與氧的親和力"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 7,
+            "content": "關於血管內溶血的敘述，下列何者錯誤？",
+            "options": {
+                "A": "血清 haptoglobin 濃度上升",
+                "B": "出現血鐵素尿（hemosiderinuria）",
+                "C": "網狀紅血球增加（reticulocytosis）",
+                "D": "LDH上升"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 8,
+            "content": "Vitamin B12 在血液中主要是以下列何種形式運送？",
+            "options": {
+                "A": "Methyl-cobalamin",
+                "B": "Intrinsic factor-cobalamin complex",
+                "C": "Transcobalamin II-cobalamin complex",
+                "D": "Methylene-cobalamin"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 9,
+            "content": "有關血液中Hb F及Hb A2的敘述，下列何者錯誤？",
+            "options": {
+                "A": "在血色素中的比例，出生前Hb F＞Hb A2，出生後二個月時Hb F＜Hb A2",
+                "B": "在（pH 8.6）cellulose acetate電泳的移動速度，Hb F＞Hb A2",
+                "C": "發育過程中，Hb F比Hb A2早出現",
+                "D": "在酸性（pH 3.3）環境下的變性程度，Hb A2＞Hb F"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 10,
+            "content": "下列何者為後天（acquired）病變造成細胞本身（intrinsic）缺失所引起的溶血性貧血疾病？",
+            "options": {
+                "A": "Paroxysmal nocturnal hemoglobinuria",
+                "B": "G6PD deficiency",
+                "C": "March hemoglobinuria",
+                "D": "Microangiopathic hemolytic anemia"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 11,
+            "content": "有關紅血球spectrin蛋白質的所在位置，下列何者正確？",
+            "options": {
+                "A": "細胞膜的內側"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 12,
+            "content": "利用 eosin-5-maleimide（EMA）staining 搭配 flow cytometric analysis 可用來篩檢下列何種疾病？",
+            "options": {
+                "A": "Aplastic anemia",
+                "B": "Pernicious anemia",
+                "C": "Paroxysmal nocturnal hemoglobinuria（PNH）",
+                "D": "Hereditary spherocytosis"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 13,
+            "content": "帶有Heinz bodies之紅血球主要依賴下列那個器官清除？",
+            "options": {
+                "A": "Spleen",
+                "B": "Liver",
+                "C": "Kidney",
+                "D": "Pancreas"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 14,
+            "content": "病人的檢驗結果如下：serum iron上升；serum ferritin上升；TIBC正常；Hb electrophoresis正常，此人最可能有\n何種疾病？",
+            "options": {
+                "A": "Iron deficiency anemia",
+                "B": "Chronic inflammation",
+                "C": "β-thalassemia",
+                "D": "Sideroblastic anemia"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 15,
+            "content": "下列有關脾臟的敘述，何者錯誤？",
+            "options": {
+                "A": "脾臟萎縮病人的周邊血紅血球含有Howell-Jolly body的機率增加",
+                "B": "脾臟的高含氧狀態及巨噬細胞之分布有助於清除老化血球",
+                "C": "正常脾臟內之紅血球約占紅血球總量的2-5%",
+                "D": "嚴重型β-海洋性貧血病人常發生脾臟腫大"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 16,
+            "content": "下列有關紅血球之敘述，何者錯誤？",
+            "options": {
+                "A": "網狀紅血球在超活體染色下呈藍色的主要原因是因富含粒線體",
+                "B": "Hb H紅血球因富含β4血色素，故在超活體染色下呈藍色",
+                "C": "紅血球內的Howell-Jolly body是DNA殘留物",
+                "D": "瘧疾病人紅血球內之瘧原蟲環狀體，可用血液抹片染色觀察"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 17,
+            "content": "當血漿中的甲基化葉酸（methyl-tetrahydrofolate, methyl-THF）進入細胞後，轉化成THF時，需要下列何者參\n與？",
+            "options": {},
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 18,
+            "content": "Erythropoietin最主要由下列何者製造？",
+            "options": {
+                "A": "肝細胞（hepatocyte）",
+                "B": "腎小管細胞（tubular cells）",
+                "C": "腎小管間質細胞（peritubular interstitial cells）",
+                "D": "肝庫普弗細胞（Kupffer cell）"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 19,
+            "content": "下列何種血色素幾乎不存在於健康成人血液中？",
+            "options": {
+                "A": "α2β2",
+                "B": "α2γ2",
+                "C": "α2δ2",
+                "D": "α2ε2"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 20,
+            "content": "當葉酸缺乏時引起megaloblastic anemia，是由於下列何者的合成受到抑制？",
+            "options": {
+                "A": "dAMP (deoxyadenosine monophosphate)",
+                "B": "dTMP (deoxythymidine monophosphate)",
+                "C": "dCMP (deoxycytidine monophosphate)",
+                "D": "dGMP (deoxyguanosine monophosphate)"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 21,
+            "content": "血球分化受到許多重要轉錄因子（transcription factor）的調控，下列敘述何者正確？",
+            "options": {
+                "A": "C/EBPα導引basophil-mast cell progenitor cell分化走向mast cell",
+                "B": "PU.1及Egr-1導引lymphocyte progenitor cell分化",
+                "C": "PAX5導引common lymphoid progenitor cell分化走向B lymphocyte",
+                "D": "GATA-3導引common myeloid progenitor cell分化走向eosinophil"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 22,
+            "content": "60歲男性一直身體感覺良好。但最近首次健檢卻發現白血球高達32,000/μL，其中淋巴球比例高達75%。周邊\n血液抹片如圖示，則這些淋巴球的細胞表面標記最可能為下列何者？",
+            "options": {},
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 23,
+            "content": "染色體變化或者基因變異對急性血癌具有預後指標，且與治療藥物選擇有關。下列何種變異目前有Quizartinib\n的藥物（一種multiple tyrosine kinases抑制劑）可以選擇使用？",
+            "options": {
+                "A": "FLT3-ITD",
+                "B": "Translocation (15;17)",
+                "C": "Translocation (8;21)",
+                "D": "Inversion (16)"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 24,
+            "content": "下列何者為 severe congenital neutropenia （SCN）最常見的基因（蛋白質）突變 ？",
+            "options": {
+                "A": "LYST gene（lysosomal trafficking regulatory protein）",
+                "B": "LBR gene（lamin B receptor）",
+                "C": "ELANE gene（neutrophil elastase）",
+                "D": "MYH9 gene（non-muscular myosin heavy chain A）"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 25,
+            "content": "白血球的分化過程中，在bone marrow中那些細胞屬於mitotic pool？",
+            "options": {
+                "A": "Myelocyte & Band",
+                "B": "Myelocyte & Metamyelocyte",
+                "C": "Promyelocyte & Myelocyte",
+                "D": "Promyelocyte & Segmented neutrophil"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 26,
+            "content": "下列何者不是造成lymphocytosis的原因？",
+            "options": {},
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 27,
+            "content": "關於infectious mononucleosis，下列敘述何者錯誤？",
+            "options": {
+                "A": "是因EBV（Epstein-Barr virus）感染引起",
+                "B": "病人會出現glandular fever症狀",
+                "C": "病人血液中發生lymphocytosis是因T淋巴球增生所致",
+                "D": "可用monospot test偵測病人血液中是否有EBV（Epstein-Barr virus）抗體"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 28,
+            "content": "有關CD14及單核球（monocyte）之敘述，下列何者錯誤？",
+            "options": {
+                "A": "CD14是單核球的細胞標記之一",
+                "B": "CD14是脂多醣體（lipopolysaccharide）受器",
+                "C": "單核球進入組織後即為巨噬細胞（macrophage）",
+                "D": "單核球的次級顆粒特徵是peroxidase (+)"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 29,
+            "content": "年輕病人就醫前三天出現持續性喉嚨痛、發燒及頸部淋巴腺腫大。血球檢驗顯示白血球數上升，周邊血液抹\n片如圖示。圖中有核細胞最可能是下列那種細胞？",
+            "options": {
+                "A": "漿細胞（plasma cell）",
+                "B": "單核球（monocyte）"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 30,
+            "content": "有關兒童急性淋巴性白血病（acute lymphoblastic leukemia, ALL）之敘述，下列何者錯誤？",
+            "options": {
+                "A": "好發於3～7歲的孩童",
+                "B": "臨床表現中可以有淋巴結腫大",
+                "C": "T細胞屬性的急性淋巴性白血病占大多數",
+                "D": "診斷時血中常出現嗜中性球減少"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 31,
+            "content": "關於chronic myelomonocytic leukemia的檢驗數據，下列敘述何者錯誤？",
+            "options": {
+                "A": "周邊血中有持續性monocytosis，超過1.0 × 109/L，且骨髓中blast cells > 20%",
+                "B": "周邊血中WBC 數目偏高，甚至可能超過100 × 109/L",
+                "C": "沒有發生BCR-ABL1 translocation",
+                "D": "常見TET2, ASXL1 基因異常"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 32,
+            "content": "關於acute promyelocytic leukemia，下列敘述何者錯誤？",
+            "options": {
+                "A": "屬於acute myeloid leukemia",
+                "B": "臨床上病人常發生瀰漫性血管內凝血症（disseminated intravascular coagulation, DIC）",
+                "C": "病人發生染色體異常 t(15;17)，導致產生CBFB-MYH11融合蛋白",
+                "D": "Promyelocyte 細胞質中可見到Auer rods"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 33,
+            "content": "在慢性骨髓性白血病（CML）chronic phase時，下列何種周邊血液的白血球比例最高？",
+            "options": {
+                "A": "Blast",
+                "B": "Promyelocyte",
+                "C": "Myelocyte",
+                "D": "Segmented neutrophil"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 34,
+            "content": "張先生一年前被診斷貧血，但沒有繼續追蹤。最近食慾變差，人臉消瘦。抽血檢驗結果除貧血惡化外，出現\n白血球增多。周邊血液抹片如圖，很多為具有細胞漿質外突（cytoplasma projections）的怪細胞，且這些怪細\n胞有BRAF基因突變。其細胞標記為CD5-/CD23-，下列何者是最有可能的診斷？",
+            "options": {},
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 35,
+            "content": "下列何種免疫標記最可能在B-acute lymphoblastic leukemia的血癌細胞表現？",
+            "options": {
+                "A": "CD2-/CD10-/CD19+/TdT+",
+                "B": "CD3-/CD7+/CD19-/TdT+",
+                "C": "CD33+/CD10+/CD19+/TdT-",
+                "D": "CD2+/CD10+/CD19-/TdT+"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 36,
+            "content": "有關追蹤慢性骨髓性白血病的治療反應，下列何者最適用於檢測白血病細胞的殘留量？",
+            "options": {
+                "A": "以cytogenetic analysis檢測帶有t(15;17)細胞",
+                "B": "以 qRT-PCR 檢測 BCR-ABL1 transcript",
+                "C": "周邊血液 WBC count",
+                "D": "周邊血液blast cell所占的百分比"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 37,
+            "content": "有關B-cell prolymphocytic leukemia（B-PLL）的敘述，下列何者最不適當？",
+            "options": {
+                "A": "一般而言，B-PLL癌細胞比典型的慢性淋巴性白血病（chronic lymphocytic leukemia）的癌細胞來得大",
+                "B": "一般而言，光學顯微鏡下，B-PLL癌細胞具明顯可見細胞核仁",
+                "C": "一般而言，光學顯微鏡下，B-PLL癌細胞的核質比很大，幾乎看不到細胞質",
+                "D": "一般而言，B-PLL預後比典型的慢性淋巴性白血病（chronic lymphocytic leukemia）來得差"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 38,
+            "content": "圖中箭號所指為何種細胞？",
+            "options": {},
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 39,
+            "content": "一位76歲男性，因為倦怠無力而到醫院求診。檢驗數據顯示血色素為8.3 g/dL、血小板為87,000/μL、白血球為\n3,800/μL；骨髓檢查顯示異常細胞如圖箭號所示；流式細胞儀檢驗結果如圖，則此病人最有可能患有下列何\n種疾病？",
+            "options": {},
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 40,
+            "content": "周邊血液抹片中觀察到如圖所示的白血球，是下列何種細胞？",
+            "options": {
+                "A": "嗜中性球",
+                "B": "嗜酸性球",
+                "C": "嗜鹼性球",
+                "D": "淋巴球"
+            },
+            "image_path": "image/臨床血液學和血庫學/111年_第二次/題目1112血液/題目1112血液-page10-img2.png",
+            "page_number": 10,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 41,
+            "content": "目前以化學治療瀰漫性大細胞B細胞淋巴瘤（diffuse large B-cell lymphoma）最常併用下列那一種單株抗體？",
+            "options": {
+                "A": "Anti-CD19",
+                "B": "Anti-CD20",
+                "C": "Anti-CD22",
+                "D": "Anti-CD33"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 42,
+            "content": "下列有關血液疾病與臨床檢驗數據的組合，何者最相關？",
+            "options": {
+                "A": "多發性骨髓瘤（multiple myeloma）／IgM增加",
+                "B": "急性前骨髓細胞性白血病（acute promyelocytic leukemia）／RUNX1-RUNX1T1（AML1-ETO）陽性",
+                "C": "急性骨髓細胞性白血病（acute myeloid leukemia）／Sudan black B 陽性",
+                "D": "霍金氏淋巴瘤（Hodgkin lymphoma）／monoclonal gammopathy"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 43,
+            "content": "血小板內serotonin主要存於何種胞器？",
+            "options": {
+                "A": "α-granules",
+                "B": "Dense granules",
+                "C": "Lysosomes",
+                "D": "Mitochondria"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 44,
+            "content": "急性骨髓性白血病的病患若發生瀰漫性血管內凝血症（disseminated intravascular coagulation, DIC），則下列\n何者最不可能發生？",
+            "options": {
+                "A": "Factor VIII活性下降",
+                "B": "Platelet counts下降",
+                "C": "D-dimer 數值下降",
+                "D": "Fibrinogen濃度下降"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 45,
+            "content": "下列各物質與血小板功能之關係，何者正確？",
+            "options": {
+                "A": "ATP：抑制aggregation",
+                "B": "Arachidonic acid：抑制aggregation",
+                "C": "cAMP：促進aggregation",
+                "D": "TxA2：促進aggregation"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 46,
+            "content": "長期服用aspirin的病人，止血功能會降低，是因為aspirin會直接抑制血小板中的何種酵素？",
+            "options": {
+                "A": "Adenylate cyclase",
+                "B": "Thromboxane synthase",
+                "C": "Heme oxygenase"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 47,
+            "content": "下列何者之致病機轉與抗體最無相關？",
+            "options": {
+                "A": "Heparin-induced thrombocytopenia",
+                "B": "Acquired hemophilia",
+                "C": "EDTA-dependent pseudothrombocytopenia",
+                "D": "Antithrombin deficiency"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 48,
+            "content": "有關 lupus anticoagulants之臨床表現，下列何者最為少見？",
+            "options": {
+                "A": "出血性中風",
+                "B": "不明原因反覆自然流產",
+                "C": "胎兒死亡",
+                "D": "深部靜脈栓塞"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 49,
+            "content": "血小板減少與血友病之臨床出血表現差異，下列敘述何者最適當？",
+            "options": {
+                "A": "血小板減少常見肌肉出血",
+                "B": "血友病常見黏膜及皮下出血",
+                "C": "血友病之出血症狀屬於慢發型（delayed onset）",
+                "D": "血小板因施打肝素而減少時，最常因出血致死"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 50,
+            "content": "有關口服直接抗凝血藥物（direct oral anticoagulants）之作用機轉，下列敘述何者最適當？",
+            "options": {
+                "A": "Direct thrombin inhibitor可用PT及INR監測劑量",
+                "B": "Direct Xa inhibitor劑量與APTT呈線性相關",
+                "C": "Thrombin time正常時，通常可排除檢體含有dabigatran",
+                "D": "Direct Xa inhibitor可使用one stage factor X assay來調整劑量"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 51,
+            "content": "有關血塊收縮試驗（clot retraction time）的敘述，下列何者最適當？",
+            "options": {
+                "A": "是指凝血纖維蛋白收縮、血塊縮小使血清析出，並在特定的條件下，依照規定的時間觀察並計算血塊收縮率\n的試驗",
+                "B": "血塊收縮試驗結果異常表示血小板數量下降，但無法反映出血小板功能及纖維蛋白原（fibrinogen）含量下\n降的現象",
+                "C": "血塊收縮試驗結果與血球容積比（hematocrit）無關，但會受到檢體溶血（hemolysis）的影響",
+                "D": "血塊收縮試驗最主要是測試血小板之第四因子（PF-4）的釋放"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 52,
+            "content": "有關血小板細胞膜的敘述，下列何者最適當？",
+            "options": {
+                "A": "在未活化的血小板細胞膜上，其脂質組成（如：phosphatidylserine）呈不對稱性分布，有助於Factor VII的聚\n集與prothrombin的活化"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 53,
+            "content": "Platelet aggregation assay 結果如圖所示，病人最可能的疾病為何？",
+            "options": {
+                "A": "Glanzmann thrombasthenia",
+                "B": "von Willebrand disease",
+                "C": "Storage pool disease",
+                "D": "Aspirin effect"
+            },
+            "image_path": "image/臨床血液學和血庫學/111年_第二次/題目1112血液/題目1112血液-page13-img0.png",
+            "page_number": 13,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 54,
+            "content": "有關thrombopoietin（TPO）的敘述，下列何者錯誤？",
+            "options": {
+                "A": "當病人血小板數目下降時，血中TPO濃度也隨之下降",
+                "B": "為人體最重要調控血小板生成的因子",
+                "C": "在人體主要由肝臟製造",
+                "D": "在血小板和megakaryocyte表面都有TPO的受器"
+            },
+            "image_path": null,
+            "page_number": 13,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 55,
+            "content": "有關bleeding time試驗的敘述，下列何者正確？",
+            "options": {
+                "A": "受血小板、VWF及血管功能影響",
+                "B": "為一敏感且再現性高的試驗",
+                "C": "需利用光學儀器偵測試驗結果",
+                "D": "凝血因子功能缺失時會出現時間延長"
+            },
+            "image_path": null,
+            "page_number": 13,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 56,
+            "content": "有關血小板凝集試驗（platelet aggregation test）的敘述，下列何者最適當？",
+            "options": {
+                "A": "ATP及腎上腺素（epinephrine）為臨床上最常用的激活劑（agonist）",
+                "B": "應使用platelet poor plasma（PPP），以避免血小板堆積所造成的偽陽性",
+                "C": "高濃度collagen 所得之凝集曲線，常為單一波線（single wave）",
+                "D": "臨床上常使用花生四烯酸（arachidonic acid）作為激活劑"
+            },
+            "image_path": null,
+            "page_number": 13,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 57,
+            "content": "病人無出血症狀，但檢體凝血檢驗APTT時間延長，病人可能具有下列何種情況？",
+            "options": {},
+            "image_path": null,
+            "page_number": 13,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 58,
+            "content": "Thrombomodulin的功能為何？",
+            "options": {
+                "A": "參與活化protein C",
+                "B": "參與活化factor VIII",
+                "C": "參與活化heparan sulfate",
+                "D": "抑制血管收縮"
+            },
+            "image_path": null,
+            "page_number": 14,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 59,
+            "content": "下列何者最可能是Type 3 VWD的檢驗結果？",
+            "options": {
+                "A": "血漿中缺乏高分子量VWF，但低分子量VWF正常",
+                "B": "血漿中缺乏低分子量VWF，但高分子量VWF正常",
+                "C": "VWF：RCo與VWF：Ag檢驗結果異常",
+                "D": "Factor VIII活性正常"
+            },
+            "image_path": null,
+            "page_number": 14,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 60,
+            "content": "關於凝血第七因子的敘述，下列何者錯誤？",
+            "options": {
+                "A": "又稱為組織因子（tissue factor），為肝臟製造的一種醣蛋白",
+                "B": "活性受tissue factor pathway inhibitor（TFPI）抑制",
+                "C": "血漿半衰期較凝血第五因子短",
+                "D": "活化型凝血第七因子製劑可用於治療A型血友病"
+            },
+            "image_path": null,
+            "page_number": 14,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 61,
+            "content": "下列何者是溶血系統（fibrinolytic system）中最主要的抑制因子？",
+            "options": {
+                "A": "α2 antitrypsin",
+                "B": "Antithrombin",
+                "C": "α2 antiplasmin",
+                "D": "Tissue factor pathway inhibitor"
+            },
+            "image_path": null,
+            "page_number": 14,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 62,
+            "content": "病人疑有先天性血小板疾病，血小板流式細胞儀檢查結果如圖，則病人最可能的診斷為何？",
+            "options": {},
+            "image_path": null,
+            "page_number": 14,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 63,
+            "content": "有關Del之敘述，下列何者錯誤？",
+            "options": {
+                "A": "必須使用吸附沖出試驗（absorption-elution test）來證明有微弱D抗原",
+                "B": "又稱為 partial D",
+                "C": "東方人基因型多為RHD 1227 G>A",
+                "D": "其mRNA於轉錄後產生異常的剪接（splicing）"
+            },
+            "image_path": null,
+            "page_number": 15,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 64,
+            "content": "影響沖出試驗（elution test）敏感度之因素，下列敘述何者最適當？",
+            "options": {
+                "A": "為了減少抗體在清洗（washing）過程中脫落過多，可以使用冷（4°C）食鹽水來清洗",
+                "B": "為了保證所沖出的抗體來自紅血球細胞表面，一般做1～2次清洗（washing）再做沖出試驗即可",
+                "C": "沖出液中殘存的有機溶劑不會影響抗體的血清學測試",
+                "D": "有機溶劑不易變性，沖出液可長久保持安定"
+            },
+            "image_path": null,
+            "page_number": 15,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 65,
+            "content": "血庫備血發現病患為A型，抗體篩檢陰性，隨即找A型血袋進行交叉試驗卻發現不合，則下列那項原因最不可\n能？",
+            "options": {
+                "A": "血袋中紅血球之多重凝集素抗原呈陽性",
+                "B": "血袋與病患血型不合",
+                "C": "病患具有被動性輸入之anti-A或anti-B",
+                "D": "因劑量效應（dosage effect）所致"
+            },
+            "image_path": null,
+            "page_number": 15,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 66,
+            "content": "下列何者不會存在於紅血球細胞膜上的ABH抗原分子？",
+            "options": {
+                "A": "N-linked sugar"
+            },
+            "image_path": null,
+            "page_number": 15,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 67,
+            "content": "自然發生的anti-H抗體並不常見，但會引起紅血球凝集，是屬於何種類型抗體？",
+            "options": {
+                "A": "IgA",
+                "B": "IgE",
+                "C": "IgG",
+                "D": "IgM"
+            },
+            "image_path": null,
+            "page_number": 16,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 68,
+            "content": "下列何種方法可以檢測病患紅血球上是否已經吸附抗體或補體？",
+            "options": {
+                "A": "唾液酸水解反應",
+                "B": "蛋白酶水解反應",
+                "C": "間接抗球蛋白反應",
+                "D": "直接抗球蛋白反應"
+            },
+            "image_path": null,
+            "page_number": 16,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 69,
+            "content": "有關交叉試驗之限制（limitation），下列何者錯誤？",
+            "options": {
+                "A": "交叉試驗無法避免紅血球之致敏作用（alloimmunization）",
+                "B": "無法保證輸入之紅血球能於受血者體內正常存活",
+                "C": "可避免急性溶血性輸血反應",
+                "D": "無法避免遲發性溶血性輸血反應"
+            },
+            "image_path": null,
+            "page_number": 16,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 70,
+            "content": "有關捐血中心對捐血者之限制，下列何者正確？",
+            "options": {
+                "A": "服用藥物均不可捐血",
+                "B": "半年內曾經刺青者，應暫緩捐血",
+                "C": "懷孕婦女應暫緩捐血",
+                "D": "一年內曾經罹患肝炎者，應暫緩捐血"
+            },
+            "image_path": null,
+            "page_number": 16,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 71,
+            "content": "有關血小板輸注之血品選擇，下列敘述何者最適當？",
+            "options": {
+                "A": "需以相同ABO血型血小板輸注最主要是因血小板的ABO抗原表現很強",
+                "B": "分離術（apheresis）血小板輸注時，無需考慮ABO血型，因為暴露之ABO抗體量少",
+                "C": "發生血小板輸注無效（refractoriness）後，再輸注時需優先考慮HLA  class II型相合的血小板",
+                "D": "早產兒輸注減除白血球血小板血品時，血品應先執行輻射照射後才能使用"
+            },
+            "image_path": null,
+            "page_number": 16,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 72,
+            "content": "有關新生兒溶血疾病（hemolytic disease of newborn）之敘述，下列何者正確？",
+            "options": {
+                "A": "大多是IgM抗體引起",
+                "B": "在臺灣最常由anti-D所引起"
+            },
+            "image_path": null,
+            "page_number": 16,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 73,
+            "content": "關於國人亞孟買血型的血清學特性，下列敘述何者錯誤？",
+            "options": {
+                "A": "OO\nH-secretor的病人分泌物含有A、B及H抗原",
+                "B": "OA\nH-secretor的病人血清中自然抗體含有anti-B",
+                "C": "OB\nH-secretor的病人分泌物含有B及H抗原",
+                "D": "OAB\nH-secretor的病人血清中無自然抗體"
+            },
+            "image_path": null,
+            "page_number": 17,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 74,
+            "content": "有關紅血球濃厚液之儲存，下列何者錯誤？",
+            "options": {
+                "A": "儲存於1℃～6℃之血庫專用冰箱",
+                "B": "以CPD保存者，可儲存21天",
+                "C": "以CPDA-1保存者，可儲存35天",
+                "D": "以SAGM添加液保存者，可儲存49天"
+            },
+            "image_path": null,
+            "page_number": 17,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 75,
+            "content": "病人出現瀰漫性血管內凝血症（DIC），應用下列何種血品治療？①新鮮冷凍血漿 ②冷凍血漿 ③冷凍沉\n澱品 ④全血",
+            "options": {
+                "A": "①②",
+                "B": "①③",
+                "C": "②④",
+                "D": "③④"
+            },
+            "image_path": null,
+            "page_number": 17,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 76,
+            "content": "下列何種檢測方式無法鑑別國人B3表現型之所有已知基因型？",
+            "options": {
+                "A": "Allele-specific oligonucleotide hybridization",
+                "B": "Allele-specific PCR",
+                "C": "Sequencing",
+                "D": "cDNA microarray"
+            },
+            "image_path": null,
+            "page_number": 17,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 77,
+            "content": "關於MNS血型系統的敘述，下列何者錯誤？",
+            "options": {
+                "A": "MNS血型系統之血型抗原位於glycophorin A或 glycophorin B上",
+                "B": "Glycophorin A上所表現大量之唾酸（sialic acid）為紅血球帶負電之主要來源",
+                "C": "Mi.III表現型亞洲人較白種人多，亦是臺灣臨床血庫作業中重要的表現型",
+                "D": "Anti-\"Mia\"為臺灣血庫作業中常被偵測到的不規則抗體，大多為冷型抗體"
+            },
+            "image_path": null,
+            "page_number": 17,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 78,
+            "content": "病人輸血後出現呼吸困難，胸部X光異常，Pro-BNP上升，且經利尿劑治療有效，病人最可能發生下列何種輸",
+            "options": {},
+            "image_path": null,
+            "page_number": 17,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 79,
+            "content": "有關流式細胞儀螢光補償 （color compensation）之敘述，下列何者最適當？",
+            "options": {
+                "A": "可用於調校檢體自發之干擾螢光",
+                "B": "若螢光之吸收光譜重疊，則不需執行光補償調整",
+                "C": "同時使用之螢光愈多，光補償的影響愈不顯著",
+                "D": "使用適當的濾鏡可以降低螢光光譜重疊訊號干擾"
+            },
+            "image_path": null,
+            "page_number": 18,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 80,
+            "content": "慢性淋巴性白血病 （chronic lymphocytic leukemia）之流式細胞儀免疫分型結果如圖示，下列判讀何者正確？",
+            "options": {
+                "A": "CD19+/CD5-/CD10-/CD200+/Lambda-",
+                "B": "CD19-/CD5+/CD10-/CD200-/Kappa-",
+                "C": "CD19+/CD5+/CD10+/CD200-/Kappa+",
+                "D": "CD19+/CD5+/CD10-/CD200+/Lambda+"
+            },
+            "image_path": "image/臨床血液學和血庫學/111年_第二次/題目1112血液/題目1112血液-page18-img0.png",
+            "page_number": 18,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        }
+    ]
+}
