@@ -1,0 +1,1245 @@
+{
+    "meta": {
+        "exam_name": "112 年第一次專門職業及技術人員高等考試醫師牙醫師中醫師藥師考",
+        "subject_name": "醫學分子檢驗學與臨床鏡檢學（包括寄生蟲學）",
+        "subject_code": "3308",
+        "subject_type": "醫事檢驗師",
+        "year": 112,
+        "period": 1,
+        "question_count": null
+    },
+    "questions": [
+        {
+            "question_number": 1,
+            "content": "若物鏡上刻有160／0.11－0.23 數字，則下列何者正確？",
+            "options": {
+                "A": "孔徑值最大值為0.23",
+                "B": "載玻片厚度可用0.11～0.23 mm 之間",
+                "C": "蓋玻片可選用0.20 mm 厚度",
+                "D": "工作距離約0.11～0.23 mm"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 2,
+            "content": "暗視野顯微鏡觀察物體時，背景為何黑暗？",
+            "options": {
+                "A": "分析鏡與起偏鏡相互垂直，因此沒有光線進入物鏡",
+                "B": "暗相位，所以物體較背景明亮",
+                "C": "使用一種特殊的聚光鏡，使照明光線斜射不能進入物鏡",
+                "D": "物鏡孔徑值大於聚光鏡孔徑值，所以入射光沒有進入物鏡"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 3,
+            "content": "黃棕色尿液檢體經振盪後產生黃色泡沫，最可能為下列何種成份所造成？",
+            "options": {
+                "A": "bilirubin",
+                "B": "glucose",
+                "C": "NaCl",
+                "D": "occult blood"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 4,
+            "content": "正常尿液中，下列何種無機物質含量最多？",
+            "options": {
+                "A": "鈉離子",
+                "B": "鉀離子",
+                "C": "鎂離子",
+                "D": "鈣離子"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 5,
+            "content": "下列何者最適合用來鑑定檢體是否為尿液？",
+            "options": {
+                "A": "葡萄糖與尿酸",
+                "B": "尿酸與尿素"
+            },
+            "image_path": null,
+            "page_number": 1,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 6,
+            "content": "下列何者不是造成新鮮尿液檢體呈現混濁的原因？",
+            "options": {
+                "A": "RBC",
+                "B": "glucose",
+                "C": "WBC",
+                "D": "bacteria"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 7,
+            "content": "下列何者為尿液尿膽素原的化性試驗？",
+            "options": {
+                "A": "SSA test",
+                "B": "Benedict's test",
+                "C": "Watson-Schwartz test",
+                "D": "Rothera's test"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 8,
+            "content": "下列何種尿液檢體，用尿液試紙法檢測尿蛋白時會呈現偽陽性，而用酸性沉澱試驗法時會呈現偽陰性？",
+            "options": {
+                "A": "高維生素C 尿",
+                "B": "高鹼性尿",
+                "C": "高酸性尿",
+                "D": "高比重尿"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 9,
+            "content": "有關全自動化儀器檢驗尿液之敘述，下列何者正確？",
+            "options": {
+                "A": "檢體不需離心，僅可檢查化學項目",
+                "B": "檢體不需離心，可檢查化學項目、細胞、結晶及圓柱體等",
+                "C": "檢體需離心，僅可檢查化學項目",
+                "D": "檢體需離心，可檢查化學項目、細胞、結晶及圓柱體等"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 10,
+            "content": "下列何種尿液最不適合作細菌培養？",
+            "options": {
+                "A": "24 小時尿液",
+                "B": "導尿尿液",
+                "C": "中段尿尿液",
+                "D": "恥骨上抽取尿液"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 11,
+            "content": "健康成人尿液形成過程中，每分鐘體積由大至小排序為何？①腎臟血流量 ②腎臟血漿流量 ③腎絲球過濾\n液 ④尿液量",
+            "options": {
+                "A": "①＞②＞③＞④"
+            },
+            "image_path": null,
+            "page_number": 2,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 12,
+            "content": "以蘇丹III 染色，在尿沉渣觀察到細胞內紅色的圓形小球，下列敘述何者正確？",
+            "options": {
+                "A": "表示嚴重的感染性疾病",
+                "B": "紅色小球是白血球二級顆粒",
+                "C": "表示嚴重的代謝性疾病",
+                "D": "紅色小球是腎小管上皮細胞吞噬之脂肪"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 13,
+            "content": "下列何種疾病常引發滲透性腹瀉（osmotic diarrhea）？",
+            "options": {
+                "A": "霍亂",
+                "B": "乳糖不耐症",
+                "C": "甲狀腺機能亢進",
+                "D": "十二指腸潰瘍"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 14,
+            "content": "糞便檢體進行下列何種試驗，可輔助診斷侵襲性細菌感染？",
+            "options": {
+                "A": "D-xylose test",
+                "B": "Lactoferrin latex agglutination test",
+                "C": "APT test",
+                "D": "Clinitest"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 15,
+            "content": "糞便試驗中，下列何種方法會有加醋酸至檢體的操作步驟？",
+            "options": {
+                "A": "guaiac 潛血試驗",
+                "B": "APT 試驗",
+                "C": "Sudan III 染色法於中性脂肪鏡檢",
+                "D": "滴定分析法於脂肪定量"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 16,
+            "content": "有關痰液Charcot-Leyden 結晶之敘述，下列何者錯誤？",
+            "options": {
+                "A": "外觀無色、菱形、細尖結晶",
+                "B": "常見於支氣管氣喘病人痰液",
+                "C": "常見於黃色膿痰中",
+                "D": "是嗜酸性白血球之衍生物"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 17,
+            "content": "關於痰液黴菌檢驗的敘述，下列何者錯誤？",
+            "options": {
+                "A": "白色念珠菌（Candida albicans）為正常咽喉菌叢之一"
+            },
+            "image_path": null,
+            "page_number": 3,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 18,
+            "content": "關於痰液的敘述，下列何者錯誤？",
+            "options": {
+                "A": "見到完整的白血球可能有發炎反應",
+                "B": "支氣管氣喘病人，會出現大量嗜酸性白血球",
+                "C": "下呼吸道嚴重感染，會出現大量紅血球",
+                "D": "Curschmann 氏螺旋體外觀呈樹枝分支狀"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 19,
+            "content": "腦脊隨液進行鱟溶解物試驗的反應時間為何？",
+            "options": {
+                "A": "5 分鐘",
+                "B": "15 分鐘",
+                "C": "30 分鐘",
+                "D": "1 小時"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 20,
+            "content": "目前臨床上以乳膠凝集法快速檢驗腦脊髓液之病原，主要是偵測病原體之何種成份？",
+            "options": {
+                "A": "抗體",
+                "B": "抗原",
+                "C": "DNA 基因體",
+                "D": "RNA 基因體"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 21,
+            "content": "下列何者不是控制胸膜液製造速度的因素？",
+            "options": {
+                "A": "微血管的液體靜壓",
+                "B": "血液白血球的數量",
+                "C": "微血管的通透性",
+                "D": "淋巴管的再吸收"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 22,
+            "content": "對腺癌而言，下列何者可能是最有用的單一腫瘤標記？",
+            "options": {
+                "A": "AFP",
+                "B": "CEA",
+                "C": "CA-125",
+                "D": "CA-15-3"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 23,
+            "content": "腹水在觀察凝固狀態時，採檢試管內含物為何？",
+            "options": {
+                "A": "肝素（heparin）"
+            },
+            "image_path": null,
+            "page_number": 4,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 24,
+            "content": "下列何種結晶常出現於假痛風病人之關節液？",
+            "options": {
+                "A": "尿酸鈉鹽",
+                "B": "焦磷酸鈣鹽",
+                "C": "膽固醇",
+                "D": "氫氧磷灰石"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 25,
+            "content": "下列何者屬於關節液內源性物質，且以偏光顯微鏡觀察時呈馬爾它十字型？",
+            "options": {
+                "A": "滑石粉",
+                "B": "膽固醇結晶",
+                "C": "脂肪小滴",
+                "D": "尿酸鈉鹽結晶"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 26,
+            "content": "前列腺分泌不足時，不會影響下列何者的含量？",
+            "options": {
+                "A": "neutral α-glucosidase",
+                "B": "zinc",
+                "C": "citric acid",
+                "D": "acid phosphatase"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 27,
+            "content": "有關正常精蟲頭部的形態，下列何者正確？",
+            "options": {
+                "A": "圓形",
+                "B": "卵圓形",
+                "C": "不定型",
+                "D": "長三角型"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 28,
+            "content": "精液抹片觀察尖頭形態的精蟲約有40%，則此病人可能有下列何種疾病？",
+            "options": {
+                "A": "睪丸發育不全",
+                "B": "附睪功能缺陷",
+                "C": "輸精管阻塞",
+                "D": "精索靜脈曲張"
+            },
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 29,
+            "content": "測定孕婦血清中α-胎兒蛋白（AFP）、β-人類絨毛膜性腺激素（β-hCG）、游離型雌脂三醇（uE3）等試驗\n可做為胎兒疾病的篩檢，此篩檢在懷孕約幾週時進行比較適合？",
+            "options": {},
+            "image_path": null,
+            "page_number": 5,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 30,
+            "content": "直接凝集法的懷孕試驗，其原理是在乳膠顆粒上包覆下列何者？",
+            "options": {
+                "A": "hCG 抗原",
+                "B": "抗hCG 抗體",
+                "C": "Estrogen 抗原",
+                "D": "抗Estrogen 抗體"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 31,
+            "content": "下列何種寄生蟲的感染可能造成角膜潰瘍？",
+            "options": {
+                "A": "福氏內格里阿米巴（Naegleria fowleri）",
+                "B": "貝氏等胞球蟲（Isospora belli）",
+                "C": "棘阿米巴（Acanthamoeba spp.）",
+                "D": "人滴蟲（Trichomonas hominis）"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 32,
+            "content": "感染羅德西亞錐蟲（Trypanosoma brucei rhodesiense）的早期，採集何種檢體鏡檢最容易發現蟲體？",
+            "options": {
+                "A": "腦脊髓液",
+                "B": "痰",
+                "C": "尿",
+                "D": "血液"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 33,
+            "content": "下列何種寄生蟲可能侵犯腦中樞神經引起病變？",
+            "options": {
+                "A": "豬肉囊蟲（Cysticercus cellulosae）",
+                "B": "菲律賓毛線蟲（Capillaria philippinensis）",
+                "C": "薑片蟲（Fasciolopsis buski）",
+                "D": "隱胞子蟲（Cryptosporidium parvum）"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 34,
+            "content": "下列何者在輕度感染人體時，對肝臟實質組織（parenchyma）的破壞最大？",
+            "options": {
+                "A": "香貓肝吸蟲（Opisthorchis viverrini）",
+                "B": "中華肝吸蟲（Clonorchis sinensis）",
+                "C": "牛羊肝吸蟲（Fasciola hepatica）",
+                "D": "槍狀肝吸蟲（Dicrocoelium dendriticum）"
+            },
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 35,
+            "content": "有關Sabin-Feldman 染色檢驗法的敘述，下列何者錯誤？",
+            "options": {},
+            "image_path": null,
+            "page_number": 6,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 36,
+            "content": "痢疾阿米巴（Entamoeba histolytica）的腸道外感染，以下列何者最常見？",
+            "options": {
+                "A": "腦部",
+                "B": "肝臟",
+                "C": "心臟",
+                "D": "皮膚"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 37,
+            "content": "血清白蛋白濃度3.2 g/ dL；血清總蛋白濃度8 g/dL；腹水白蛋白濃度2.4 g/dL，則可推測此腹水為下列何者？",
+            "options": {
+                "A": "滲出液（exudate）",
+                "B": "濾出液（transudate）",
+                "C": "二者混合液",
+                "D": "無法判斷"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 38,
+            "content": "下列何者的葡萄糖正常參考值最高？",
+            "options": {
+                "A": "腦脊髓液",
+                "B": "關節液",
+                "C": "尿液",
+                "D": "羊水"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 39,
+            "content": "尿液化學檢查，下列何者不受維生素C 的干擾？",
+            "options": {
+                "A": "血液",
+                "B": "葡萄糖",
+                "C": "酮體",
+                "D": "亞硝酸鹽"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 40,
+            "content": "醫檢師若發生針扎事件，應盡速執行下列何者？",
+            "options": {
+                "A": "清洗工作區域",
+                "B": "消毒工作區域",
+                "C": "報告主管",
+                "D": "接受HIV 預防處理"
+            },
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "＃"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 41,
+            "content": "關於真核細胞轉錄作用（transcription）的敘述，下列何者最不適當？",
+            "options": {},
+            "image_path": null,
+            "page_number": 7,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 42,
+            "content": "關於人類基因變異的敘述，下列何者最正確？",
+            "options": {
+                "A": "單一核苷酸多型性（SNP）的發生頻率一定比基因突變的發生頻率高",
+                "B": "基因突變一定會造成其表現型的改變",
+                "C": "基因片段的插入或缺失對其蛋白功能的影響一定大於點突變的影響",
+                "D": "內含子（intron）的變異一定不會影響其表現型"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 43,
+            "content": "關於G6PD 基因與G6PD 缺乏症（蠶豆症）的敘述，下列何者最不適當？",
+            "options": {
+                "A": "G6PD 基因座落於 X 染色體中",
+                "B": "大部分G6PD 基因突變是倒轉（inversion）",
+                "C": "本土蠶豆症發生率以客家人居首",
+                "D": "臺灣及鄰近地區的蠶豆症平均發生頻率為女性低於男性"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 44,
+            "content": "下列關於原核細胞基因轉錄之repressor 的敘述，下列何者最不適當？",
+            "options": {
+                "A": "抑制基因表現",
+                "B": "通常不會直接與DNA 結合",
+                "C": "會辨識基因啟動子（promoter）位置附近的DNA 序列",
+                "D": "通常為蛋白質"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 45,
+            "content": "人類染色體中的重複DNA 序列（repetitive DNA sequence）約占整個基因體的多少%？",
+            "options": {
+                "A": "10",
+                "B": "30",
+                "C": "55",
+                "D": "75"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 46,
+            "content": "醫學分子檢驗，血液類檢體的處理，下列何者最不適當？",
+            "options": {
+                "A": "血液檢體應於4 小時內將血球與血漿分離",
+                "B": "檢測標的物為DNA 時，血球與血漿分離後，可在2～8℃穩定5 天",
+                "C": "檢測標的物為RNA 時，血球與血漿分離後，建議4 小時內萃取，否則應保存-20℃以下",
+                "D": "純化後的RNA 直接保存於在-20℃"
+            },
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 47,
+            "content": "Fluorescence in situ hybridization（FISH）最常用於以螢光探針與細胞內染色體的那種分子結合？",
+            "options": {},
+            "image_path": null,
+            "page_number": 8,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 48,
+            "content": "核酸分子檢測之檢體類別是需要考量的因素之一，針對檢測項目及其臨床上常用檢體的敘述，下列何者最不\n適當？",
+            "options": {
+                "A": "HBV 與HCV 病毒量檢測採集血液檢體",
+                "B": "新冠病毒與流感病毒A 型檢測採集鼻咽／咽喉拭子檢體",
+                "C": "HAV 與HDV 病毒量檢測採集鼻咽／咽喉拭子檢體",
+                "D": "HSV-1 與HSV-2 檢測採集腦脊髓液檢體"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 49,
+            "content": "關於聚合酶連鎖反應（polymerase chain reaction, PCR）的實驗設計，下列何者最正確？",
+            "options": {
+                "A": "引子（primer）的序列是根據所偵測之DNA 模板的序列來設計",
+                "B": "黏合（annealing）溫度是依照DNA 模板的序列計算後設定",
+                "C": "所使用鎂離子的濃度愈高，特異性產物比例愈多",
+                "D": "延伸（extension）時間是依照引子（primer）的序列計算後設定"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 50,
+            "content": "如圖所示為利用DNA 甲基化晶片進行實驗分析的結果，下列敘述何者最正確？",
+            "options": {
+                "A": "重亞硫酸鹽主要是將具有甲基化的胞嘧啶（cytosine）轉變為尿嘧啶（uracil）",
+                "B": "通常在基因的啟動子（promoter）處如果有高度甲基化，會伴隨該基因高度表現",
+                "C": "以甲基化晶片可以同時定量多個CpG 位點（CpG site）",
+                "D": "甲基化是表觀遺傳調控（epigenetic regulation）的一種，透過改變基因序列造成突變的方式達到基因表達調控"
+            },
+            "image_path": "image/臨床鏡檢學與分子生物學/112年_第一次/題目1121鏡檢/題目1121鏡檢-page9-img0.png",
+            "page_number": 9,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 51,
+            "content": "承上題，根據上圖，測試樣本的DNA 甲基化結果，下列何者最正確？",
+            "options": {
+                "A": "待分析的CpG 位點具有甲基化",
+                "B": "待分析的CpG 位點不具有甲基化",
+                "C": "實驗結果品質欠佳，無法判讀"
+            },
+            "image_path": null,
+            "page_number": 9,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 52,
+            "content": "以次世代定序（next-generation sequenc\nsequencing）進行確認；結果如圖所示\nSNV）位點，下列那一個變異位點最",
+            "options": {
+                "A": "Ⅰ",
+                "B": "Ⅱ",
+                "C": "Ⅲ",
+                "D": "Ⅳ"
+            },
+            "image_path": "image/臨床鏡檢學與分子生物學/112年_第一次/題目1121鏡檢/題目1121鏡檢-page10-img0.png",
+            "page_number": 10,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 53,
+            "content": "承上題，臨床檢驗實務上，如果要更",
+            "options": {
+                "A": "重複進行次世代定序檢驗，確認再現",
+                "B": "將樣本進行巨觀刮取（macro-dissect",
+                "C": "使用第三平台檢驗，例如即時定量聚",
+                "D": "採取同病人血球DNA，進行該位點"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 54,
+            "content": "PCR 是分子檢驗常用的核酸放大技術",
+            "options": {
+                "A": "nested PCR 可提高PCR 反應的speci",
+                "B": "進行semi-nested PCR 時，反應中一共",
+                "C": "PCR 之tailed primer method，可增加",
+                "D": "gap-PCR 適合用來偵測核酸點突變"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 55,
+            "content": "臨床上常使用增幅阻礙突變系統（AR",
+            "options": {
+                "A": "可以偵測已知及未知的基因突變點",
+                "B": "可以偵測大片段突變（例如deletion",
+                "C": "引子設計突變位置在3'末端鹼基",
+                "D": "不能同時檢測多個突變點"
+            },
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 56,
+            "content": "Allele-specific oligonucleotide hybridizati\n述何者最適當？\ncing, NGS）進行實體腫瘤組織樣本突變檢測，\n示：Ⅰ、Ⅱ、Ⅲ、Ⅳ是四個單一核苷酸變異（s\n最有可能是種系突變（germline mutation）？\n更進一步確認該變異位點確實為種系突變，下列\n現性\ntion），提高腫瘤含量至90%以上，再次檢驗\n聚合酶連鎖反應進行變異位點確認\n點的變異分析\n術，關於延伸技術的敘述，下列何者最正確？\nificity 和sensitivity\n共有4 個primers\n加PCR 的specificity，但不會增加sensitivity\nRMS）進行等位基因特異性檢驗，下列敘述何\nn）\nion 廣泛使用在癌症與遺傳疾病的分子鑑定上\n並用桑格定序法（Sanger\nsingle nucleotide variation,\n列何種驗證最有效？\n何者最適當？\n，在探針的設計上，下列敘",
+            "options": {},
+            "image_path": null,
+            "page_number": 10,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 57,
+            "content": "二維電泳配合蛋白質譜分析的實驗前後順序，下列何者最適當？①特定酵素水解蛋白 ②一維等電點聚焦電\n泳 ③膠體染色 ④檢體製備 ⑤二維聚丙烯醯胺凝膠電泳",
+            "options": {
+                "A": "④②⑤③①",
+                "B": "④①②⑤③",
+                "C": "④③①②⑤",
+                "D": "①②③⑤④"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 58,
+            "content": "使用基質輔助雷射脫附游離飛行時間質譜法（MALDI-TOF MS）分析蛋白質樣品，所測得的飛行時間（time-of-\nflight）最主要取決於裂解胜肽片段（peptide fragment）的何種特性？",
+            "options": {
+                "A": "裂解位置",
+                "B": "質荷比",
+                "C": "三級結構",
+                "D": "分子量"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 59,
+            "content": "關於HLA 等位基因檢測，下列何種方法的解析度最高？",
+            "options": {
+                "A": "細胞毒殺測試法",
+                "B": "特異性寡核苷酸探針（sequence-specific oligonucleotide probe）檢測法",
+                "C": "序列特異性引子（sequence-specific primer）法",
+                "D": "核酸定序（Sanger）法"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 60,
+            "content": "下列何者無法以DNA 晶片偵測？",
+            "options": {
+                "A": "癌症的分類",
+                "B": "病毒的亞型分析（subtyping）",
+                "C": "單一核苷酸多型性（single nucleotide polymorphism）",
+                "D": "臨床檢體中的蛋白質是否磷酸化（phosphorylation）或醣基化（glycosylation）"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 61,
+            "content": "關於檢體的傳送與儲存，下列敘述何者最不適當？",
+            "options": {
+                "A": "血液檢體，在機構內室溫傳送即可",
+                "B": "formalin-fixed, paraffin-embedded（FFPE）檢體，必須低溫傳送",
+                "C": "收到痰液檢體，如無法立即處理，應將檢體冷藏保存"
+            },
+            "image_path": null,
+            "page_number": 11,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 62,
+            "content": "醫學實驗室之品質要求是參照下列何者？",
+            "options": {
+                "A": "ISO17043",
+                "B": "ISO9001",
+                "C": "ISO15189",
+                "D": "ISO14001"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 63,
+            "content": "核酸定序後，欲進行序列比對，下列何者為最適合的工具？",
+            "options": {
+                "A": "dbSNP",
+                "B": "ClinVar",
+                "C": "BLAST",
+                "D": "TCGA"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 64,
+            "content": "依據臨床需求，某醫院分子實驗室將以自行設計的方法進行遺傳代謝與罕見疾病之基因檢測，該分子實驗室\n人員共有4 位，有關其分工狀況，下列何者不符合「特定醫療技術檢查檢驗醫療儀器施行或使用管理辦法」\n規範？",
+            "options": {
+                "A": "品質主管為專任病理科醫師",
+                "B": "次世代定序（next-generation sequencing, NGS）技術操作者為兼任醫事檢驗師",
+                "C": "測試結果資訊分析者為專任具有生醫博士學位的醫師",
+                "D": "檢測報告核發者為具有博士學位的兼任醫事檢驗師"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 65,
+            "content": "某生技公司取得衛生福利部食品藥物管理署之LDTS 列冊登錄資格後，所核發的轉移性大腸直腸癌（mCRC）\n之基因檢測報告內容，下列何者最不適當？",
+            "options": {
+                "A": "檢體種類：mCRC 組織",
+                "B": "收件日期：2021/10/18",
+                "C": "限制：熱區（hotspots）突變低於3%者，可能檢測不出",
+                "D": "結果：K-RAS gene NM_0333123:c.35A＞C. 不適用cetuximab（EGFR 單株抗體）治療"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 66,
+            "content": "下列何者不需要運用探針雜交法來鑑定細菌的檢測？",
+            "options": {
+                "A": "固相寡核苷酸晶片",
+                "B": "原位螢光雜交法",
+                "C": "液相晶片",
+                "D": "單股結構多型性分析法"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 67,
+            "content": "病毒之分子檢測，下列何者需要進行反轉錄酶－聚合酶連鎖反應？",
+            "options": {
+                "A": "BK virus"
+            },
+            "image_path": null,
+            "page_number": 12,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 68,
+            "content": "下列何種病毒分子定量檢測方法，不是在恆溫（isothermal）進行？",
+            "options": {
+                "A": "loop-mediated isothermal amplification（LAMP）",
+                "B": "gap-ligase chain reaction（gap-LCR）",
+                "C": "nucleic acid sequence-based amplification（NASBA）",
+                "D": "specific high sensitivity enzymatic reporter unLOCKing（SHERLOCK）"
+            },
+            "image_path": null,
+            "page_number": 13,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 69,
+            "content": "DNA 定序法用於進行真菌鑑定時，下列敘述何者最正確？",
+            "options": {
+                "A": "核糖體核酸基因不是主要的鑑定標的",
+                "B": "ITS（internal transcribed spacer）與D1／D2 兩段基因序列是真菌分型的標的",
+                "C": "真菌的核糖體基因有高拷貝數且序列具高變異性的特性",
+                "D": "真菌的rRNA 包括18S, 5S, 23S 三種"
+            },
+            "image_path": null,
+            "page_number": 13,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 70,
+            "content": "發展分子診斷法偵測病原菌的主要優勢為何？",
+            "options": {
+                "A": "全面取代傳統檢測技術",
+                "B": "縮短報告時間並增加運用多重反應（multiplex）的可行性",
+                "C": "降低偽陽性",
+                "D": "可快速發出所有細菌藥敏結果的報告"
+            },
+            "image_path": null,
+            "page_number": 13,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 71,
+            "content": "腸球菌對萬古黴素的抗藥性主要是源自於下列那個酵素的基因表達？",
+            "options": {
+                "A": "D-alanyl-D-alanine ligase",
+                "B": "D-alanyl-D-alanine endopeptidase",
+                "C": "D-alanyl-D-alanine carboxypeptidase",
+                "D": "D-alanyl-D-lactate ligase"
+            },
+            "image_path": null,
+            "page_number": 13,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 72,
+            "content": "染色體易位檢查的方法學，靈敏度由低至高順序為何？①染色體核型（karyotyping）分析 ②原位螢光雜交法\n（FISH） ③即時定量聚合酶連鎖反應（real-time quantitative PCR）",
+            "options": {
+                "A": "①②③",
+                "B": "②③①",
+                "C": "③②①",
+                "D": "②①③"
+            },
+            "image_path": null,
+            "page_number": 13,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 73,
+            "content": "以周邊血液腫瘤DNA（circulating tumor DNA, ctDNA）作為腫瘤突變基因分子檢驗樣本，下列敘述何者最不適",
+            "options": {},
+            "image_path": null,
+            "page_number": 13,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 74,
+            "content": "下列何種野生型基因過度表達時，可能會造成癌症？",
+            "options": {
+                "A": "TP53",
+                "B": "RB1",
+                "C": "APC",
+                "D": "EGFR"
+            },
+            "image_path": null,
+            "page_number": 14,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 75,
+            "content": "關於acute lymphoblastic leukemia（ALL）微量殘存疾病（minimal residual disease, MRD）的敘述，下列何者最不\n適當？",
+            "options": {
+                "A": "ALL 血癌經治療後常會發生MRD",
+                "B": "採檢骨髓樣本比周邊血液樣本容易檢測出MRD",
+                "C": "原位螢光雜交法（FISH）與即時定量聚合酶連鎖反應分析MRD 的靈敏度相當",
+                "D": "可以使用流式細胞儀分析特異性之免疫抗原標記偵測MRD"
+            },
+            "image_path": null,
+            "page_number": 14,
+            "correct_answer_key": [
+                "C"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 76,
+            "content": "下列何種指標與pembrolizumab 免疫治療的療效預測無關？",
+            "options": {
+                "A": "microsatellite instability",
+                "B": "tumor mutation burden",
+                "C": "PD-L1 expression",
+                "D": "K-RAS mutation"
+            },
+            "image_path": null,
+            "page_number": 14,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 77,
+            "content": "在臺灣，許多病患因服用allopurinol 而引起嚴重的藥物不良反應，主因是15～20%的臺灣漢族人口帶有下列何\n種等位基因？",
+            "options": {
+                "A": "HLA-B*5801",
+                "B": "HLA-B*1502",
+                "C": "HLA-B*5701",
+                "D": "HLA-A*1301"
+            },
+            "image_path": null,
+            "page_number": 14,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 78,
+            "content": "下列何種基因的缺失會造成5-fluorouracil 對癌症的療效變差？",
+            "options": {
+                "A": "MutL homolog 1（MLH1）",
+                "B": "excision repair cross complementing 1（ERCC1）"
+            },
+            "image_path": null,
+            "page_number": 14,
+            "correct_answer_key": [
+                "A"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 79,
+            "content": "對於利用分子檢驗檢測B 型血友病的相關敘述，下列何者最不適當？",
+            "options": {
+                "A": "變性高效能液相層析法可以檢測B 型血友病基因變異",
+                "B": "可以利用南方墨點法鑑別特定的B 型血友病基因型",
+                "C": "直接定序法適用於鑑別最多種類的B 型血友病型別",
+                "D": "凝血第九因子基因在病患家族中，沒有特定多型性（polymorphism）或DNA-STR（short tandem repeat）型別"
+            },
+            "image_path": null,
+            "page_number": 15,
+            "correct_answer_key": [
+                "D"
+            ],
+            "notes": null
+        },
+        {
+            "question_number": 80,
+            "content": "下列何種標的基因的檢驗，常用以評估乳癌病人是否適用荷爾蒙療法？",
+            "options": {
+                "A": "HER2/neu",
+                "B": "ER（estrogen receptor）",
+                "C": "BRCA1",
+                "D": "TP53"
+            },
+            "image_path": null,
+            "page_number": 15,
+            "correct_answer_key": [
+                "B"
+            ],
+            "notes": null
+        }
+    ]
+}
